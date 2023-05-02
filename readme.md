@@ -23,3 +23,9 @@ Our goal is to create a software for the society that is going to simulate the b
 
 
 ## Documents
+
+[Functional Specifications](specs/functional/functional-specifications.md) <br> 
+[Technical Specifications](specs/technical/technical-specifications.md) <br>
+[Test Plan](specs/Test_Plan/Test_Plan.md) <br>
+
+## Weekly Reports
