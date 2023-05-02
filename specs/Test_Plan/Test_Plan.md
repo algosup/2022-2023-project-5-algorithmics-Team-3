@@ -36,6 +36,22 @@ _____
 
 </details>
 
+_____
+
+## 1. Introduction
+
+### 1.1. Scope
+
+#### 1.1.1. In Scope
+
+- **Functional Testing** <br>
+  - **Smoke Testing** <br>
+  - **Regression Testing** <br>
+  - **Integration Testing** <br>
+  - **System Testing** <br>
+  - **User Acceptance Testing** <br>
+
+
 
 
 
