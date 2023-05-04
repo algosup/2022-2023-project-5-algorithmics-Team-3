@@ -13,24 +13,23 @@
 
 _____
 
-<details><summary>Below find important constituents of a test plan-</summary>
+<details><summary>Below find important constituents of a test plan</summary>
 
-- 1. Introduction <br>
-  - 1.1. Scope <br>
-    - 1.1.1. In Scope <br>
-    - 1.1.2. Out of Scope <br>
-  - 1.2. Quality Objectives <br>
-  - 1.3. Roles and Responsibilities
-2. Test Methodology
-   - 2.1. Overview <br>
-   - 2.2. Test Levels <br>
-   - 2.3. Bug Triage <br>
-   - 2.4. Suspension Criteria and Resumption Requirements <br>
-   - 2.5. Test Completeness <br>
-3. Test Deliverables
-4. Resource & Environment Requirements
-    - 4.1. Testing Tools
-    - 4.2. Test Environment
+- [Introduction](#1-introduction) <br>
+  - [1.1. Scope](#11-scope) <br>
+    - [1.1.1. In Scope](#111-in-scope) <br>
+    - [1.1.2. Out of Scope](#112-out-of-scope) <br>
+  - [1.2. Quality Objectives](#12-quality-objectives) <br>
+- [Test Methodology](#2-test-methodology)
+   - [2.1. Overview](#21-overview) <br>
+   - [2.2. Test Levels](#22-test-levels) <br>
+   - [2.3. Bug Triage](#23-bug-triage) <br>
+   - [2.4. Suspension Criteria and Resumption Requirements](#24-suspension-criteria-and-resumption-requirements) <br>
+   - [2.5. Test Completeness](#25-test-completeness) <br>
+- [Test Deliverables](#3-test-deliverables) <br>  
+- [Resource & Environment Requirements](#4-resource--environment-requirements) <br>
+    - [4.1. Testing Tools](#41-testing-tools) <br>
+    - [4.2. Test Environment](#42-test-environment) <br>
 
 </details>
 
@@ -67,69 +66,16 @@ All the feature of the project which were defined in software requirement [specs
 
 Quality Objectives for the Krug Champagne Blending Software Project:
 
-**Accuracy:** The software must provide highly accurate blending solutions that closely match the given formula. The blending process must maintain the integrity of the wine and adhere to the principles of the traditional champagne-making method.
+| Objective       | Description                                                                                                                   | Metrics                                                                                                   |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| **Accuracy**    | The software must provide highly accurate blending solutions that closely match the given formula.                            | - Difference between the final blended proportions and the target formula<br>- Number of blending steps   |
+| **Efficiency**  | The software must minimize the number of blending steps to reduce the time and resources required for the process.             | - The number of blending steps<br>- The time required to execute the blending process                     |
+| **Robustness**  | The software must be able to handle a wide range of inputs and variations in the wine-making process, as well as unexpected conditions or errors.   | - The number of successful test cases covering various input conditions and edge cases<br>- The percentage of error-free software runs   |
+| **Usability**   | The software must be user-friendly, allowing the Cellar Master and the team to efficiently work with the blending process and make adjustments as needed. | - Time required for new users to learn and use the software<br>- User satisfaction ratings                |
+| **Maintainability** | The software must be easy to maintain, with a clean and modular design that allows for updates, bug fixes, and future enhancements. | - The number of lines of code<br>- The level of code complexity, measured using standard software metrics (e.g., cyclomatic complexity) |
+| **Scalability** | The software must be designed to scale efficiently as the winery's operations grow, with the ability to handle increasing numbers of tanks and blends without significant performance degradation. | - Execution time for increasing numbers of tanks and blends<br>- Resource utilization (e.g., memory and CPU usage) for increasing workloads |
+| **Compliance**  | The software must comply with all applicable industry standards and regulations, ensuring that the blending process meets the requirements of the traditional champagne-making method. | - Compliance with industry standards and regulations<br>- External audit results, if applicable           |
 
-Metrics:
-
-- Difference between the final blended proportions and the target formula
-- The number of blending steps within a defined tolerance of the optimal solution
-  
-<br>
-
-**Efficiency:** The software must minimize the number of blending steps to reduce the time and resources required for the process, without compromising the quality of the final product.
-
-Metrics:
-
-- The number of blending steps
-- The time required to execute the blending process
-
-<br>
-
-**Robustness:** The software must be able to handle a wide range of inputs and variations in the wine-making process, as well as unexpected conditions or errors.
-
-Metrics:
-
-- The number of successful test cases covering various input conditions and edge cases
-- The percentage of error-free software runs
-
-<br>
-
-**Usability:** The software must be user-friendly, allowing the Cellar Master and the team to efficiently work with the blending process and make adjustments as needed.
-
-Metrics:
-
-- Time required for new users to learn and use the software
-- User satisfaction ratings
-
-<br>
-
-**Maintainability:** The software must be easy to maintain, with a clean and modular design that allows for updates, bug fixes, and future enhancements.
-
-Metrics:
-
-- The number of lines of code
-- The level of code complexity, measured using standard 
-software metrics (e.g., cyclomatic complexity)
-
-<br>
-
-**Scalability:** The software must be designed to scale efficiently as the winery's operations grow, with the ability to handle increasing numbers of tanks and blends without significant performance degradation.
-
-Metrics:
-
-- Execution time for increasing numbers of tanks and blends
-- Resource utilization (e.g., memory and CPU usage) for increasing workloads
-  
-<br>
-
-**Compliance:** The software must comply with all applicable industry standards and regulations, ensuring that the blending process meets the requirements of the traditional champagne-making method.
-
-Metrics:
-
-- Compliance with industry standards and regulations
-- External audit results, if applicable
-
-### 1.3. Roles and Responsibilities
 
 ## 2. Test Methodology
 
