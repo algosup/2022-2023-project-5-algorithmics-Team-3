@@ -134,16 +134,57 @@ Test completeness will be determined based on the following criteria:
 
 ## 3. Test Deliverables
 
+Test deliverables are provided as below
+
+Before testing phase
+
+- Test plans document.
+- Test cases documents
+- Test Design specifications.
+
+During the testing
+
+- Test Tool Simulators.
+- Test Data
+- Test Trace-ability Matrix – Error logs and execution logs.
+
+After the testing cycles is over
+
+- Test Results/reports
+- Defect Report
+- Installation/ Test procedures guidelines
+- Release notes
+
 ## 4. Resource & Environment Requirements
 
 ### 4.1. Hardware
 
+The hardware requirements for testing the Krug Champagne Blending Software Project are as follows:
+
+1. **Test Workstations:** Desktop or laptop computers for testers, equipped with sufficient processing power, memory, and storage to run the test tools, frameworks, and the application under test.
+2. **Networking Equipment:** Networking hardware, such as routers, switches, and cables, to support the test environment and ensure connectivity between the test server and workstations.
+
 ### 4.2. Software
+
+The software requirements for testing the Krug Champagne Blending Software Project include:
+
+1. **Operating System:** A compatible operating system for the test server and workstations, such as Windows or macOS, based on the application's platform requirements.
+2. **Testing Tools and Frameworks:** Tools and frameworks for managing, executing, and automating test cases, pytest.
+3. **Bug Tracking System:** A bug tracking system, such as Jira, Bugzilla, or Mantis, to manage the reporting, classification, assignment, resolution, and verification of bugs.
+4. **Version Control System:** A version control system, such as Git, SVN, or Mercurial, to manage and track changes to the source code, test scripts, and test documentation.
+5. **Integrated Development Environment (IDE):** An IDE, such as Visual Studio, Eclipse, or PyCharm, to write, debug, and run test scripts, as well as manage the application's source code.
 
 ### 4.3. Test Environment
 
 ### 4.4. Test Data
 
+Test data for the Krug Champagne Blending Software Project should include a variety of inputs, such as different wine blends, tank capacities, and blending formulas, to cover various test scenarios and edge cases. Test data should be generated or collected in a way that:
+
+- Ensures data privacy and compliance with any applicable regulations or guidelines.
+- Provides sufficient coverage of normal, boundary, and edge cases.
+- Enables the validation of both positive and negative test cases.
+
+Test data should be stored securely, version-controlled, and easily accessible by the test team for executing test cases and analyzing test results.
 
 
 
