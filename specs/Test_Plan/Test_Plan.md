@@ -157,6 +157,8 @@ After the testing cycles is over
 
 ## 4. Resource & Environment Requirements
 
+`In Progress...`
+
 ### 4.1. Hardware
 
 The hardware requirements for testing the Krug Champagne Blending Software Project are as follows:
