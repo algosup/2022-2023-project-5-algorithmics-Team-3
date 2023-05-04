@@ -9,7 +9,7 @@
 | **Rémy Charles** <img src="https://ca.slack-edge.com/T019N8PRR7W-U0338M4B32R-2e88fca92827-512" width="50px" align=center> | 
 
 **Created**: 2023-02-05 <br>
-**Last updated**: 2023-02-05
+**Last updated**: 2023-04-05
 
 _____
 
@@ -170,8 +170,8 @@ The hardware requirements for testing the Krug Champagne Blending Software Proje
 
 The software requirements for testing the Krug Champagne Blending Software Project include:
 
-1. **Operating System:** A compatible operating system for the test server and workstations, such as Windows or macOS, based on the application's platform requirements.
-2. **Testing Tools and Frameworks:** Tools and frameworks for managing, executing, and automating test cases, pytest.
+1. **Operating System:** A compatible operating system for the test server and workstations, such as [Windows]() or [macOS](), based on the application's platform requirements.
+2. **Testing Tools and Frameworks:** Tools and frameworks for managing, executing, and automating test cases, [pytest]().
 3. **Bug Tracking System:** A bug tracking system, such as Jira, Bugzilla, or Mantis, to manage the reporting, classification, assignment, resolution, and verification of bugs.
 4. **Version Control System:** A version control system, such as Git, SVN, or Mercurial, to manage and track changes to the source code, test scripts, and test documentation.
 5. **Integrated Development Environment (IDE):** An IDE, such as Visual Studio, Eclipse, or PyCharm, to write, debug, and run test scripts, as well as manage the application's source code.
