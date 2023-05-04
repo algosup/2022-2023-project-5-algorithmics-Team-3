@@ -5,10 +5,13 @@
 <summary>
 Table of content
 </summary>
-- [Introduction](#introduction)
-  - [Context ang goal](#context-and-goal)
-  - [Project overview](#project-overview)
-  - [Technical words](#technical-words)
+
+- [Technical Specifications](#technical-specifications)
+  - [Introduction](#introduction)
+    - [Context and goal](#context-and-goal)
+    - [Project overview](#project-overview)
+    - [Technical words](#technical-words)
+
 </details>
 
 ## Introduction
