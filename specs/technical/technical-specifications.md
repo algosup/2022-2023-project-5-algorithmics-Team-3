@@ -53,29 +53,29 @@ These objectives will guide the development and implementation of the software s
 
 Reminder of the project elements:
 
-**Project Name:** Algorithmics Krug Champagne
+- **Project Name:** Algorithmics Krug Champagne
 
-**Client:** Krug Champagne, part of LVMH
+- **Client:** Krug Champagne, part of LVMH
 
-**Project Description:**
+- **Project Description**
 
-The software will be used for the new winery of Krug Champagne to assist with the blending process of champagne. The software will focus on stage 4: **blending, which involves blending still wines from different vineyards and grape varieties to create a consistent flavor profile.** The goal of the software is to produce the closest result to the desired formula with the minimum number of steps.
+  - The software will be used for the new winery of Krug Champagne to assist with the blending process of champagne. The software will focus on stage 4: **blending, which involves blending still wines from different vineyards and grape varieties to create a consistent flavor profile.** The goal of the software is to produce the closest result to the desired formula with the minimum number of steps.
 
-**Scope:**
+- **Scope**
 
-The software will include a user interface that will allow the cellar master and her team to input the desired formula for the champagne blend. The software will then analyze the available wines and recommend the optimal combinations of wines to achieve the desired formula. The software will also manage the transfer of wine between tanks during the blending process, ensuring that the tanks are never partially full to prevent oxidation. The software will need to manage the inventory of the wine and tanks and ensure that the blending process is conducted efficiently and accurately.
+  - The software will include a user interface that will allow the cellar master and her team to input the desired formula for the champagne blend. The software will then analyze the available wines and recommend the optimal combinations of wines to achieve the desired formula. The software will also manage the transfer of wine between tanks during the blending process, ensuring that the tanks are never partially full to prevent oxidation. The software will need to manage the inventory of the wine and tanks and ensure that the blending process is conducted efficiently and accurately.
 
-**Deliverables:**
+- **Deliverables**
 
-The software will be delivered as a desktop application that can be installed on the winery's computers. The software will be designed to run on Windows, Mac, and Linux operating systems. The application will have a user-friendly interface that will allow the cellar master and her team to easily input the desired formula and view the recommended wine combinations.
+  - The software will be delivered as a desktop application that can be installed on the winery's computers. The software will be designed to run on Windows, Mac, and Linux operating systems. The application will have a user-friendly interface that will allow the cellar master and her team to easily input the desired formula and view the recommended wine combinations.
 
-**Timeline:**
+- **Timeline**
 
-The project is expected to be completed by June 23, 2023, with at least one week allotted for testing and bug fixing.
+  - The project is expected to be completed by June 23, 2023, with at least one week allotted for testing and bug fixing.
 
-**Budget:**
+- **Budget**
 
-As no budget has been specified by the client, and we do not anticipate incurring any expenses, this project is expected to have no budgetary constraints.
+  - As no budget has been specified by the client, and we do not anticipate incurring any expenses, this project is expected to have no budgetary constraints.
 
 ### Point of contact
 
@@ -92,38 +92,38 @@ As no budget has been specified by the client, and we do not anticipate incurrin
 
 ### Description of the system's functionalities
 
-**The system will allow users to:**
+- **The system will allow users to**
 
-- View and manage tank inventory, including tank size and contents
-- Generate production plans based on wine blend formulas and tank inventory
-- Track wine production and blending process in real-time
-- Generate reports on production data and inventory levels
+  - View and manage tank inventory, including tank size and contents
+  - Generate production plans based on wine blend formulas and tank inventory
+  - Track wine production and blending process in real-time
+  - Generate reports on production data and inventory levels
 
-**Tank Management Functionality:**
+- **Tank Management Functionality**
 
-- Add and remove tanks from the system
-- Assign tanks to specific wine types or blends
-- View tank inventory and contents
-- Set tank capacity and volume thresholds for notifications
+  - Add and remove tanks from the system
+  - Assign tanks to specific wine types or blends
+  - View tank inventory and contents
+  - Set tank capacity and volume thresholds for notifications
 
-**Production Planning Functionality:**
+- **Production Planning Functionality**
 
-- Create production plans based on wine blend formulas and inventory levels
-- Set target production quantity and dates
-- Allocate tanks and volumes to the production plan
-- Generate and assign work orders to workers for wine blending and production
+  - Create production plans based on wine blend formulas and inventory levels
+  - Set target production quantity and dates
+  - Allocate tanks and volumes to the production plan
+  - Generate and assign work orders to workers for wine blending and production
 
-**Production Monitoring Functionality:**
+- **Production Monitoring Functionality**
 
-- Track wine production and blending process in real-time
-- Set alerts for out-of-range values
+  - Track wine production and blending process in real-time
+  - Set alerts for out-of-range values
 
-**Reporting Functionality:**
+- **Reporting Functionality**
 
-- Generate production reports based on selected parameters
-- View inventory reports and trends over time
-- Track production costs and margins
-- Analyze production data to optimize processes and identify areas for improvement
+  - Generate production reports based on selected parameters
+  - View inventory reports and trends over time
+  - Track production costs and margins
+  - Analyze production data to optimize processes and identify areas for improvement
 
 ### System use cases
 
