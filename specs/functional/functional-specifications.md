@@ -80,10 +80,10 @@ The requirement specifications for the software include a focus on the blending 
 
 Take a look at our initial proposed solution below to see how we plan to tackle the blending challenge.
 
-<a href="https://github.com/algosup/2022-2023-project-5-algorithmics-Team-3/blob/documents/specs/functional/Algorithm_part_1.jpg">
+<a href="https://github.com/algosup/2022-2023-project-5-algorithmics-Team-3/blob/documents/specs/functional/enlarged_image.md#algorithm_part_2">
     <img src="Algorithm_part_1.jpg" height="400px">
 </a>
-<a href="https://github.com/algosup/2022-2023-project-5-algorithmics-Team-3/blob/documents/specs/functional/Algorithm_part_2.jpg">
+<a href="https://github.com/algosup/2022-2023-project-5-algorithmics-Team-3/blob/documents/specs/functional/enlarged_image.md#algorithm_part_2">
     <img src="Algorithm_part_2.jpg" height="400px">
 </a>
 <br>Click on an image to enlarge it.
