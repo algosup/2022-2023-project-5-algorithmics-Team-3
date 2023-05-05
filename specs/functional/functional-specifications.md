@@ -2,91 +2,119 @@
 
 Author: [Pierre GORIN](https://www.github.com/pierre2103)
 
-*Last update: 2<sup>nd</sup> of May 2023*
+_Last update: 4<sup>th</sup> of May 2023_
 
-<sub>
 <details>
     <summary>Table of Contents <b>Click to expand</b></summary>
 
 - [Functional Specification](#functional-specification)
   - [Overview](#overview)
-  - [Krug Champagne](#krug-champagne)
-  - [What is the Problem ?](#what-is-the-problem-)
+  - [Project Scope](#project-scope)
+  - [Stakeholders](#stakeholders)
+  - [Terms and Definitions](#terms-and-definitions)
+  - [Risks and Assumptions](#risks-and-assumptions)
   - [Personas](#personas)
-  - [Glossary](#glossary)
 </details>
-</sub>
-
 
 ## Overview
 
-Krug Champagne (part of LVMH) is building a new winery software that will focus on the blending stage of champagne making. The software will aim to produce the closest result to the formula with the minimum number of steps, while ensuring that there are no crashes or half full/half empty tanks, and the wine is never in contact with oxygen.
+The Krug Champagne House, in collaboration with LVMH, is developing a winery software that will streamline the blending stage of champagne production. The software's primary objective is to determine the right quantities of champagne required for blending the Krug Grande Cuvée formula accurately. The software should ensure that there are no wastages and no unwanted oxygenation.
 
-## Krug Champagne
+## Project Scope
 
-Krug Champagne is a luxury brand owned by LVMH and is known for its high-quality champagne made using the traditional method. The Cellar Master, Julie CAVIL, and her team taste different combinations of wine for about 9 months until they find the perfect formula, which becomes the challenge of blending large quantities of wine in the right proportions.
+The primary function of this software is to determine the precise proportions of Champagne required for blending to produce the Krug Grande Cuvée based on pre-entered quantities and a specified formula. In order to achieve this, the software must meet the following requirements:
 
-## What is the Problem ?
+- [ ] No crash and no bugs
+- [ ] We must have only full or only empty tanks to avoid oxidation
+- [ ] The final result must be the closest possible to the specified formula
+- [ ] The code must be commented to be easily understandable
+- [ ] The code must be in an idiomatic style to be easily readable
+- [ ] The result must be find with the minimum number of steps possible
+- [ ] The code's execution time must be the fastest possible
 
-The blending process in champagne making is a complex task that requires precision and expertise to achieve the desired flavor and texture. With 330 tanks of various sizes and a system of pumps and pipes that can connect any tank with any other tank, the winery needs a software solution that can optimize the blending process, reduce the number of steps required, and produce the closest result to the input formula.
+## Stakeholders
+
+| Stakeholder          | Role              | Description                                                         |
+| -------------------- | ----------------- | ------------------------------------------------------------------- |
+| Krug Champagne House | Client            | Client of this project.                                             |
+| Julie CAVIL          | The Cellar Master | The person in charge of the blending stage of champagne production. |
+| ALGOSUP              | Project Owner     | The company in charge of this project.                              |
+| Franck JEANNIN       | Project Owner     | The person in charge of this project                                |
+| Paul NOWAK           | Project Manager   | The person in charge of the project management.                     |
+| Pierre GORIN         | Program Manager   | The person in charge of the program management.                     |
+| Laura-Lee HOLLANDE   | Tech Lead         | The person in charge of the technical aspects of the project.       |
+| Mathis KAKAL         | Software Engineer | The person in charge of the software development.                   |
+| Rémy CHARLES         | Quality Assurance | The person in charge of the quality of this project.                |
+
+## Terms and Definitions
+
+| Term | Definition                                                                                          |
+| ---- | --------------------------------------------------------------------------------------------------- |
+| Tank | Sizable container primarily utilized for storing and holding a significant amount of liquid or gas. |
+
+## Risks and Assumptions
+
+The Krug Champagne House's winery software project faces several risks and assumptions, including technical, time, and financial risks. Technical risks such as bugs and crashes could impact the software's functionality, leading to manual blending and wastage of champagne. To mitigate these risks, the software development team must ensure that the code is commented and written in an idiomatic style to enhance readability and undergoes thorough testing to detect any bugs early on. Time risks include delays in project delivery, leading to manual blending and the loss of the client's trust. The development team must prioritize efficient project management and optimize the code's execution time to avoid delays. Financial risks include the cost of software development, maintenance, and licensing, which can be mitigated through cost-benefit analysis and establishing a budget for the project's entire lifecycle. The project's assumptions include a precise formula for the blending process that is easy to implement in the software and no changes to the formula in the future. The development team should consider these assumptions and ensure that the software's design is flexible enough to accommodate any future changes.
+
+| Risk                     | Impact                                                                                                                                                   | Mitigation                                                                                                           |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Software bugs or crashes | May impact the software's functionality, leading to manual blending and wastage of champagne                                                             | Thorough testing, commenting, and writing in an idiomatic style to enhance readability.                              |
+| Project delays           | May lead to manual blending and loss of client trust                                                                                                     | Prioritizing efficient project management, optimization of the code's execution time.                                |
+| Financial risks          | Cost of software development, maintenance, and licensing                                                                                                 | Conducting a cost-benefit analysis, establishing a budget for the project's entire lifecycle.                        |
+| Assumptions              | The blending process follows a precise formula that is easy to implement in the software and that there will be no changes to the formula in the future. | Consideration of these assumptions, ensuring the software's design is flexible enough to accommodate future changes. |
 
 ## Personas
 
-Persona 1: Wine Maker
+Persona 1:
+
 ```none
-Name: Jean-Luc
-Age: 45
-Occupation: Cellar Master
-Place: Reims, France
+Name:
+Age:
+Occupation:
+Place:
 
 Description:
-Jean-Luc has been a wine maker for over 20 years and is an expert in the champagne-making process. He works as a Cellar Master at Krug Champagne in Reims, France, where he oversees the blending process and ensures that the final product meets the quality standards of the company.
+Description of the persona goes here.
 
 Needs & goals:
-Jean-Luc wants to optimize the blending process to reduce the number of steps required and produce a champagne that closely matches the input formula. He also wants to find a solution that eliminates the risk of the wine coming in contact with oxygen, which can affect the quality of the final product.
+Needs and goals of the persona go here.
 
 Use case:
-Jean-Luc needs a software solution that can optimize the blending process and reduce the number of steps required. He is also interested in using technology to ensure that the wine is never in contact with oxygen during the blending process, which will improve the quality of the final product. With a software solution, Jean-Luc will be able to streamline the blending process, reduce errors, and produce high-quality champagne.
+Use case of the persona goes here.
 ```
 
-Persona 2: Production Manager
+Persona 2:
+
 ```none
-Name: Marie
-Age: 35
-Occupation: Production Manager
-Place: Reims, France
+Name:
+Age:
+Occupation:
+Place:
 
 Description:
-Marie is a Production Manager at Krug Champagne in Reims, France. She oversees the production process at the winery and is responsible for ensuring that the winery operates efficiently and effectively.
+Description of the persona goes here.
 
 Needs & goals:
-Marie wants to reduce the production time and increase the productivity of the winery. She is looking for a software solution that can optimize the blending process and reduce the number of steps required. She wants a solution that is user-friendly and easy to integrate into the existing production process.
+Needs and goals of the persona go here.
 
 Use case:
-Marie needs a software solution that can optimize the blending process and reduce the number of steps required, which will help her to increase the productivity of the winery. She is also interested in a solution that is user-friendly and easy to integrate into the existing production process. With a software solution, Marie will be able to streamline the production process, reduce errors, and increase the efficiency of the winery.
+Use case of the persona goes here.
 ```
 
-Persona 3: Quality Control Specialist
+Persona 3:
+
 ```none
-Name: Sophie
-Age: 30
-Occupation: Quality Control Specialist
-Place: Reims, France
+Name:
+Age:
+Occupation:
+Place:
 
 Description:
-Sophie is a Quality Control Specialist at Krug Champagne in Reims, France. She is responsible for ensuring that the final product meets the quality standards of the company. Sophie performs regular quality checks on the wine and analyzes the data to identify any issues.
+Description of the persona goes here.
 
 Needs & goals:
-Sophie wants to ensure that the wine is blended correctly and meets the quality standards of Krug Champagne. She is looking for a software solution that can help her to identify any issues with the wine and provide real-time data analysis.
+Needs and goals of the persona go here.
 
 Use case:
-Sophie needs a software solution that can help her to ensure that the wine is blended correctly and meets the quality standards of Krug Champagne. She is interested in a solution that can provide real-time data analysis, which will help her to identify any issues with the wine quickly. With a software solution, Sophie will be able to perform quality checks more efficiently, reduce errors, and maintain the high quality of the final product.
+Use case of the persona goes here.
 ```
-
-## Glossary
-- Traditional Method: A specific method used to make champagne that involves a complex process of fermentation and aging.
-- Méthode Champenoise: Another name for the traditional method of making champagne.
-- Harvesting: The process of picking grapes used to make champagne.
-- Pressing: The process of extracting juice from grapes.
-- Fermentation: The process of converting sugar into alcohol.
-- Blending: The process of mixing still wines from different vineyards and grape varieties to create a consistent flavor profile.
