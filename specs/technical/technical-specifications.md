@@ -133,6 +133,8 @@ The system can generate a production plan that specifies the required volumes of
 
 By using this system, the wine blending process can be carried out quickly and efficiently, saving time and resources while ensuring the quality and consistency of the final product.
 
+[ Add schema]
+
 ## Glossary
 
 | Word                  | Definition | Source |
