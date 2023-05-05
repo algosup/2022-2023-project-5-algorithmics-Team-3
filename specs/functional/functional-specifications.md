@@ -13,7 +13,11 @@ _Last update: 4<sup>th</sup> of May 2023_
   - [Stakeholders](#stakeholders)
   - [Terms and Definitions](#terms-and-definitions)
   - [Risks and Assumptions](#risks-and-assumptions)
+  - [Use Cases](#use-cases)
+  - [Requirements Specification](#requirements-specification)
+  - [Solution Overview](#solution-overview)
   - [Personas](#personas)
+
 </details>
 
 ## Overview
@@ -54,16 +58,39 @@ The primary function of this software is to determine the precise proportions of
 
 ## Risks and Assumptions
 
-The Krug Champagne House's winery software project faces several risks and assumptions, including technical, time, and financial risks. Technical risks such as bugs and crashes could impact the software's functionality, leading to manual blending and wastage of champagne. To mitigate these risks, the software development team must ensure that the code is commented and written in an idiomatic style to enhance readability and undergoes thorough testing to detect any bugs early on. Time risks include delays in project delivery, leading to manual blending and the loss of the client's trust. The development team must prioritize efficient project management and optimize the code's execution time to avoid delays. Financial risks include the cost of software development, maintenance, and licensing, which can be mitigated through cost-benefit analysis and establishing a budget for the project's entire lifecycle. The project's assumptions include a precise formula for the blending process that is easy to implement in the software and no changes to the formula in the future. The development team should consider these assumptions and ensure that the software's design is flexible enough to accommodate any future changes.
+To mitigate risks, the development team must prioritize efficient project management, ensure thorough testing, and optimize code execution time.
 
 | Risk                     | Impact                                                                                                                                                   | Mitigation                                                                                                           |
 | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | Software bugs or crashes | May impact the software's functionality, leading to manual blending and wastage of champagne                                                             | Thorough testing, commenting, and writing in an idiomatic style to enhance readability.                              |
 | Project delays           | May lead to manual blending and loss of client trust                                                                                                     | Prioritizing efficient project management, optimization of the code's execution time.                                |
-| Financial risks          | Cost of software development, maintenance, and licensing                                                                                                 | Conducting a cost-benefit analysis, establishing a budget for the project's entire lifecycle.                        |
 | Assumptions              | The blending process follows a precise formula that is easy to implement in the software and that there will be no changes to the formula in the future. | Consideration of these assumptions, ensuring the software's design is flexible enough to accommodate future changes. |
+| Financial risks          | Cost of software development, maintenance, and licensing                                                                                                 | Conducting a cost-benefit analysis, establishing a budget for the project's entire lifecycle.                        |
+
+## Use Cases
+
+// TODO: Add use cases
+
+
+## Requirements Specification
+
+The requirement specifications for the software include a focus on the blending stage of the Krug Champagne House's winery process. The software must be designed to produce the closest result to the formula with the minimum number of steps. The software should optimize the use of 330 tanks of various sizes and a system of pumps and pipes to connect any tank with any other tank while ensuring that tanks are either completely full or completely empty to prevent oxidation. The software must also ensure that the wine is never in contact with oxygen.
+
+## Solution Overview
+
+Take a look at our initial proposed solution below to see how we plan to tackle the blending challenge.
+
+<a href="https://github.com/algosup/2022-2023-project-5-algorithmics-Team-3/blob/documents/specs/functional/Algorithm_part_1.jpg">
+    <img src="Algorithm_part_1.jpg" height="400px">
+</a>
+<a href="https://github.com/algosup/2022-2023-project-5-algorithmics-Team-3/blob/documents/specs/functional/Algorithm_part_2.jpg">
+    <img src="Algorithm_part_2.jpg" height="400px">
+</a>
+<br>Click on an image to enlarge it.
 
 ## Personas
+
+// TODO: Add personas
 
 Persona 1:
 
