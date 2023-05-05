@@ -82,7 +82,7 @@ Reminder of the project elements:
 | Person             | Role              | Contact |
 |--------------------|-------------------|---------|
 | Paul Nowak         | Project Manager   | Slack   |
-| Mathis Kakal       | Software Engeener | Slack   |
+| Mathis Kakal       | Software Engineer | Slack   |
 | Rémy Charles       | Quality Assurance | Slack   |
 | Pierre Gorin       | Program Manager   | Slack   |
 | Laura-Lee Hollande | Tech Lead         | Slack   |
