@@ -30,3 +30,5 @@ Our goal is to create a software for the society that is going to simulate the b
 [Retro-Planning](https://algosup-my.sharepoint.com/:x:/p/paul_nowak/EYv_348sClRLoZ54u2WiJZUB1TdbuF2w3qxRnsIBGKNUZg?e=0w2Uro) <br>
 
 ## Weekly Reports
+
+[Week 1](https://algosup-my.sharepoint.com/:w:/p/paul_nowak/EX1DYGZUoHtEgvIg2KeuROcBkuQVj4AHiBCvMWWWANi2ew?e=r8696A) <br> 
