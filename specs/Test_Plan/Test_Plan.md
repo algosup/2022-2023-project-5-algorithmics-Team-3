@@ -51,6 +51,8 @@ The plan identify the items to be tested, the features to be tested, the types o
 
 #### 1.1.1. In Scope
 
+`In progress...`
+
 All the feature of the project which were defined in software requirement [specs](./../../specs/) are need to be tested.
 
 | Feature     | Description     | Test Cases                         | Test Status |
