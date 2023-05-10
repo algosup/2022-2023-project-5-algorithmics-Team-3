@@ -16,6 +16,8 @@ Table of content
   - [Functional requirements](#functional-requirements)
     - [Description of the system's functionalities](#description-of-the-systems-functionalities)
     - [System use cases](#system-use-cases)
+    - [Performance requirements](#performance-requirements)
+    - [Security requirements](#security-requirements)
   - [Glossary](#glossary)
 
 </details>
@@ -79,14 +81,15 @@ Reminder of the project elements:
 
 ### Point of contact
 
-| Person             | Role              | Contact |
-|--------------------|-------------------|---------|
-| Paul Nowak         | Project Manager   | Slack   |
-| Mathis Kakal       | Software Engineer | Slack   |
-| Rémy Charles       | Quality Assurance | Slack   |
-| Pierre Gorin       | Program Manager   | Slack   |
-| Laura-Lee Hollande | Tech Lead         | Slack   |
-| Franck Jeannin     | Project Overseer  | Slack   |
+| Person               | Role              | Contact              |
+|----------------------|-------------------|----------------------|
+| Paul Nowak           | Project manager   | Groupe server, Slack |
+| Mathis Kakal         | Software engeener | Groupe server, Slack |
+| Rémy Charles         | Quality assurance | Groupe server, Slack |
+| Pierre Gorin         | Program Manager   | Groupe server, Slack |
+| Laura-Lee Hollande   | Tech Lead         | Groupe server, Slack |
+| Franck Jeannin       | Project overseer  | Slack                |
+| Krug Champagne House | Client            | Franck Jeannin       |
 
 ## Functional requirements
 
@@ -99,14 +102,14 @@ Reminder of the project elements:
   - Track wine production and blending process in real-time
   - Generate reports on production data and inventory levels
 
-- **Tank Management Functionality**
+- **Tank management functionality**
 
   - Add and remove tanks from the system
   - Assign tanks to specific wine types or blends
   - View tank inventory and contents
   - Set tank capacity and volume thresholds for notifications
 
-- **Production Planning Functionality**
+- **Production planning functionality**
 
   - Create production plans based on wine blend formulas and inventory levels
   - Set target production quantity and dates
@@ -118,7 +121,7 @@ Reminder of the project elements:
   - Track wine production and blending process in real-time
   - Set alerts for out-of-range values
 
-- **Reporting Functionality**
+- **Reporting functionality**
 
   - Generate production reports based on selected parameters
   - View inventory reports and trends over time
@@ -127,13 +130,24 @@ Reminder of the project elements:
 
 ### System use cases
 
-Suppose the Cellar Master has determined the perfect wine blend formula to produce Krug Grande Cuvée. This formula involves using different volumes of wine from different tanks. Your software system can be used to facilitate the production process by helping cellar workers to efficiently blend the required volumes of wine from the different tanks.
+Suppose the Cellar Master has determined the perfect wine blend formula to produce Krug Grande Cuvée. This formula involves using different volumes of wine from different tanks. Our software system can be used to facilitate the production process by helping cellar workers to efficiently blend the required volumes of wine from the different tanks.
 
 The system can generate a production plan that specifies the required volumes of each wine to be blended to produce the total amount of Krug Grande Cuvée needed. The cellar workers can then use the system to locate the appropriate tanks and pump the required volumes of wine into the blending tanks. The system can also monitor the blending process to ensure that the correct volumes of each wine are mixed together to produce the perfect blend.
 
 By using this system, the wine blending process can be carried out quickly and efficiently, saving time and resources while ensuring the quality and consistency of the final product.
 
-[ Add schema]
+`Add scheme`
+
+### Performance requirements
+
+- **Response time:** `WIP`
+- **Scalability:** `WIP`
+- **Optimization:** `WIP`
+- **No crashes:** `WIP`
+
+### Security requirements
+
+
 
 ## Glossary
 
