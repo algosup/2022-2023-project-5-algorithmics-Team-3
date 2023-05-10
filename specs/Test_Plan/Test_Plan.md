@@ -55,16 +55,15 @@ The plan identify the items to be tested, the features to be tested, the types o
 
 All the feature of the project which were defined in software requirement [specs](./../../specs/) are need to be tested.
 
-| Feature     | Description     | Test Cases                         | Test Status |
-| ----------- | --------------- | ---------------------------------- | ----------- |
-| `Feature 1` | `Description 1` | [Test Case 1](./../../test-cases/) | `Pass`      |
-| `Feature 2` | `Description 2` | [Test Case 2](./../../test-cases/) | `Pass`      |
-| `Feature 3` | `Description 3` | [Test Case 3](./../../test-cases/) | `Pass`      |
-| `Feature 4` | `Description 4` | [Test Case 4](./../../test-cases/) | `Pass`      |
-| `Feature 5` | `Description 5` | [Test Case 5](./../../test-cases/) | `Pass`      |
-| `Feature 6` | `Description 6` | [Test Case 6](./../../test-cases/) | `Pass`      |
-| `Feature 7` | `Description 7` | [Test Case 7](./../../test-cases/) | `Pass`      |
-| `Feature 8` | `Description 8` | [Test Case 8](./../../test-cases/) | `Pass`      |
+| Test Case ID | Description                                                                             | Test Cases                         | Test Status    |
+| ------------ | --------------------------------------------------------------------------------------- | ---------------------------------- | -------------- |
+| `TC-001`     | `Test loading wine data from the input source (e.g., a file or a database).`            | [Test Case 1](./../../test-cases/) | `Not Executed` |
+| `TC-002`     | `Test blending of two wines with equal proportions.`                                    | [Test Case 2](./../../test-cases/) | `Not Executed` |
+| `TC-003`     | `Test blending of multiple wines with different proportions.`                           | [Test Case 3](./../../test-cases/) | `Not Executed` |
+| `TC-004`     | `Test blending operation with an insufficient number of empty tanks.`                   | [Test Case 4](./../../test-cases/) | `Not Executed` |
+| `TC-005`     | `Test blending operation with invalid input (e.g., incorrect tank IDs or proportions).` | [Test Case 5](./../../test-cases/) | `Not Executed` |
+| `TC-006`     | `Test optimization algorithm to find the minimum number of blending steps.`             | [Test Case 6](./../../test-cases/) | `Not Executed` |
+| `TC-007`     | `Test the performance of the optimization algorithm. `                                  | [Test Case 7](./../../test-cases/) | `Not Executed` |
 
 #### 1.1.2. Out of Scope
 
