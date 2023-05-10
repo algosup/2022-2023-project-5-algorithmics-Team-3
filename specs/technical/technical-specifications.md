@@ -18,6 +18,8 @@ Table of content
     - [System use cases](#system-use-cases)
     - [Performance requirements](#performance-requirements)
     - [Security requirements](#security-requirements)
+  - [System architecture](#system-architecture)
+    - [System architecture overview](#system-architecture-overview)
   - [Glossary](#glossary)
 
 </details>
@@ -147,7 +149,23 @@ By using this system, the wine blending process can be carried out quickly and e
 
 ### Security requirements
 
+Given that we only need to design an algorithm, we don't have any major security concerns to address. We simply need to ensure that our algorithm doesn't cause any issues or disruptions in the client's machines.
 
+## System architecture
+
+### System architecture overview
+
+- **Blending module**
+  - The main component of our system is the blending module, which manages the process of mixing wines to create the best formula. The blending algorithm is the core of our software solution.
+
+- **Wine tanks**
+  - We have a fleet of 330 tanks of various sizes to store the different wines used in the blending process. There is no specific configuration for the fleet, as it needs to be fully **scalable.** These tanks act as sources of wine to create the blends and can only be considered either **empty** or **full**. There should be no partially filled tanks in the system.
+
+- **Pumps and pipes**
+  - A system of pumps and pipes is used to connect the wine tanks and enable the transfer of the required volumes of each wine to the blending tanks. This system must also be fully scalable, allowing for the flexibility to connect any tank to any other tank based on the blending requirements. **The scalability ensures that the system can adapt to changes in the tank configuration and handle the transfer of wine volumes efficiently.**
+
+- **User interface**
+  - An user interface can be considered to allow cellar workers to interact with the system. This interface can provide visual information about the ongoing blending process. It can display relevant data such as tank statuses, volumes, and blending progress. The user interface should be intuitive and user-friendly, allowing workers to easily input commands, monitor the system's operation, and receive real-time feedback. It plays a crucial role in enabling efficient communication and control between the workers and the blending system.
 
 ## Glossary
 
