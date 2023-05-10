@@ -27,5 +27,5 @@ Our goal is to create a software for the society that is going to simulate the b
 [Functional Specifications](specs/functional/functional-specifications.md) <br> 
 [Technical Specifications](specs/technical/technical-specifications.md) <br>
 [Test Plan](specs/Test_Plan/Test_Plan.md) <br>
-[Retro-Planning](https://algosup-my.sharepoint.com/:x:/p/paul_nowak/EYv_348sClRLoZ54u2WiJZUB1TdbuF2w3qxRnsIBGKNUZg?e=0w2Uro) <br>
+
 
