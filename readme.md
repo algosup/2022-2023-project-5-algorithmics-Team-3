@@ -16,7 +16,7 @@
 
 ## Overview
 
-For this project, we are working with the company [Krug Champagne](https://www.krug.com/fr/la-maison-krug), a french champagne house established in Reims and founded in 1843. It is a subsidiary of [LVMH](https://www.lvmh.fr) (Moët Hennessy Louis Vuitton), a french company group that is world leader in luxe industry.
+For this project, we are working with the company [Krug Champagne](https://www.krug.com/fr/la-maison-krug), a french champagne house established in Reims and founded in 1843. It is a subsidiary of [LVMH](https://www.lvmh.fr) (Moët Hennessy Louis Vuitton), a french company group that is world leader in the luxury industry.
 
 Our goal is to create a software for the society that is going to simulate the blending of different wines and bring the closest result to a formula approved by winemakers with the minimum number of steps.
 
