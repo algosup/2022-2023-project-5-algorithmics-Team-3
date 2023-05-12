@@ -92,7 +92,7 @@ To mitigate risks, the development team must prioritize efficient project manage
 ### Use Case 2: Check Resources Availability
 **Actor:** Winemaker
 
-**Scenario****:** The winemaker needs to check the availability of resources (tanks) before creating a new champagne blend. They input the number of tanks required and their respective capacities. The software then checks the availability of the required tanks and their respective quantities (full or empty).
+**Scenario:** The winemaker needs to check the availability of resources (tanks) before creating a new champagne blend. They input the number of tanks required and their respective capacities. The software then checks the availability of the required tanks and their respective quantities (full or empty).
 
 **Success Criteria:** The software displays the availability of the required tanks and their respective quantities (full or empty).
 
@@ -124,22 +124,36 @@ Take a look at our initial proposed solution below to see how we plan to tackle 
 <a href="https://github.com/algosup/2022-2023-project-5-algorithmics-Team-3/blob/documents/specs/functional/Algorithm_part_2.jpg">
     <img src="Algorithm_part_2.jpg" height="600px">
 </a>
-<br>Click on an image to enlarge it.
+<br>
+
+***Click on an image to enlarge it.***
 
 ## Personas
 // Only advanced template, need to be completed
 ### Persona 1:
 
-**Name:** Sarah Thompson <br>
-**Profession:** Marketing Manager <br>
-**Needs:** Sarah is a busy professional who is always on the lookout for ways to improve her team's productivity and efficiency. She wants to stay up-to-date with the latest marketing trends and tools to help her team achieve better results. <br>
-**Pain Points:** Sarah is often overwhelmed with her workload, and she struggles to find the time to learn new skills and stay on top of the latest trends. She is also frustrated when her team is unable to meet their targets due to lack of resources or knowledge. <br>
-Introverted -------------T-------------------- Extraverted <br>
-Spontaneous ----------------T---------------- Organized <br>
-Analytics ------------------------T------------ Creative <br>
-Internet Skill : ★★★★☆ <br>
-Smartphone Skill : ★★★☆☆ <br>
-Computer Skill : ★★★★★ <br>
+<ins>**Name:**</ins> *Sarah Thompson*
+
+<ins>**Profession:**</ins> *Marketing Manager*
+
+<ins>**Needs:**</ins> *Sarah is a busy professional who is always on the lookout for ways to improve her team's productivity and efficiency. She wants to stay up-to-date with the latest marketing trends and tools to help her team achieve better results.*
+
+<ins>**Pain Points:**</ins>
+*Sarah is often overwhelmed with her workload, and she struggles to find the time to learn new skills and stay on top of the latest trends. She is also frustrated when her team is unable to meet their targets due to lack of resources or knowledge.*
+
+<ins>**Personality:**</ins><br>
+```
+Introverted -------------🔘------------------- Extraverted
+Spontaneous ----------------🔘---------------- Organized
+Analytics   ------------------------🔘-------- Creative
+```
+
+<ins>**Tech Skills:**</ins><br>
+```
+Internet :   ★★★★☆
+Smartphone : ★★★☆☆
+Computer :   ★★★★★
+```
 
 
 ### Persona 2:
@@ -148,9 +162,9 @@ Computer Skill : ★★★★★ <br>
 **Profession:** Freelance Graphic Designer <br>
 **Needs:** John needs to constantly create new and innovative designs to satisfy his clients. He also wants to expand his skill set and learn new design tools and techniques to stay competitive. <br>
 **Pain Points:** John often struggles to find new clients and is frustrated with the lack of recognition for his work. He is also concerned about keeping up with the ever-changing design industry and worries that his skills may become outdated. <br>
-Introverted -------------T-------------------- Extraverted <br>
+Introverted -------------T------------------- Extraverted <br>
 Spontaneous ----------------T---------------- Organized <br>
-Analytics ------------------------T------------ Creative <br>
-Internet Skill : ★★★★☆ <br>
+Analytics   ------------------------T-------- Creative <br>
+Internet Skill :   ★★★★☆ <br>
 Smartphone Skill : ★★★☆☆ <br>
-Computer Skill : ★★★★★ <br>
+Computer Skill :   ★★★★★ <br>
