@@ -9,7 +9,7 @@
 | **Rémy Charles** <img src="https://ca.slack-edge.com/T019N8PRR7W-U0338M4B32R-2e88fca92827-512" width="50px" align=center> |
 
 **Created**: 2023-02-05 <br>
-**Last updated**: 2023-04-05
+**Last updated**: 2023-12-05
 
 _____
 
@@ -67,7 +67,7 @@ All the feature of the project which were defined in software requirement [specs
 
 #### 1.1.2. Out of Scope
 
-
+`In progress...`
 
 ### 1.2. Quality Objectives
 
