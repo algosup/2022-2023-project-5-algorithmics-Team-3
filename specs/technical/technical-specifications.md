@@ -20,6 +20,19 @@ Table of content
     - [Security requirements](#security-requirements)
   - [System architecture](#system-architecture)
     - [System architecture overview](#system-architecture-overview)
+    - [Architecture diagrams and charts](#architecture-diagrams-and-charts)
+    - [System components](#system-components)
+    - [Description of the interfaces between the components](#description-of-the-interfaces-between-the-components)
+    - [Technologies and tools used](#technologies-and-tools-used)
+  - [Features specifications](#features-specifications)
+    - [Description](#description)
+    - [Features workflow](#features-workflow)
+    - [User Interface Specifications](#user-interface-specifications)
+  - [Test and validation](#test-and-validation)
+  - [Maintenance and upgradeability](#maintenance-and-upgradeability)
+    - [Maintenance strategy](#maintenance-strategy)
+    - [Maintenance procedures](#maintenance-procedures)
+    - [Improvements](#improvements)
   - [Glossary](#glossary)
 
 </details>
@@ -166,6 +179,60 @@ Given that we only need to design an algorithm, we don't have any major security
 
 - **User interface**
   - An user interface can be considered to allow cellar workers to interact with the system. This interface can provide visual information about the ongoing blending process. It can display relevant data such as tank statuses, volumes, and blending progress. The user interface should be intuitive and user-friendly, allowing workers to easily input commands, monitor the system's operation, and receive real-time feedback. It plays a crucial role in enabling efficient communication and control between the workers and the blending system.
+
+### Architecture diagrams and charts
+
+`Add scheme`
+
+### System components
+
+- **Algorythm blending**
+  - This central component is responsible for applying the specific blending algorithm that determines the appropriate proportions of each wine to achieve the desired blend.
+
+  | Parameter     | Information about it  |
+  |---------------|-----------------------|
+  | Input         | `WIP`                 |
+  | Output        | `WIP`                 |
+  | Time response | `WIP`                 |
+
+- **Tanks managment**
+  - This component manages wine tanks, their status, their capacities, their availability, and facilitates the transfer of necessary volumes between tanks.
+
+  | Parameter    | Information about it           |
+  |--------------|--------------------------------|
+  | Status       | `Full` or `Empty`              |
+  | Capacity     | `Scalable`                     |
+  | Availability | `Available` or `Not available` |
+
+- ****
+- ****
+- ****
+
+### Description of the interfaces between the components
+
+### Technologies and tools used
+
+## Features specifications
+
+### Description
+
+### Features workflow
+
+### User Interface Specifications
+
+<!-- ### Data and storage requirements -->
+
+## Test and validation
+
+## Maintenance and upgradeability
+
+### Maintenance strategy
+
+### Maintenance procedures
+
+### Improvements
+
+<!-- ## Annexes -->
 
 ## Glossary
 
