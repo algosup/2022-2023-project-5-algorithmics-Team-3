@@ -2,7 +2,7 @@
 
 Author: [Pierre GORIN](https://www.github.com/pierre2103)
 
-_Last update: 5<sup>th</sup> of May 2023_
+_Last update: 12<sup>th</sup> of May 2023_
 
 <details>
     <summary>Table of Contents <b>Click to expand</b></summary>
@@ -13,16 +13,17 @@ _Last update: 5<sup>th</sup> of May 2023_
   - [Stakeholders](#stakeholders)
   - [Terms and Definitions](#terms-and-definitions)
   - [Risks and Assumptions](#risks-and-assumptions)
-  - [Use Cases](#use-cases)
-    - [Use Case 1: Create a New Champagne Blend](#use-case-1-create-a-new-champagne-blend)
-    - [Use Case 2: Check Resources Availability](#use-case-2-check-resources-availability)
-    - [Use Case 3: Check Status of Tanks](#use-case-3-check-status-of-tanks)
-    - [Use Case 4: Manage Champagne Production](#use-case-4-manage-champagne-production)
   - [Requirements Specification](#requirements-specification)
   - [Solution Overview](#solution-overview)
   - [Personas](#personas)
     - [Persona 1](#persona-1)
     - [Persona 2](#persona-2)
+    - [Persona 3](#persona-3)
+  - [Use Cases](#use-cases)
+    - [Use Case 1: Create a New Champagne Blend](#use-case-1-create-a-new-champagne-blend)
+    - [Use Case 2: Check Resources Availability](#use-case-2-check-resources-availability)
+    - [Use Case 3: Check Status of Tanks](#use-case-3-check-status-of-tanks)
+    - [Use Case 4: Manage Champagne Production](#use-case-4-manage-champagne-production)
 
 </details>
 
@@ -48,15 +49,15 @@ We need to be able to enter a number of input parameters including: the formula 
 
 ## Stakeholders
 
-| Stakeholder          | Role              | Description                                 |
-| -------------------- | ----------------- | ------------------------------------------- |
-| Krug Champagne House | Client            | Client of this project.                     |
-| Franck JEANNIN       | Project Overseer  | In charge of overseeing the entire project. |
-| Paul NOWAK           | Project Manager   | In charge of project management.            |
-| Pierre GORIN         | Program Manager   | In charge of program management.            |
-| Laura-Lee HOLLANDE   | Tech Lead         | In charge of technical aspects.             |
-| Mathis KAKAL         | Software Engineer | In charge of software development.          |
-| Rémy CHARLES         | Quality Assurance | In charge of project quality.               |
+| Stakeholder          | Role              | Description                                 | 🔗 |
+| -------------------- | ----------------- | ------------------------------------------- | - |
+| Krug Champagne House | Client            | Client of this project.                     | [Website](https://www.krug.com/) |
+| Franck JEANNIN       | Project Overseer  | In charge of overseeing the entire project. | [Github](https://www.github.com/frje) |
+| Paul NOWAK           | Project Manager   | In charge of project management.            | [Github](https://www.github.com/PaulNowak36) |
+| Pierre GORIN         | Program Manager   | In charge of program management.            | [Github](https://www.github.com/pierre2103) |
+| Laura-Lee HOLLANDE   | Tech Lead         | In charge of technical aspects.             | [Github](https://www.github.com/lauraleehollande) |
+| Mathis KAKAL         | Software Engineer | In charge of software development.          | [Github](https://www.github.com/mathiskakal) |
+| Rémy CHARLES         | Quality Assurance | In charge of project quality.               | [Github](https://www.github.com/RemyCHARLES) |
 
 ## Terms and Definitions
 
@@ -78,39 +79,6 @@ To mitigate risks, the development team must prioritize efficient project manage
 | Assumptions              | The blending process follows a precise formula that is easy to implement in the software and that there will be no changes to the formula in the future. | Consideration of these assumptions, ensuring the software's design is flexible enough to accommodate future changes. |
 | Financial risks          | Cost of software development, maintenance, and licensing                                                                                                 | Conducting a cost-benefit analysis, establishing a budget for the project's entire lifecycle.                        |
 
-## Use Cases
-
-### Use Case 1: Create a New Champagne Blend
-
-<ins>**Actor:**</ins> _Winemaker_
-
-<ins>**Scenario:**</ins> _The winemaker wants to create a new champagne blend using the software. They enter the desired blend formula, the available resources (tanks, their quantities), and their respective amounts. The software then calculates the precise amount of champagne required for blending, ensures that only full or empty tanks are used to prevent oxidation, and produces a final blend closest to the desired formula._
-
-<ins>**Success Criteria:**</ins> _The software provides the winemaker with a champagne blend closest to the desired formula with the minimum number of steps and without any software crashes._
-
-### Use Case 2: Check Resources Availability
-
-<ins>**Actor:**</ins> _Winemaker_
-
-<ins>**Scenario:**</ins> _The winemaker needs to check the availability of resources (tanks) before creating a new champagne blend. They input the number of tanks required and their respective capacities. The software then checks the availability of the required tanks and their respective quantities (full or empty)._
-
-<ins>**Success Criteria:**</ins> _The software displays the availability of the required tanks and their respective quantities (full or empty)._
-
-### Use Case 3: Check Status of Tanks
-
-<ins>**Actor:**</ins> _Cellar master_
-
-<ins>**Scenario:**</ins> _The cellar master needs to check the status of tanks (full or empty) to ensure they are correctly utilized to prevent oxidation. They input the number of tanks required and their respective capacities. The software then checks the status of the required tanks and their respective quantities (full or empty)._
-
-<ins>**Success Criteria:**</ins> _The software displays the status of the required tanks and their respective quantities (full or empty)._
-
-### Use Case 4: Manage Champagne Production
-
-<ins>**Actor:**</ins> _Production Manager_
-
-<ins>**Scenario:**</ins> _The production manager needs to monitor the blending process, including the number of movements required to transfer the champagne from one tank to another. They input the number of movements and their respective tanks. The software then calculates the number of movements required and monitors the entire blending process._
-
-<ins>**Success Criteria:**</ins> _The software displays the number of movements required and monitors the entire blending process._
 
 ## Requirements Specification
 
@@ -132,44 +100,117 @@ Take a look at our initial proposed solution below to see how we plan to tackle 
 
 ## Personas
 
-// Only advanced template, need to be completed
-
 ### Persona 1
 
-<ins>**Name:**</ins> _Sarah Thompson_
+<ins>**Name:**</ins> _Isabelle Dubois_
 
-<ins>**Profession:**</ins> _Marketing Manager_
+<ins>**Profession:**</ins> _Cellar Master_
 
-<ins>**Needs:**</ins> _Sarah is a busy professional who is always on the lookout for ways to improve her team's productivity and efficiency. She wants to stay up-to-date with the latest marketing trends and tools to help her team achieve better results._
+<ins>**Needs:**</ins> _The cellar master is responsible for overseeing the storage and preservation of champagne. They need efficient tools to manage the status of tanks, ensure proper utilization to prevent oxidation, and monitor the blending process._
 
 <ins>**Pain Points:**</ins>
-_Sarah is often overwhelmed with her workload, and she struggles to find the time to learn new skills and stay on top of the latest trends. She is also frustrated when her team is unable to meet their targets due to lack of resources or knowledge._
+_Isabelle faces challenges in tracking the status of tanks (full or empty) and ensuring they are utilized correctly. They also need to prevent oxidation and maintain the quality of the champagne throughout the blending process._
 
 <ins>**Personality:**</ins><br>
 
 ```
 Introverted ├─────────────🔘───────────────────┤ Extraverted
-Spontaneous ├────────────────🔘────────────────┤ Organized
-Analytics   ├────────────────────────🔘────────┤ Creative
+Spontaneous ├───────────────────────────🔘─────┤ Organized
+Analytics   ├───────────────🔘─────────────────┤ Creative
 ```
 
 <ins>**Tech Skills:**</ins><br>
 
 ```
 Internet :   ⭐⭐⭐⭐
-Smartphone : ⭐⭐⭐
-Computer :   ⭐⭐⭐⭐⭐
+Smartphone : ⭐⭐⭐⭐
+Computer :   ⭐⭐⭐⭐
 ```
 
 ### Persona 2
 
-**Name:** John Davis <br>
-**Profession:** Freelance Graphic Designer <br>
-**Needs:** John needs to constantly create new and innovative designs to satisfy his clients. He also wants to expand his skill set and learn new design tools and techniques to stay competitive. <br>
-**Pain Points:** John often struggles to find new clients and is frustrated with the lack of recognition for his work. He is also concerned about keeping up with the ever-changing design industry and worries that his skills may become outdated. <br>
-Introverted -------------T------------------- Extraverted <br>
-Spontaneous ----------------T---------------- Organized <br>
-Analytics   ------------------------T-------- Creative <br>
-Internet Skill :   ★★★★☆ <br>
-Smartphone Skill : ★★★☆☆ <br>
-Computer Skill :   ★★★★★ <br>
+<ins>**Name:**</ins> _Alexandre Moreau_
+
+<ins>**Profession:**</ins> _Winemaker_
+
+<ins>**Needs:**</ins> Alexandre wants to create new champagne blends using efficient software. They require precise calculations, utilization of available resources (tanks), and the ability to produce blends closest to the desired formula._
+
+<ins>**Pain Points:**</ins>
+_The winemaker faces challenges in determining the precise proportions of champagne required for blending and achieving the desired result. They also need to ensure the software is reliable and avoids crashes or bugs._
+
+<ins>**Personality:**</ins><br>
+
+```
+Introverted ├───────────────────🔘─────────────┤ Extraverted
+Spontaneous ├───────🔘─────────────────────────┤ Organized
+Analytics   ├────────────────────────────🔘────┤ Creative
+```
+
+<ins>**Tech Skills:**</ins><br>
+
+```
+Internet :   ⭐⭐
+Smartphone : ⭐⭐⭐⭐
+Computer :   ⭐⭐⭐
+```
+
+### Persona 3
+
+<ins>**Name:**</ins> _Sophie Laurent_
+
+<ins>**Profession:**</ins> _Production Manager_
+
+<ins>**Needs:**</ins> _The production manager is responsible for overseeing the entire champagne production process. They require a software solution that can efficiently manage and monitor the blending process, including tracking the number of movements required to transfer champagne between tanks._
+
+<ins>**Pain Points:**</ins>
+_Sophie faces challenges in coordinating the blending process and ensuring efficient movement of champagne between tanks. They need to monitor the progress and ensure the blending is carried out with the minimum number of steps._
+
+<ins>**Personality:**</ins><br>
+
+```
+Introverted ├──────────────────🔘──────────────┤ Extraverted
+Spontaneous ├─────────────────────────🔘───────┤ Organized
+Analytics   ├────🔘────────────────────────────┤ Creative
+```
+
+<ins>**Tech Skills:**</ins><br>
+
+```
+Internet :   ⭐⭐⭐⭐
+Smartphone : ⭐⭐⭐⭐⭐
+Computer :   ⭐⭐⭐⭐
+```
+
+## Use Cases
+
+### Use Case 1: Create a New Champagne Blend
+
+<ins>**Actor:**</ins> _Alexandre Moreau (Winemaker)_
+
+<ins>**Scenario:**</ins> _The Winemaker wants to create a new champagne blend using the software. They enter the desired blend formula, the available resources (tanks, their quantities), and their respective amounts. The software then calculates the precise amount of champagne required for blending, ensures that only full or empty tanks are used to prevent oxidation, and produces a final blend closest to the desired formula._
+
+<ins>**Success Criteria:**</ins> _The software provides the winemaker with a champagne blend closest to the desired formula with the minimum number of steps and without any software crashes._
+
+### Use Case 2: Check Resources Availability
+
+<ins>**Actor:**</ins> _Alexandre Moreau (Winemaker)_
+
+<ins>**Scenario:**</ins> _The Winemaker needs to check the availability of resources (tanks) before creating a new champagne blend. They input the number of tanks required and their respective capacities. The software then checks the availability of the required tanks and their respective quantities (full or empty)._
+
+<ins>**Success Criteria:**</ins> _The software displays the availability of the required tanks and their respective quantities (full or empty)._
+
+### Use Case 3: Check Status of Tanks
+
+<ins>**Actor:**</ins> _Isabelle Dubois (Cellar Master)_
+
+<ins>**Scenario:**</ins> _The Cellar Master needs to check the status of tanks (full or empty) to ensure they are correctly utilized to prevent oxidation. They input the number of tanks required and their respective capacities. The software then checks the status of the required tanks and their respective quantities (full or empty)._
+
+<ins>**Success Criteria:**</ins> _The software displays the status of the required tanks and their respective quantities (full or empty)._
+
+### Use Case 4: Manage Champagne Production
+
+<ins>**Actor:**</ins> _Sophie Laurent (Production Manager)_
+
+<ins>**Scenario:**</ins> _The Production Manager needs to monitor the blending process, including the number of movements required to transfer the champagne from one tank to another. They input the number of movements and their respective tanks. The software then calculates the number of movements required and monitors the entire blending process._
+
+<ins>**Success Criteria:**</ins> _The software displays the number of movements required and monitors the entire blending process._
