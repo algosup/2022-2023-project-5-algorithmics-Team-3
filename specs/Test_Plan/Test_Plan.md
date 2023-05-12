@@ -67,7 +67,19 @@ All the feature of the project which were defined in software requirement [specs
 
 #### 1.1.2. Out of Scope
 
-`In progress...`
+For this specific project - the development of a software application to aid in the blending stage of champagne production at Krug Champagne, the following elements could be considered out of scope:
+
+1. **Other Stages of Production:** The software only focuses on the blending stage of champagne production. Harvesting, fermentation, aging, riddling, disgorging, and other processes are not part of this project.
+
+2. **Physical Infrastructure:** The project does not involve the creation or modification of physical infrastructure such as tanks, pumps, pipes, or vineyards.
+
+3. **Training Personnel:** While the software should be user-friendly, comprehensive training of personnel on how to use the software is not included. This would be a separate project or would require a separate training team.
+
+4. **Maintenance and Support:** Post-deployment maintenance, updates, and customer support are not part of this project. A separate agreement or project should be set up for ongoing support and maintenance.
+
+5. **Other Products:** The software is specifically designed for the Krug Grande Cuvée. It doesn't cover other products or wine types produced by Krug Champagne or any other wineries.
+
+6. **Integration with Other Systems:** The project scope is to create a standalone software. Integration with other existing systems (like an ERP system or a bottling line automation system) is out of scope.
 
 ### 1.2. Quality Objectives
 
