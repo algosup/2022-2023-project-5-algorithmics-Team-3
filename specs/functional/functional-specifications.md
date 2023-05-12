@@ -79,7 +79,6 @@ To mitigate risks, the development team must prioritize efficient project manage
 | Assumptions              | The blending process follows a precise formula that is easy to implement in the software and that there will be no changes to the formula in the future. | Consideration of these assumptions, ensuring the software's design is flexible enough to accommodate future changes. |
 | Financial risks          | Cost of software development, maintenance, and licensing                                                                                                 | Conducting a cost-benefit analysis, establishing a budget for the project's entire lifecycle.                        |
 
-
 ## Requirements Specification
 
 The requirement specifications for the software include a focus on the blending stage of the Krug Champagne House's winery process. The software must be designed to produce the closest result to the formula with the minimum number of steps. The software should optimize the use of 330 tanks of various sizes and a system of pumps and pipes to connect any tank with any other tank while ensuring that tanks are either completely full or completely empty to prevent oxidation. The software must also ensure that the wine is never in contact with oxygen.
@@ -88,11 +87,11 @@ The requirement specifications for the software include a focus on the blending 
 
 Take a look at our initial proposed solution below to see how we plan to tackle the blending challenge.
 
-<a href="https://github.com/algosup/2022-2023-project-5-algorithmics-Team-3/blob/documents/specs/functional/Algorithm_part_1.jpg">
-    <img src="Algorithm_part_1.jpg" height="600px">
+<a href="https://github.com/algosup/2022-2023-project-5-algorithmics-Team-3/blob/documents/specs/functional/img/Algorithm_part_1.jpg">
+    <img src="img/Algorithm_part_1.jpg" height="600px">
 </a>
-<a href="https://github.com/algosup/2022-2023-project-5-algorithmics-Team-3/blob/documents/specs/functional/Algorithm_part_2.jpg">
-    <img src="Algorithm_part_2.jpg" height="600px">
+<a href="https://github.com/algosup/2022-2023-project-5-algorithmics-Team-3/blob/documents/specs/functional/img/Algorithm_part_2.jpg">
+    <img src="img/Algorithm_part_2.jpg" height="600px">
 </a>
 <br>
 
@@ -101,6 +100,8 @@ Take a look at our initial proposed solution below to see how we plan to tackle 
 ## Personas
 
 ### Persona 1
+
+<img src="img/cellar_master.jpeg" width="150" style="border-radius:50%;">
 
 <ins>**Name:**</ins> _Isabelle Dubois_
 
@@ -129,11 +130,13 @@ Computer :   ⭐⭐⭐⭐
 
 ### Persona 2
 
+<img src="img/winemaker.jpeg" width="150" style="border-radius:50%;">
+
 <ins>**Name:**</ins> _Alexandre Moreau_
 
 <ins>**Profession:**</ins> _Winemaker_
 
-<ins>**Needs:**</ins> Alexandre wants to create new champagne blends using efficient software. They require precise calculations, utilization of available resources (tanks), and the ability to produce blends closest to the desired formula._
+<ins>**Needs:**</ins> _Alexandre wants to create new champagne blends using efficient software. They require precise calculations, utilization of available resources (tanks), and the ability to produce blends closest to the desired formula._
 
 <ins>**Pain Points:**</ins>
 _The winemaker faces challenges in determining the precise proportions of champagne required for blending and achieving the desired result. They also need to ensure the software is reliable and avoids crashes or bugs._
@@ -155,6 +158,8 @@ Computer :   ⭐⭐⭐
 ```
 
 ### Persona 3
+
+<img src="img/production_manager.jpeg" width="150" style="border-radius:50%;">
 
 <ins>**Name:**</ins> _Sophie Laurent_
 
