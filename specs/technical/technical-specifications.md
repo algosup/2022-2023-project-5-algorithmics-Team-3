@@ -76,7 +76,7 @@ Reminder of the project elements:
 
 - **Project Description**
 
-  - The software will be used for the new winery of Krug Champagne to assist with the blending process of champagne. The software will focus on the blending task described as follows: **blending, which involves blending still wines from different vineyards and grape varieties to create a consistent flavor profile.** The goal of the software is to produce the closest result to the desired formula with the minimum number of steps.
+  - The software will be used for the new winery of Krug Champagne to assist with the blending process of champagne. The software will focus on the blending task described as follows: **"Blending: The still wines from different vineyards and grape varieties are blended together to create a consistent flavor profile."** The goal of the software is to produce the closest result to the desired formula with the minimum number of steps.
 
 - **Scope**
 
