@@ -127,9 +127,12 @@ Analytics   ├───────────────🔘─────�
 <ins>**Tech Skills:**</ins><br>
 
 ```
-Internet :   ⭐⭐⭐⭐
-Smartphone : ⭐⭐⭐⭐
-Computer :   ⭐⭐⭐⭐
+Internet*  :   ⭐⭐⭐⭐
+Smartphone :   ⭐⭐⭐⭐
+Computer** :   ⭐⭐⭐⭐
+
+*This part defines the ability to navigate through the internet and its websites.
+**This part defines the ability to navigate through a computer and its softwares.
 ```
 
 ### Persona 2
@@ -156,9 +159,12 @@ Analytics   ├─────────────────────�
 <ins>**Tech Skills:**</ins><br>
 
 ```
-Internet :   ⭐⭐
-Smartphone : ⭐⭐⭐⭐
-Computer :   ⭐⭐⭐
+Internet*  :   ⭐⭐
+Smartphone :   ⭐⭐⭐⭐
+Computer** :   ⭐⭐⭐
+
+*This part defines the ability to navigate through the internet and its websites.
+**This part defines the ability to navigate through a computer and its softwares.
 ```
 
 ### Persona 3
@@ -185,9 +191,12 @@ Analytics   ├────🔘────────────────�
 <ins>**Tech Skills:**</ins><br>
 
 ```
-Internet :   ⭐⭐⭐⭐
-Smartphone : ⭐⭐⭐⭐⭐
-Computer :   ⭐⭐⭐⭐
+Internet*  :   ⭐⭐⭐⭐
+Smartphone :   ⭐⭐⭐⭐⭐
+Computer** :   ⭐⭐⭐⭐
+
+*This part defines the ability to navigate through the internet and its websites.
+**This part defines the ability to navigate through a computer and its softwares.
 ```
 
 ## Use Cases
