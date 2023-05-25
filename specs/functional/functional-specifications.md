@@ -1,20 +1,23 @@
-# Functional Specification
+# <div align="center">Functional Specification</div>
+## <div align="center">Team 3</div>
 
-Author: [Pierre GORIN](https://www.github.com/pierre2103)
+<div align="right">Author: <a href="https://www.github.com/pierre2103">Pierre GORIN</a></div>
 
-_Last update: 12<sup>th</sup> of May 2023_
+_<div align="right">Last update: 25<sup>th</sup> of May 2023</div>_
+
 
 <details>
     <summary>Table of Contents <b>Click to expand</b></summary>
 
 - [Functional Specification](#functional-specification)
+  - [Team 3](#team-3)
   - [Overview](#overview)
   - [Project Scope](#project-scope)
   - [Stakeholders](#stakeholders)
-  - [Terms and Definitions](#terms-and-definitions)
   - [Risks and Assumptions](#risks-and-assumptions)
   - [Requirements Specification](#requirements-specification)
   - [Solution Overview](#solution-overview)
+  - [What are the reasons to automate the process ?](#what-are-the-reasons-to-automate-the-process-)
   - [Personas](#personas)
     - [Persona 1](#persona-1)
     - [Persona 2](#persona-2)
@@ -24,16 +27,17 @@ _Last update: 12<sup>th</sup> of May 2023_
     - [Use Case 2: Check Resources Availability](#use-case-2-check-resources-availability)
     - [Use Case 3: Check Status of Tanks](#use-case-3-check-status-of-tanks)
     - [Use Case 4: Manage Champagne Production](#use-case-4-manage-champagne-production)
+  - [Terms and Definitions](#terms-and-definitions)
 
 </details>
 
 ## Overview
 
-The Krug Champagne House, in collaboration with LVMH, is developing winery software to streamline the blending stage of champagne production. The software's primary objective is to determine the right quantities of champagne required for blending Krug Grande Cuvée accurately, while ensuring no wastage and unwanted oxidation.
+The Krug Champagne House, in collaboration with LVMH, is developing winery software to streamline the blending stage of champagne production. The software's primary objective is to determine the right quantities of champagne required for blending Krug Grande Cuvée accurately, while ensuring no wastage and unwanted oxidation[^oxidation].
 
 ## Project Scope
 
-The software's primary function is to determine the precise proportions of Champagne required for blending Krug Grande Cuvée. To achieve this, it must meet several requirements, including avoiding crashes and bugs from the algorithms, using only full or empty tanks to prevent oxidation, producing a result closest to the specified formula, and being written in an idiomatic style that is easily readable and commented for easy understanding. Additionally, the software should achieve the desired result with a minimum number of steps and execute quickly.
+The software's primary function is to determine the precise proportions of Champagne required for blending Krug Grande Cuvée. To achieve this, it must meet several requirements, including avoiding crashes and bugs from the algorithms, using only full or empty tanks[^tank] to prevent oxidation, producing a result closest to the specified formula, and being written in an idiomatic[^idiomatic] style that is easily readable and commented for easy understanding. Additionally, the software should achieve the desired result with a minimum number of steps and execute quickly.
 
 - No crash and no bugs
 - We must have only full or only empty tanks to avoid oxidation
@@ -42,6 +46,7 @@ The software's primary function is to determine the precise proportions of Champ
 - The code must be in an idiomatic style to be easily readable
 - The result must be find with the minimum number of steps possible
 - The code's execution time must be the fastest possible
+- The software must be able to be easily used, so a user-friendly interface is required
 
 We need to be able to enter a number of input parameters including: the formula of the solution we want after blending, the resources we have at our disposal and their quantities, the number of tanks we have at our disposal and their quantities. In the output we will find the final solution, the exact composition or the closest possible composition to the starting one, a summary of the rest, as well as the full and empty tanks, and the number of movements* necessary to make the whole blending process.
 
@@ -58,15 +63,6 @@ We need to be able to enter a number of input parameters including: the formula 
 | Laura-Lee HOLLANDE   | Tech Lead         | In charge of technical aspects.             | [Github](https://www.github.com/lauraleehollande) |
 | Mathis KAKAL         | Software Engineer | In charge of software development.          | [Github](https://www.github.com/mathiskakal) |
 | Rémy CHARLES         | Quality Assurance | In charge of project quality.               | [Github](https://www.github.com/RemyCHARLES) |
-
-## Terms and Definitions
-
-| Term | Definition                                                                                          |
-| ---- | --------------------------------------------------------------------------------------------------- |
-| Tank | Sizable container primarily utilized for storing and holding a significant amount of liquid or gas. |
-| Oxygenation | The process of adding oxygen to a liquid. |
-| Oxidation | The process of oxygen reacting with a substance. |
-| Idiomatic style | A style of writing code that is easily readable and understandable. |
 
 ## Risks and Assumptions
 
@@ -96,6 +92,14 @@ Take a look at our initial proposed solution below to see how we plan to tackle 
 <br>
 
 ***Click on an image to enlarge it.***
+
+## What are the reasons to automate the process ?
+
+Blending plays a crucial role in the creation of champagne and holds significant importance in the production process. This intricate procedure demands substantial time and expertise. A team of proficient individuals conducts the blending, meticulously tasting different wines to determine the ideal combination for the ultimate product.
+
+Afterward, the challenge lies in replicating this precise blend on a larger scale. However, accomplishing this task proves arduous due to the inherent loss and variation that occurs during manual blending.
+
+Employing an effective algorithm can enhance the quality and consistency of the final champagne, bringing it closer to the authentic recipe and resulting in a superior taste.
 
 ## Personas
 
@@ -219,3 +223,11 @@ Computer :   ⭐⭐⭐⭐
 <ins>**Scenario:**</ins> _The Production Manager needs to monitor the blending process, including the number of movements required to transfer the champagne from one tank to another. They input the number of movements and their respective tanks. The software then calculates the number of movements required and monitors the entire blending process._
 
 <ins>**Success Criteria:**</ins> _The software displays the number of movements required and monitors the entire blending process._
+
+
+## Terms and Definitions
+[^tank]: A sizable container primarily utilized for storing and holding a significant amount of liquid or gas.
+
+[^oxidation]: The process of oxygen reacting with a substance.
+
+[^idiomatic]: A style of writing code that is easily readable and understandable.
