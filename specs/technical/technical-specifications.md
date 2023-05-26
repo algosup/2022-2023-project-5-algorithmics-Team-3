@@ -22,6 +22,8 @@ Table of content
     - [System architecture overview](#system-architecture-overview)
     - [Architecture diagrams and charts](#architecture-diagrams-and-charts)
     - [System components](#system-components)
+      - [Algorithm blending](#algorithm-blending)
+      - [Tanks managment](#tanks-managment)
     - [Description of the interfaces between the components](#description-of-the-interfaces-between-the-components)
     - [Technologies and tools used](#technologies-and-tools-used)
   - [Features specifications](#features-specifications)
@@ -186,17 +188,92 @@ Given that we only need to design an algorithm, we don't have any major security
 
 ### System components
 
-- **Algorythm blending**
-  - This central component is responsible for applying the specific blending algorithm that determines the appropriate proportions of each wine to achieve the desired blend.
+#### Algorithm blending
 
-  | Parameter     | Information about it  |
-  |---------------|-----------------------|
-  | Input         | `WIP`                 |
-  | Output        | `WIP`                 |
-  | Time response | `WIP`                 |
+This central component is responsible for applying the specific blending algorithm that determines the appropriate proportions of each wine to achieve the desired blend. We have defined our parameters as follows:
+<!-- ------------------------------ C# START ------------------------------- -->
+- **Input**
 
-- **Tanks managment**
-  - This component manages wine tanks, their status, their capacities, their availability, and facilitates the transfer of necessary volumes between tanks.
+  - ``formula`` would be a ``Tuple<string, float>[]``, which means an array of tuples where each tuple contains a string (wine type) and a float (percentage in the formula).
+
+  ```cs
+  var formula = new Tuple<string, float>[] 
+        {
+            Tuple.Create("chardonnay", 37f)
+        };
+  ```
+
+  - ``tank`` would be a ``Tuple<int, float, string>[]`` which means an array of tuples where each tuple contains an integer (number of tanks), a float (capacity of tanks) and a string (empty or filled by a scpecific wine).
+
+  ```cs
+  var tank = new Tuple<int, float, string>[]
+        {
+            Tuple.Create(3, 50f, "empty"),
+            Tuple.Create(2, 100f, "pinot_noir")
+        };
+  ```
+<!-- ------------------------------- C# END -------------------------------- -->
+
+<!-- ------------------------------ GO START ------------------------------- -->
+<!-- - **Input**
+
+  - ``formula`` would be a ``[]struct{ WineType string; Percentage float32 }``, which means a slice of structures where each structure has a field ``WineType`` of type string (wine type) and a field ``Percentage`` of type float32 (percentage in the formula).
+
+  ```go
+  formula := []struct {
+        WineType  string
+        Percentage float32
+    }{
+        {"chardonnay", 37.00},
+    }
+  ```
+
+  - ``tank`` would be a ``[]struct{ Tanks int; Capacity float32; Status string }``, which means a slice of structures where each structure has a field ``Tanks`` of type integer (number of tanks), a field ``Capacity`` of type float(capacity of tanks) and a field ``Status`` of type string (empty or filled by a scpecific wine).
+
+  ```go
+  tank := []struct {
+        Tanks   int
+        Capacity float32
+        Status string
+    }{
+        {3, 50.0, "empty"},
+        {2, 100.0, "pinot_noir"},
+    }
+  ``` -->
+<!-- ------------------------------- GO END -------------------------------- -->
+
+<!-- ---------------------------- PYTHON START ----------------------------- -->
+<!-- - **Input**
+
+  - ``formula`` would be a ``list[tuple[str, float]]``, which represents a list of tuples where each tuple has keys of type string (wine type) and values that can be either of type string or float (percentage in the formula).
+
+  ```py
+  formulas = [
+    ("chardonnay", 37.0),
+  ]
+  ```
+
+  - ``tank`` would be a ``list[tuple[int, float, str]]``, which represent a list of tuples where each tuple has keys of type integer (number of tanks), float (capacity of tanks) and string(empty or filled by a scpecific wine).
+
+```py
+tank = [
+    (3, 50.0, "empty"),
+    (2, 100.0, "pinot_noir")
+]
+``` -->
+<!-- ----------------------------- PYTHON END ------------------------------ -->
+
+- Output
+
+``WIP``
+
+- Time response
+
+``WIP``
+
+#### Tanks managment
+
+This component manages wine tanks, their status, their capacities, their availability, and facilitates the transfer of necessary volumes between tanks.
 
   | Parameter    | Information about it           |
   |--------------|--------------------------------|
