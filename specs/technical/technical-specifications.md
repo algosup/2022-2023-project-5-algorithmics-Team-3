@@ -192,7 +192,7 @@ Given that we only need to design an algorithm, we don't have any major security
 
 This central component is responsible for applying the specific blending algorithm that determines the appropriate proportions of each wine to achieve the desired blend. We have defined our parameters as follows:
 <!-- ------------------------------ C# START ------------------------------- -->
-- **Input**
+<!-- - **Input**
 
   - ``formula`` would be a ``Tuple<string, float>[]``, which means an array of tuples where each tuple contains a string (wine type) and a float (percentage in the formula).
 
@@ -211,7 +211,7 @@ This central component is responsible for applying the specific blending algorit
             Tuple.Create(3, 50f, "empty"),
             Tuple.Create(2, 100f, "pinot_noir")
         };
-  ```
+  ``` -->
 <!-- ------------------------------- C# END -------------------------------- -->
 
 <!-- ------------------------------ GO START ------------------------------- -->
@@ -243,7 +243,7 @@ This central component is responsible for applying the specific blending algorit
 <!-- ------------------------------- GO END -------------------------------- -->
 
 <!-- ---------------------------- PYTHON START ----------------------------- -->
-<!-- - **Input**
+- **Input**
 
   - ``formula`` would be a ``list[tuple[str, float]]``, which represents a list of tuples where each tuple has keys of type string (wine type) and values that can be either of type string or float (percentage in the formula).
 
@@ -260,7 +260,7 @@ tank = [
     (3, 50.0, "empty"),
     (2, 100.0, "pinot_noir")
 ]
-``` -->
+```
 <!-- ----------------------------- PYTHON END ------------------------------ -->
 
 - Output
@@ -277,7 +277,7 @@ This component manages wine tanks, their status, their capacities, their availab
 
   | Parameter    | Information about it           |
   |--------------|--------------------------------|
-  | Status       | `Full` or `Empty`              |
+  | Status       | `Full`, `Empty` or `Wine type` |
   | Capacity     | `Scalable`                     |
   | Availability | `Available` or `Not available` |
 
