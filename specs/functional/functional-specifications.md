@@ -97,24 +97,31 @@ Take a look at our initial proposed solution below to see how we plan to tackle 
 The input will consist of two lists: one for the formula and another one for the tanks.
 
 Formulas will be a list of tuples, where each tuple represents a wine type and its corresponding percentage in the formula. Each tuple will have a string as the first element (wine type) and either a string or a float as the second element (desired ratio in the final solution in percent). Here's an example of a formula for the Krug Grande Cuvée 2015:
-```python
-formulas = [
-    ("chardonnay", 37.0),
-    ("pinot_noir", 45.0),
-    ("meunier", 18.0)
-]
+```go
+formulas := []struct {
+    WineType string
+    Ratio    float64
+}{
+    {"chardonnay", 37.0},
+    {"pinot_noir", 45.0},
+    {"meunier", 18.0},
+}
 ```
 
 Tank will be a list of tuples, where each tuple represents a tank with its respective details. Each tuple will have an integer as the first element (number of tanks), a float as the second element (tank capacity in hectoliters), and a string indicating whether the tank is empty or filled with a specific wine. Here's an example of the tank configurations:
-```python
-tanks = [
-    (2, 100.0, "pinot_noir"),
-    (1, 100.0, "meunier"),
-    (1, 100.0, "chardonnay"),
-    (1, 50.0, "chardonnay"),
-    (2, 100.0, "empty"),
-    (2, 50.0, "empty")
-]
+```go
+tanks := []struct {
+    NumberOfTanks int
+    Capacity      float64
+    WineType      string
+}{
+    {2, 100.0, "pinot_noir"},
+    {1, 100.0, "meunier"},
+    {1, 100.0, "chardonnay"},
+    {1, 50.0, "chardonnay"},
+    {2, 100.0, "empty"},
+    {2, 50.0, "empty"},
+}
 ```
 Please note that these inputs are represented as lists of tuples to allow for flexibility in adding or removing elements from the list. However, the individual elements within the tuples remain immutable.
 
