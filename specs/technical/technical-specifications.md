@@ -215,7 +215,7 @@ This central component is responsible for applying the specific blending algorit
 <!-- ------------------------------- C# END -------------------------------- -->
 
 <!-- ------------------------------ GO START ------------------------------- -->
-<!-- - **Input**
+- **Input**
 
   - ``formula`` would be a ``[]struct{ WineType string; Percentage float32 }``, which means a slice of structures where each structure has a field ``WineType`` of type string (wine type) and a field ``Percentage`` of type float32 (percentage in the formula).
 
@@ -239,11 +239,11 @@ This central component is responsible for applying the specific blending algorit
         {3, 50.0, "empty"},
         {2, 100.0, "pinot_noir"},
     }
-  ``` -->
+  ```
 <!-- ------------------------------- GO END -------------------------------- -->
 
 <!-- ---------------------------- PYTHON START ----------------------------- -->
-- **Input**
+<!-- - **Input**
 
   - ``formula`` would be a ``list[tuple[str, float]]``, which represents a list of tuples where each tuple has keys of type string (wine type) and values that can be either of type string or float (percentage in the formula).
 
@@ -260,7 +260,7 @@ tank = [
     (3, 50.0, "empty"),
     (2, 100.0, "pinot_noir")
 ]
-```
+``` -->
 <!-- ----------------------------- PYTHON END ------------------------------ -->
 
 - Output
