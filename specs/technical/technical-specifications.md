@@ -217,25 +217,18 @@ This central component is responsible for applying the specific blending algorit
 <!-- ------------------------------ GO START ------------------------------- -->
 - **Input**
 
-  - ``formula`` would be a ``[]struct{ WineType string; Percentage float32 }``, which means a slice of structures where each structure has a field ``WineType`` of type string (wine type) and a field ``Percentage`` of type float32 (percentage in the formula).
+  - ``formula`` would be a ``f``, which means a **h** where each **h** has a field ``WineType`` of type string (wine type) and a field ``Percentage`` of type float32 (percentage in the formula).
 
   ```go
-  formula := []struct {
-        WineType  string
-        Percentage float32
-    }{
-        {"chardonnay", 37.00},
-    }
+  formula := [1][2]interface{}{
+		  {"chardonnay", 37.00},
+	  }
   ```
 
-  - ``tank`` would be a ``[]struct{ Tanks int; Capacity float32; Status string }``, which means a slice of structures where each structure has a field ``Tanks`` of type integer (number of tanks), a field ``Capacity`` of type float(capacity of tanks) and a field ``Status`` of type string (empty or filled by a scpecific wine).
+  - ``tank`` would be a ``g``, which means a **h**s where each **h** has a field ``Tanks`` of type integer (number of tanks), a field ``Capacity`` of type float(capacity of tanks) and a field ``Status`` of type string (empty or filled by a scpecific wine).
 
   ```go
-  tank := []struct {
-        Tanks   int
-        Capacity float32
-        Status string
-    }{
+  tank := [1][2][3]interface{}{
         {3, 50.0, "empty"},
         {2, 100.0, "pinot_noir"},
     }
@@ -323,3 +316,8 @@ This component manages wine tanks, their status, their capacities, their availab
 | Riddling              |            |        |
 | Aging                 |            |        |
 | Stainless steel tanks |            |        |
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                                  NOTE                                   -->
+<!-- ----------------------------------------------------------------------- -->
+<!-- bonne pratique -> Go -->
