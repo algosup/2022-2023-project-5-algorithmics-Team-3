@@ -5,6 +5,7 @@ Contains progress reports of our work during the project:
 
 [Week 1](https://algosup-my.sharepoint.com/:w:/p/paul_nowak/EX1DYGZUoHtEgvIg2KeuROcBkuQVj4AHiBCvMWWWANi2ew?e=r8696A) <br> 
 [Week 2](https://algosup-my.sharepoint.com/:w:/p/paul_nowak/ETaReXWYxT5Ete4ufmTlxIABY6vljCa7HaVbhvtt75YdqQ?e=DvIBpc) <br> 
+[Week 3 & 4](https://algosup-my.sharepoint.com/:w:/p/paul_nowak/Ef_m7F4cqu5Gh45DHkW-32cB8gCLv4IonHhvfn2Yo7nnoA?e=az90aB) <br>
 
 ## Planning
 Shows the planning of the project's tasks and the KPIs:
