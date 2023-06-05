@@ -1,10 +1,10 @@
 # <div align="center">Functional Specification</div>
+
 ## <div align="center">Team 3</div>
 
 <div align="right">Author: <a href="https://www.github.com/pierre2103">Pierre GORIN</a></div>
 
 _<div align="right">Last update: 25<sup>th</sup> of May 2023</div>_
-
 
 <details>
     <summary>Table of Contents <b>Click to expand</b></summary>
@@ -19,6 +19,9 @@ _<div align="right">Last update: 25<sup>th</sup> of May 2023</div>_
   - [Solution Overview](#solution-overview)
     - [Inputs](#inputs)
   - [What are the reasons to automate the process ?](#what-are-the-reasons-to-automate-the-process-)
+  - [How it will works](#how-it-will-works)
+    - [Setting Up Wine Blend Formulas and Tank Parameters](#setting-up-wine-blend-formulas-and-tank-parameters)
+    - [Generating Instructions for the Blending Process](#generating-instructions-for-the-blending-process)
   - [Personas](#personas)
     - [Persona 1](#persona-1)
     - [Persona 2](#persona-2)
@@ -55,15 +58,15 @@ We need to be able to enter a number of input parameters including: the formula 
 
 ## Stakeholders
 
-| Stakeholder          | Role              | Description                                 | 🔗 |
-| -------------------- | ----------------- | ------------------------------------------- | - |
-| Krug Champagne House | Client            | Client of this project.                     | [Website](https://www.krug.com/) |
-| Franck JEANNIN       | Project Overseer  | In charge of overseeing the entire project. | [Github](https://www.github.com/frje) |
-| Paul NOWAK           | Project Manager   | In charge of project management.            | [Github](https://www.github.com/PaulNowak36) |
-| Pierre GORIN         | Program Manager   | In charge of program management.            | [Github](https://www.github.com/pierre2103) |
+| Stakeholder          | Role              | Description                                 | 🔗                                                 |
+| -------------------- | ----------------- | ------------------------------------------- | ------------------------------------------------- |
+| Krug Champagne House | Client            | Client of this project.                     | [Website](https://www.krug.com/)                  |
+| Franck JEANNIN       | Project Overseer  | In charge of overseeing the entire project. | [Github](https://www.github.com/frje)             |
+| Paul NOWAK           | Project Manager   | In charge of project management.            | [Github](https://www.github.com/PaulNowak36)      |
+| Pierre GORIN         | Program Manager   | In charge of program management.            | [Github](https://www.github.com/pierre2103)       |
 | Laura-Lee HOLLANDE   | Tech Lead         | In charge of technical aspects.             | [Github](https://www.github.com/lauraleehollande) |
-| Mathis KAKAL         | Software Engineer | In charge of software development.          | [Github](https://www.github.com/mathiskakal) |
-| Rémy CHARLES         | Quality Assurance | In charge of project quality.               | [Github](https://www.github.com/RemyCHARLES) |
+| Mathis KAKAL         | Software Engineer | In charge of software development.          | [Github](https://www.github.com/mathiskakal)      |
+| Rémy CHARLES         | Quality Assurance | In charge of project quality.               | [Github](https://www.github.com/RemyCHARLES)      |
 
 ## Risks and Assumptions
 
@@ -84,45 +87,22 @@ The requirement specifications for the software include a focus on the blending 
 
 Take a look at our initial proposed solution below to see how we plan to tackle the blending challenge.
 
-<a href="https://github.com/algosup/2022-2023-project-5-algorithmics-Team-3/blob/documents/specs/functional/img/Algorithm_part_1.jpg">
+<!-- <a href="https://github.com/algosup/2022-2023-project-5-algorithmics-Team-3/blob/documents/specs/functional/img/Algorithm_part_1.jpg">
     <img src="img/Algorithm_part_1.jpg" height="600px">
 </a>
 <a href="https://github.com/algosup/2022-2023-project-5-algorithmics-Team-3/blob/documents/specs/functional/img/Algorithm_part_2.jpg">
     <img src="img/Algorithm_part_2.jpg" height="600px">
 </a>
-<br>***Click on an image to enlarge it.***
+<br>***Click on an image to enlarge it.*** -->
 
 ### Inputs
 
 The input will consist of two lists: one for the formula and another one for the tanks.
 
 Formulas will be a list of tuples, where each tuple represents a wine type and its corresponding percentage in the formula. Each tuple will have a string as the first element (wine type) and either a string or a float as the second element (desired ratio in the final solution in percent). Here's an example of a formula for the Krug Grande Cuvée 2015:
-```go
-formulas := []struct {
-    WineType string
-    Ratio    float64
-}{
-    {"chardonnay", 37.0},
-    {"pinot_noir", 45.0},
-    {"meunier", 18.0},
-}
-```
 
 Tank will be a list of tuples, where each tuple represents a tank with its respective details. Each tuple will have an integer as the first element (number of tanks), a float as the second element (tank capacity in hectoliters), and a string indicating whether the tank is empty or filled with a specific wine. Here's an example of the tank configurations:
-```go
-tanks := []struct {
-    NumberOfTanks int
-    Capacity      float64
-    WineType      string
-}{
-    {2, 100.0, "pinot_noir"},
-    {1, 100.0, "meunier"},
-    {1, 100.0, "chardonnay"},
-    {1, 50.0, "chardonnay"},
-    {2, 100.0, "empty"},
-    {2, 50.0, "empty"},
-}
-```
+
 Please note that these inputs are represented as lists of tuples to allow for flexibility in adding or removing elements from the list. However, the individual elements within the tuples remain immutable.
 
 To maximize the amount of wine produced, we will calculate the maximum quantity of wine that can be obtained using the wine present in the tanks. The tanks provided include 2 tanks of 100hL each filled with pinot noir, 1 tank of 100hL filled with meunier, 1 tank of 100hL filled with chardonnay, 1 tank of 50hL filled with chardonnay, and 3 empty tanks with a capacity of 100hL each.
@@ -136,6 +116,75 @@ Blending plays a crucial role in the creation of champagne and holds significant
 Afterward, the challenge lies in replicating this precise blend on a larger scale. However, accomplishing this task proves arduous due to the inherent loss and variation that occurs during manual blending.
 
 Employing an effective algorithm can enhance the quality and consistency of the final champagne, bringing it closer to the authentic recipe and resulting in a superior taste.
+
+## How it will works  
+
+### Setting Up Wine Blend Formulas and Tank Parameters
+The customer will provide a CSV file[^csv] with the following information:
+
+- The percentage of wines in the final blend (e.g. 50% of wine 1, 30% of wine 2, 20% of wine 3)
+- The number of tanks, their capacity and what they are filled with (e.g. 2 tanks of 100hL each filled with wine 1, 1 tank of 100hL filled with wine 2, 1 tank of 100hL filled with wine 3, 1 tank of 50hL filled with wine 3, 3 empty tanks with a capacity of 100hL each)
+
+The structure of the CSV file will be as follows:
+|                 |     |     |     |     |
+| --------------- | --- | --- | --- | --- |
+| Id              | 1   | 2   | 3   |     |
+| Percentage      | 37  | 45  | 18  |     |
+| Number of tanks | 2   | 1   | 1   | 1   | 2  |
+| Capacity        | 100 | 100 | 50  | 50  | 50 |
+| Id of wine      | 0   | 2   | 2   | 3   | 1  |
+
+Lines "Id" and "Percentage" represent the formula, and lines "Number of tanks", "Capacity" and "Id of wine" represent the tanks.
+
+To be more precise, we define how many type of wine there is in our final blend, and we assign to each an Id, the Id is a integers that start at 1 and increment by 1 for each new type of wine. Then we define the percentage of each wine in the final blend, to do it we enter the number in percent below the Id of the wine. Be careful the sum of the percentage must be equal to 100, if it's not the software will say it to you.
+
+In the tanks section (lines 3 to 5), we'll define the properties of each tank in columns, first the number of tanks, then the capacity of these tanks in hectolitres, and below that the Id of the wine in this tank. The wine Id is the same as the wine Id in the formula. If the tank is empty, we'll put 0 in the wine Id.
+
+So in the example above the list of tanks will be as follows:
+<img src="img/tanks.png" width="700">
+
+### Generating Instructions for the Blending Process
+
+After loading the CSV file, the software will execute the blending process and generate a text file with detailed instructions. The instructions will include the following information:
+
+- Number of Steps: The total number of steps required for the blending process.
+
+- Step Details: A breakdown of each step, providing clear instructions. For example, "Step 1: Connect tank 1 to tank 2 and connect tank 3 to tank 4."
+
+- Blend Accuracy: The accuracy of the blend compared to the expected formula. This will be presented as the expected blend formula (e.g., Wine 1 = 37%, Wine 2 = 45%, Wine 3 = 18%) and the actual blend formula achieved by the software (e.g., Wine 1 = 33%, Wine 2 = 48%, Wine 3 = 19%). Additionally, the accuracy percentage will be provided (e.g., Accuracy: 91.2%).
+
+- Wine Quantity Produced: The total quantity of wine produced during the blending process. This will be specified in hectoliters (e.g., "Quantity of wine produced: 200hL").
+
+- Wine Loss Due to Oxidation: The quantity of wine lost due to oxidation. If no wine is lost, it will be indicated as "Quantity of wine lost: 20hL".
+
+- Tank Conditions: The condition of each tank involved in the process. Tanks will be categorized as empty, containing wine that can still be used, containing oxidized wine or containing the final blending.
+
+The output file will be as follows:
+```
+Number of Steps: 5
+
+Step Details:
+ - Step 1: Connect tank 1 to tank 2.
+ - Step 2: Connect tank 3 to tank 4.
+ - Step 3: Empty tank 1 and fill it with wine 2.
+ - Step 4: Empty tank 3 and fill it with wine 3.
+ - Step 5: Connect tank 1 to tank 3.
+ 
+Blend Accuracy:
+ - Expected formula: Wine 1 = 37%, Wine 2 = 45%, Wine 3 = 18%
+ - Actual formula: Wine 1 = 33%, Wine 2 = 48%, Wine 3 = 19%
+ - Accuracy: 91.2%
+
+Wine Quantity Produced: 250hL
+
+Wine Loss Due to Oxidation: 0hL
+
+Tank Conditions:
+ - Tank 1: Contains the final blend.
+ - Tank 2: Contains wine 2.
+ - Tank 3: Contains wine 3.
+ - Tank 4: Empty.
+```
 
 ## Personas
 
@@ -269,10 +318,12 @@ Computer** :   ⭐⭐⭐⭐
 
 <ins>**Success Criteria:**</ins> _The software displays the number of movements required and monitors the entire blending process._
 
-
 ## Terms and Definitions
+
 [^tank]: A sizable container primarily utilized for storing and holding a significant amount of liquid or gas.
 
 [^oxidation]: The process of oxygen reacting with a substance.
 
 [^idiomatic]: A style of writing code that is easily readable and understandable.
+
+[^csv]: a file that allows data to be saved in a table structured format.
