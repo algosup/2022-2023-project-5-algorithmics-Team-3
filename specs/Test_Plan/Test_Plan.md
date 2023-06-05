@@ -55,15 +55,20 @@ The plan identify the items to be tested, the features to be tested, the types o
 
 All the feature of the project which were defined in software requirement [specs](./../../specs/) are need to be tested.
 
-| Test Case ID | Description                                                                             | Test Cases                         | Test Status    |
-| ------------ | --------------------------------------------------------------------------------------- | ---------------------------------- | -------------- |
-| `TC-001`     | `Test loading wine data from the input source (e.g., a file or a database).`            | [Test Case 1](./../../test-cases/) | `Not Executed` |
-| `TC-002`     | `Test blending of two wines with equal proportions.`                                    | [Test Case 2](./../../test-cases/) | `Not Executed` |
-| `TC-003`     | `Test blending of multiple wines with different proportions.`                           | [Test Case 3](./../../test-cases/) | `Not Executed` |
-| `TC-004`     | `Test blending operation with an insufficient number of empty tanks.`                   | [Test Case 4](./../../test-cases/) | `Not Executed` |
-| `TC-005`     | `Test blending operation with invalid input (e.g., incorrect tank IDs or proportions).` | [Test Case 5](./../../test-cases/) | `Not Executed` |
-| `TC-006`     | `Test optimization algorithm to find the minimum number of blending steps.`             | [Test Case 6](./../../test-cases/) | `Not Executed` |
-| `TC-007`     | `Test the performance of the optimization algorithm. `                                  | [Test Case 7](./../../test-cases/) | `Not Executed` |
+| Test Case ID | Description                                                                                             | Test Cases                          | Test Status    |
+| ------------ | ------------------------------------------------------------------------------------------------------- | ----------------------------------- | -------------- |
+| `TC-001`     | `Test loading wine data from the input source (e.g., a file or a database).`                            | [Test Case 1](./../../test-cases/)  | `Not Executed` |
+| `TC-002`     | `Test blending of two wines with equal proportions.`                                                    | [Test Case 2](./../../test-cases/)  | `Not Executed` |
+| `TC-003`     | `Test blending of multiple wines with different proportions.`                                           | [Test Case 3](./../../test-cases/)  | `Not Executed` |
+| `TC-004`     | `Test blending operation with an insufficient number of empty tanks.`                                   | [Test Case 4](./../../test-cases/)  | `Not Executed` |
+| `TC-005`     | `Test blending operation with invalid input (e.g., incorrect tank IDs or proportions).`                 | [Test Case 5](./../../test-cases/)  | `Not Executed` |
+| `TC-006`     | `Test optimization algorithm to find the minimum number of blending steps.`                             | [Test Case 6](./../../test-cases/)  | `Not Executed` |
+| `TC-007`     | `Test the performance of the optimization algorithm. `                                                  | [Test Case 7](./../../test-cases/)  | `Not Executed` |
+| `TC-008`     | `Database Entry: Verify that the system correctly records the entry of a new wine into the database.`   | [Test Case 8](./../../test-cases/)  | `Not Executed` |
+| `TC-009`     | `Verify that the blending simulation works correctly when valid inputs are provided.`                   | [Test Case 9](./../../test-cases/)  | `Not Executed` |
+| `TC-010`     | `Verify that the system correctly checks the capacity of the tanks when planning the blending process.` | [Test Case 10](./../../test-cases/) | `Not Executed` |
+| `TC-011`     | `Verify that the system provides optimal blending suggestions based on the desired characteristics.`    | [Test Case 11](./../../test-cases/) | `Not Executed` |
+| `TC-012`     | `Verify that the system correctly checks the consistency of the final blend with the original formula.` | [Test Case 12](./../../test-cases/) | `Not Executed` |
 
 #### 1.1.2. Out of Scope
 
