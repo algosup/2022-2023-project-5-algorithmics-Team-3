@@ -122,8 +122,8 @@ Employing an effective algorithm can enhance the quality and consistency of the 
 ### Setting Up Wine Blend Formulas and Tank Parameters
 The customer will provide a CSV file[^csv] with the following information:
 
-- The percentage of wines in the final blend (e.g. 50% of wine 1, 30% of wine 2, 20% of wine 3)
-- The number of tanks, their capacity and what they are filled with (e.g. 2 tanks of 100hL each filled with wine 1, 1 tank of 100hL filled with wine 2, 1 tank of 100hL filled with wine 3, 1 tank of 50hL filled with wine 3, 3 empty tanks with a capacity of 100hL each)
+- The percentage of wines in the final blend (e.g. 37% of wine 1, 45% of wine 2, 18% of wine 3)
+- The number of tanks, their capacity and what they are filled with (e.g. 2 empty tanks of 100hL each, 1 tank of 100hL filled with wine 2, 1 tank of 50hL filled with wine 1, 1 tank of 50hL filled with wine 3, 2 tanks of 50hL each filled with wine 1)
 
 The structure of the CSV file will be as follows:
 |                 |     |     |     |     |
@@ -169,7 +169,7 @@ Step Details:
  - Step 3: Empty tank 1 and fill it with wine 2.
  - Step 4: Empty tank 3 and fill it with wine 3.
  - Step 5: Connect tank 1 to tank 3.
- 
+
 Blend Accuracy:
  - Expected formula: Wine 1 = 37%, Wine 2 = 45%, Wine 3 = 18%
  - Actual formula: Wine 1 = 33%, Wine 2 = 48%, Wine 3 = 19%
