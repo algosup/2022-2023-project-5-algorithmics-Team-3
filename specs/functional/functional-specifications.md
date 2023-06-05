@@ -1,5 +1,5 @@
-<img src="img/algosup_logo.jpeg" width="100px" style="position:fixed; top:10px; right:20px">
-<img src="img/krug_logo.jpeg" width="100px" style="position:fixed; top:110px; right:20px">
+<!-- <img src="img/algosup_logo.jpeg" width="100px" style="position:fixed; top:10px; right:20px">
+<img src="img/krug_logo.jpeg" width="100px" style="position:fixed; top:125px; right:20px"> -->
 
 # <div align="center">Functional Specification</div>
 
