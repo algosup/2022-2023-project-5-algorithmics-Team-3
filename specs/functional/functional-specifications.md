@@ -1,3 +1,6 @@
+<img src="img/algosup_logo.jpeg" width="100px" style="position:fixed; top:10px; right:20px">
+<img src="img/krug_logo.jpeg" width="100px" style="position:fixed; top:110px; right:20px">
+
 # <div align="center">Functional Specification</div>
 
 ## <div align="center">Team 3</div>
@@ -17,20 +20,21 @@ _<div align="right">Last update: 25<sup>th</sup> of May 2023</div>_
   - [Risks and Assumptions](#risks-and-assumptions)
   - [Requirements Specification](#requirements-specification)
   - [Solution Overview](#solution-overview)
-    - [Inputs](#inputs)
-  - [What are the reasons to automate the process ?](#what-are-the-reasons-to-automate-the-process-)
   - [How it will works](#how-it-will-works)
     - [Setting Up Wine Blend Formulas and Tank Parameters](#setting-up-wine-blend-formulas-and-tank-parameters)
     - [Generating Instructions for the Blending Process](#generating-instructions-for-the-blending-process)
+  - [What are the reasons to automate the process ?](#what-are-the-reasons-to-automate-the-process-)
   - [Personas](#personas)
     - [Persona 1](#persona-1)
     - [Persona 2](#persona-2)
     - [Persona 3](#persona-3)
+    - [Persona 4](#persona-4)
   - [Use Cases](#use-cases)
     - [Use Case 1: Create a New Champagne Blend](#use-case-1-create-a-new-champagne-blend)
     - [Use Case 2: Check Resources Availability](#use-case-2-check-resources-availability)
     - [Use Case 3: Check Status of Tanks](#use-case-3-check-status-of-tanks)
     - [Use Case 4: Manage Champagne Production](#use-case-4-manage-champagne-production)
+    - [Use Case 5: Carry Out Blending Process](#use-case-5-carry-out-blending-process)
   - [Terms and Definitions](#terms-and-definitions)
 
 </details>
@@ -50,7 +54,6 @@ The software's primary function is to determine the precise proportions of Champ
 - The code must be in an idiomatic style to be easily readable
 - The result must be find with the minimum number of steps possible
 - The code's execution time must be the fastest possible
-- The software must be able to be easily used, so a user-friendly interface is required
 
 We need to be able to enter a number of input parameters including: the formula of the solution we want after blending, the resources we have at our disposal and their quantities, the number of tanks we have at our disposal and their quantities. In the output we will find the final solution, the exact composition or the closest possible composition to the starting one, a summary of the rest, as well as the full and empty tanks, and the number of movements* necessary to make the whole blending process.
 
@@ -85,37 +88,7 @@ The requirement specifications for the software include a focus on the blending 
 
 ## Solution Overview
 
-Take a look at our initial proposed solution below to see how we plan to tackle the blending challenge.
 
-<!-- <a href="https://github.com/algosup/2022-2023-project-5-algorithmics-Team-3/blob/documents/specs/functional/img/Algorithm_part_1.jpg">
-    <img src="img/Algorithm_part_1.jpg" height="600px">
-</a>
-<a href="https://github.com/algosup/2022-2023-project-5-algorithmics-Team-3/blob/documents/specs/functional/img/Algorithm_part_2.jpg">
-    <img src="img/Algorithm_part_2.jpg" height="600px">
-</a>
-<br>***Click on an image to enlarge it.*** -->
-
-### Inputs
-
-The input will consist of two lists: one for the formula and another one for the tanks.
-
-Formulas will be a list of tuples, where each tuple represents a wine type and its corresponding percentage in the formula. Each tuple will have a string as the first element (wine type) and either a string or a float as the second element (desired ratio in the final solution in percent). Here's an example of a formula for the Krug Grande Cuvée 2015:
-
-Tank will be a list of tuples, where each tuple represents a tank with its respective details. Each tuple will have an integer as the first element (number of tanks), a float as the second element (tank capacity in hectoliters), and a string indicating whether the tank is empty or filled with a specific wine. Here's an example of the tank configurations:
-
-Please note that these inputs are represented as lists of tuples to allow for flexibility in adding or removing elements from the list. However, the individual elements within the tuples remain immutable.
-
-To maximize the amount of wine produced, we will calculate the maximum quantity of wine that can be obtained using the wine present in the tanks. The tanks provided include 2 tanks of 100hL each filled with pinot noir, 1 tank of 100hL filled with meunier, 1 tank of 100hL filled with chardonnay, 1 tank of 50hL filled with chardonnay, and 3 empty tanks with a capacity of 100hL each.
-
-The goal is to determine the optimal combination of wine from the tanks based on the given formulas to produce the maximum amount of wine.
-
-## What are the reasons to automate the process ?
-
-Blending plays a crucial role in the creation of champagne and holds significant importance in the production process. This intricate procedure demands substantial time and expertise. A team of proficient individuals conducts the blending, meticulously tasting different wines to determine the ideal combination for the ultimate product.
-
-Afterward, the challenge lies in replicating this precise blend on a larger scale. However, accomplishing this task proves arduous due to the inherent loss and variation that occurs during manual blending.
-
-Employing an effective algorithm can enhance the quality and consistency of the final champagne, bringing it closer to the authentic recipe and resulting in a superior taste.
 
 ## How it will works  
 
@@ -185,6 +158,14 @@ Tank Conditions:
  - Tank 3: Contains wine 3.
  - Tank 4: Empty.
 ```
+
+## What are the reasons to automate the process ?
+
+Blending plays a crucial role in the creation of champagne and holds significant importance in the production process. This intricate procedure demands substantial time and expertise. A team of proficient individuals conducts the blending, meticulously tasting different wines to determine the ideal combination for the ultimate product.
+
+Afterward, the challenge lies in replicating this precise blend on a larger scale. However, accomplishing this task proves arduous due to the inherent loss and variation that occurs during manual blending.
+
+Employing an effective algorithm can enhance the quality and consistency of the final champagne, bringing it closer to the authentic recipe and resulting in a superior taste.
 
 ## Personas
 
@@ -284,6 +265,38 @@ Computer** :   ⭐⭐⭐⭐
 **This part defines the ability to navigate through a computer and its softwares.
 ```
 
+### Persona 4
+
+<img src="img/production_agent.jpeg" width="150" style="border-radius:50%;">
+
+<ins>**Name:**</ins> _Jean Martin_
+
+<ins>**Profession:**</ins> _Production Agent_
+
+<ins>**Needs:**</ins> _The production agent is responsible for carrying out the blending process. He require a software solution that can efficiently guide them through the process and help him to know how to connect each tanks._
+
+<ins>**Pain Points:**</ins>
+_Jean faces challenges in carrying out the blending process and connecting the tanks. He need to know which tanks to connect and in which order to ensure the blending is carried out correctly._
+
+<ins>**Personality:**</ins><br>
+
+```
+Introverted ├──────────────────────🔘──────────┤ Extraverted
+Spontaneous ├──────────────────────────🔘──────┤ Organized
+Analytics   ├──────────────🔘──────────────────┤ Creative
+```
+
+<ins>**Tech Skills:**</ins><br>
+
+```
+Internet*  :   ⭐⭐
+Smartphone :   ⭐⭐
+Computer** :   ⭐⭐
+
+*This part defines the ability to navigate through the internet and its websites.
+**This part defines the ability to navigate through a computer and its softwares.
+```
+
 ## Use Cases
 
 ### Use Case 1: Create a New Champagne Blend
@@ -317,6 +330,14 @@ Computer** :   ⭐⭐⭐⭐
 <ins>**Scenario:**</ins> _The Production Manager needs to monitor the blending process, including the number of movements required to transfer the champagne from one tank to another. They input the number of movements and their respective tanks. The software then calculates the number of movements required and monitors the entire blending process._
 
 <ins>**Success Criteria:**</ins> _The software displays the number of movements required and monitors the entire blending process._
+
+### Use Case 5: Carry Out Blending Process
+
+<ins>**Actor:**</ins> _Jean Martin (Production Agent)_
+
+<ins>**Scenario:**</ins> _The Production Agent needs to carry out the blending process. He know the final formula, and the tanks he has at his disposal. He need to have a list of step to follow to complete the blending process._
+
+<ins>**Success Criteria:**</ins> _The software displays the correct list of steps to follow to complete the blending process._
 
 ## Terms and Definitions
 
