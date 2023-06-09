@@ -7,7 +7,7 @@
 
 <div align="right">Author: <a href="https://www.github.com/pierre2103">Pierre GORIN</a></div>
 
-_<div align="right">Last update: 25<sup>th</sup> of May 2023</div>_
+_<div align="right">Last update: 9<sup>th</sup> of June 2023</div>_
 
 <details>
     <summary>Table of Contents <b>Click to expand</b></summary>
@@ -20,10 +20,16 @@ _<div align="right">Last update: 25<sup>th</sup> of May 2023</div>_
   - [Risks and Assumptions](#risks-and-assumptions)
   - [Requirements Specification](#requirements-specification)
   - [Solution Overview](#solution-overview)
-  - [How it will works](#how-it-will-works)
     - [Setting Up Wine Blend Formulas and Tank Parameters](#setting-up-wine-blend-formulas-and-tank-parameters)
     - [Generating Instructions for the Blending Process](#generating-instructions-for-the-blending-process)
   - [What are the reasons to automate the process ?](#what-are-the-reasons-to-automate-the-process-)
+  - [How it works ?](#how-it-works-)
+    - [The algorithm](#the-algorithm)
+    - [Example of a blend with 3 different wines and 7 tanks.](#example-of-a-blend-with-3-different-wines-and-7-tanks)
+      - [The input file](#the-input-file)
+      - [What the algorithm does](#what-the-algorithm-does)
+      - [The output file](#the-output-file)
+    - [Example of a blend with 3 different wines and 11 tanks.](#example-of-a-blend-with-3-different-wines-and-11-tanks)
   - [Personas](#personas)
     - [Persona 1](#persona-1)
     - [Persona 2](#persona-2)
@@ -88,10 +94,6 @@ The requirement specifications for the software include a focus on the blending 
 
 ## Solution Overview
 
-
-
-## How it will works  
-
 ### Setting Up Wine Blend Formulas and Tank Parameters
 The customer will provide a CSV file[^csv] with the following information:
 
@@ -122,6 +124,8 @@ After loading the CSV file, the software will execute the blending process and g
 
 - Number of Steps: The total number of steps required for the blending process.
 
+- List of tanks with their content at the beginning of process, to know the initial state of the tanks and give an ID to each tanks.
+
 - Step Details: A breakdown of each step, providing clear instructions. For example, "Step 1: Connect tank 1 to tank 2 and connect tank 3 to tank 4."
 
 - Blend Accuracy: The accuracy of the blend compared to the expected formula. This will be presented as the expected blend formula (e.g., Wine 1 = 37%, Wine 2 = 45%, Wine 3 = 18%) and the actual blend formula achieved by the software (e.g., Wine 1 = 33%, Wine 2 = 48%, Wine 3 = 19%). Additionally, the accuracy percentage will be provided (e.g., Accuracy: 91.2%).
@@ -130,18 +134,19 @@ After loading the CSV file, the software will execute the blending process and g
 
 - Wine Loss Due to Oxidation: The quantity of wine lost due to oxidation. If no wine is lost, it will be indicated as "Quantity of wine lost: 20hL".
 
-- Tank Conditions: The condition of each tank involved in the process. Tanks will be categorized as empty, containing wine that can still be used, containing oxidized wine or containing the final blending.
+- Tanks Conditions: The condition of each tank involved in the process. Tanks will be categorized as empty, containing wine that can still be used, containing oxidized wine or containing the final blending.
 
 The output file will be as follows:
 ```
 Number of Steps: 5
 
 Step Details:
- - Step 1: Connect tank 1 to tank 2.
- - Step 2: Connect tank 3 to tank 4.
- - Step 3: Empty tank 1 and fill it with wine 2.
- - Step 4: Empty tank 3 and fill it with wine 3.
- - Step 5: Connect tank 1 to tank 3.
+ - Step 1: Connect tank 1 to tank 4, connect tank 2 to tank 4 and connect tank 3 to tank 4.
+ - Step 2: Connect tank 1 to tank 5, connect tank 2 to tank 5 and connect tank 3 to tank 5.
+ - Step 3: Connect tank 1 to tank 6, connect tank 2 to tank 6 and connect tank 3 to tank 6.
+ - End of the blending process
+
+
 
 Blend Accuracy:
  - Expected formula: Wine 1 = 37%, Wine 2 = 45%, Wine 3 = 18%
@@ -159,6 +164,8 @@ Tank Conditions:
  - Tank 4: Empty.
 ```
 
+
+
 ## What are the reasons to automate the process ?
 
 Blending plays a crucial role in the creation of champagne and holds significant importance in the production process. This intricate procedure demands substantial time and expertise. A team of proficient individuals conducts the blending, meticulously tasting different wines to determine the ideal combination for the ultimate product.
@@ -166,6 +173,82 @@ Blending plays a crucial role in the creation of champagne and holds significant
 Afterward, the challenge lies in replicating this precise blend on a larger scale. However, accomplishing this task proves arduous due to the inherent loss and variation that occurs during manual blending.
 
 Employing an effective algorithm can enhance the quality and consistency of the final champagne, bringing it closer to the authentic recipe and resulting in a superior taste.
+
+## How it works ?
+In this section we will explain how the software works.
+
+### The algorithm
+
+### Example of a blend with 3 different wines and 7 tanks.
+
+#### The input file
+The Input file will be as follows:
+|                 |     |     |     |     |
+| --------------- | --- | --- | --- | --- |
+| Id              | 1   | 2   | 3   |     |
+| Percentage      | 20  | 30  | 50  |     |
+| Number of tanks | 1   | 1   | 1   | 1   | 1  | 2   | 2    |
+| Capacity        | 100 | 100 | 100 | 100 | 25 | 12,5| 12,5 |
+| Id of wine      | 1   | 2   | 3   | 0   | 0  | 0   | 0    |
+
+For a better understanding here is a visual representation of the tanks:
+
+<img src="img/3-wines_7-tanks.png" width="500">
+
+
+
+#### What the algorithm does
+
+1. The algorithm will firstly select the empty tank with the largest capacity. For each tank filled, we select the desired proportions and calculate the pro rata as follows: 20% wine 1 gives us 20hL, 30% wine 2 gives us 30hL, and 50% wine 3 gives us 50hL (so the pro rata is 20hL, 30hL, and 50hL). We use wine 3 as a reference since it has the smallest ratio, enabling us to make two containers like the one selected (the empty 100hL tank).
+
+2. Next, we'll iterate through the list of empty tanks to determine where to store the remaining wine. The next empty tank has a capacity of 50hL, which is different from the previous one. We take the quantity of remaining wine to be redistributed and adjust the pro rata based on the tank's capacity. After subtracting the quantities used to make wine 1, wine 2, and wine 3, we have 80hL, 70hL, and 50hL, respectively.
+
+3. To fill the second tank, we need 20% of the remaining 50hL of wine 1, 30% of the remaining 50hL of wine 2, and 50% of the remaining 50hL of wine 3, resulting in 10hL of wine 1, 15hL of wine 2, and 25hL of wine 3.
+
+4. Knowing that what's needed remains greater than or equal to what we have, we can continue the process. Moving on to the next empty container, which has a capacity of 25hL and the same pro rata as before, we calculate the quantity of remaining wine: 70hL of wine 1, 55hL of wine 2, and 25hL of wine 3. Then we determine the quantity of wine needed to fill the container in the correct proportions: 5hL of wine 1, 7.5hL of wine 2, and 12.5hL of wine 3, respectively.
+
+5. Knowing that what's needed remains greater than or equal to what we have, we continue with 65hL of wine 1, 47.5hL of wine 2, and 12.5hL of wine 3. The next empty container has the same capacity, and the pro rata remains the same, so we can directly fill it using the same proportions.
+
+6. Since we don't have any more wine 3 to continue the blending process, we stop here.
+
+Here is a visual representation of the tanks after the blending process:
+
+<img src="img/3-wines_7-tanks_after.png" width="500">
+
+#### The output file
+```
+  Number of Steps: 4
+
+  Step Details:
+  - Step 1: Fill tank 4 with 20hL of wine from tank 1, fill tank 4 with 30hL of wine from tank 2, and fill tank 4 with 50hL of wine from tank 3.
+  - Step 2: Fill tank 5 with 10hL of wine from tank 1, fill tank 5 with 15hL of wine from tank 2, and fill tank 5 with 25hL of wine from tank 3.
+  - Step 3: Fill tank 6 with 5hL of wine from tank 1, fill tank 6 with 7.5hL of wine from tank 2, and fill tank 6 with 12.5hL of wine from tank 3.
+  - Step 4: Fill tank 7 with 5hL of wine from tank 1, fill tank 7 with 7.5hL of wine from tank 2, and fill tank 7 with 12.5hL of wine from tank 3.
+  - End of the blending process
+
+  Blend Accuracy:
+  - Expected formula: Wine 1 = 20%, Wine 2 = 30%, Wine 3 = 50%
+  - Actual formula: Wine 1 = 20%, Wine 2 = 30%, Wine 3 = 50%
+  - Accuracy: 100%
+
+  Wine Quantity Produced: 200hL
+
+  Wine Loss Due to Oxidation: 100hL (60hL of Wine 1 and 40hL of Wine 2)
+
+  Tank Conditions:
+  - Tank 1: Contains 60hL of oxidized wine 1
+  - Tank 2: Contains 40hL of oxidized wine 2
+  - Tank 3: Empty
+  - Tank 4: Contains 100hL of final blend
+  - Tank 5: Contains 50hL of final blend
+  - Tank 6: Contains 25hL of final blend
+  - Tank 7: Contains 25hL of final blend
+```
+
+
+___
+### Example of a blend with 3 different wines and 11 tanks.
+
 
 ## Personas
 
