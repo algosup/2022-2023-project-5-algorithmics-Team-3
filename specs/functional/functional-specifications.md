@@ -190,6 +190,7 @@ The Input file will be as follows:
 | Number of tanks | 1   | 1   | 1   | 1   | 1  | 2  |
 | Capacity        | 100 | 100 | 100 | 100 | 50 | 25 |
 | Id of wine      | 1   | 2   | 3   | 0   | 0  | 0  |
+|                 |     |     |     |     |   |   |
 
 For a better understanding here is a visual representation of the tanks:
 
