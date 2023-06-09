@@ -183,12 +183,12 @@ In this section we will explain how the software works.
 
 #### The input file
 The Input file will be as follows:
-|                 |     |     |     |     |
-| --------------- | --- | --- | --- | --- |
-| Id              | 1   | 2   | 3   |     |
-| Percentage      | 20  | 30  | 50  |     |
-| Number of tanks | 1   | 1   | 1   | 1   | 1  | 2   |
-| Capacity        | 100 | 100 | 100 | 100 | 50 | 25|
+|                 |     |     |     |     |   |   |
+| --------------- | --- | --- | --- | --- | - | - |
+| Id              | 1   | 2   | 3   |     |   |   |
+| Percentage      | 20  | 30  | 50  |     |   |   |
+| Number of tanks | 1   | 1   | 1   | 1   | 1  | 2  |
+| Capacity        | 100 | 100 | 100 | 100 | 50 | 25 |
 | Id of wine      | 1   | 2   | 3   | 0   | 0  | 0  |
 
 For a better understanding here is a visual representation of the tanks:
