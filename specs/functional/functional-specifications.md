@@ -187,9 +187,9 @@ The Input file will be as follows:
 | --------------- | --- | --- | --- | --- |
 | Id              | 1   | 2   | 3   |     |
 | Percentage      | 20  | 30  | 50  |     |
-| Number of tanks | 1   | 1   | 1   | 1   | 1  | 2   | 2    |
-| Capacity        | 100 | 100 | 100 | 100 | 25 | 12,5| 12,5 |
-| Id of wine      | 1   | 2   | 3   | 0   | 0  | 0   | 0    |
+| Number of tanks | 1   | 1   | 1   | 1   | 1  | 2   |
+| Capacity        | 100 | 100 | 100 | 100 | 50 | 25|
+| Id of wine      | 1   | 2   | 3   | 0   | 0  | 0  |
 
 For a better understanding here is a visual representation of the tanks:
 
@@ -220,10 +220,10 @@ Here is a visual representation of the tanks after the blending process:
   Number of Steps: 4
 
   Step Details:
-  - Step 1: Fill tank 4 with 20hL of wine from tank 1, fill tank 4 with 30hL of wine from tank 2, and fill tank 4 with 50hL of wine from tank 3.
-  - Step 2: Fill tank 5 with 10hL of wine from tank 1, fill tank 5 with 15hL of wine from tank 2, and fill tank 5 with 25hL of wine from tank 3.
-  - Step 3: Fill tank 6 with 5hL of wine from tank 1, fill tank 6 with 7.5hL of wine from tank 2, and fill tank 6 with 12.5hL of wine from tank 3.
-  - Step 4: Fill tank 7 with 5hL of wine from tank 1, fill tank 7 with 7.5hL of wine from tank 2, and fill tank 7 with 12.5hL of wine from tank 3.
+  - Step 1: Fill tank 4 with 20hL of wine from tank 1, 30hL of wine from tank 2 and 50hL of wine from tank 3.
+  - Step 2: Fill tank 5 with 10hL of wine from tank 1, 15hL of wine from tank 2 and 25hL of wine from tank 3.
+  - Step 3: Fill tank 6 with 5hL of wine from tank 1, 7.5hL of wine from tank 2 and 12.5hL of wine from tank 3.
+  - Step 4: Fill tank 7 with 5hL of wine from tank 1, 7.5hL of wine from tank 2 and 12.5hL of wine from tank 3.
   - End of the blending process
 
   Blend Accuracy:
@@ -248,6 +248,8 @@ Here is a visual representation of the tanks after the blending process:
 
 ___
 ### Example of a blend with 3 different wines and 11 tanks.
+
+
 
 
 ## Personas
