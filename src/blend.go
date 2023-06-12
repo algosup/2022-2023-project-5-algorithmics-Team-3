@@ -1,9 +1,7 @@
 package main
 
 import (
-	"encoding/csv"
 	"fmt"
-	"os"
 	"sort"
 	"strconv"
 )
@@ -20,28 +18,31 @@ func main() {
 	಄ะ Part 1: Initialize ะ಄
 	ஐஐळஐ๑ஐळஐஐஐळஐ๑ஐळஐஐஐळ*/
 
-	// :===== Input File Handling =====:
+	/*
 
-	// Open input file and check for errors
-	fd, error := os.Open("UseCase2.csv")
-	if error != nil {
-		fmt.Println(error)
-	}
-	// Inform The user that the file has been processed
-	fmt.Println("✅ Successfully opened the CSV file")
-	fmt.Println("=====================================\n")
+		// :===== Input File Handling =====:
 
-	// Close it to prevent memory Leak
-	defer fd.Close()
+		// Open input file and check for errors
+		fd, error := os.Open("UseCase2.csv")
+		if error != nil {
+			fmt.Println(error)
+		}
+		// Inform The user that the file has been processed
+		fmt.Println("✅ Successfully opened the CSV file")
+		fmt.Println("=====================================\n")
 
-	// Read csv file
-	fileReader := csv.NewReader(fd)
-	records, error := fileReader.ReadAll()
+		// Close it to prevent memory Leak
+		defer fd.Close()
 
-	// Check if error while reading
-	if error != nil {
-		fmt.Println(error)
-	}
+		// Read csv file
+		fileReader := csv.NewReader(fd)
+		records, error := fileReader.ReadAll()
+
+		// Check if error while reading
+		if error != nil {
+			fmt.Println(error)
+		}
+	*/
 
 	// :===== Generating the main objects =====:
 
