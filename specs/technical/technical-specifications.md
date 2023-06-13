@@ -20,12 +20,13 @@ Table of content
     - [Security requirements](#security-requirements)
   - [System architecture](#system-architecture)
     - [System architecture overview](#system-architecture-overview)
-    - [Architecture diagrams and charts](#architecture-diagrams-and-charts)
     - [System components](#system-components)
       - [Algorithm blending](#algorithm-blending)
       - [Tanks managment](#tanks-managment)
-    - [Description of the interfaces between the components](#description-of-the-interfaces-between-the-components)
+    - [System architecture diagram](#system-architecture-diagram)
     - [Technologies and tools used](#technologies-and-tools-used)
+      - [Language used](#language-used)
+      - [Package used](#package-used)
   - [Features specifications](#features-specifications)
     - [Description](#description)
     - [Features workflow](#features-workflow)
@@ -182,47 +183,22 @@ Given that we only need to design an algorithm, we don't have any major security
 - **User interface**
   - An user interface can be considered to allow cellar workers to interact with the system. This interface can provide visual information about the ongoing blending process. It can display relevant data such as tank statuses, volumes, and blending progress. The user interface should be intuitive and user-friendly, allowing workers to easily input commands, monitor the system's operation, and receive real-time feedback. It plays a crucial role in enabling efficient communication and control between the workers and the blending system.
 
-### Architecture diagrams and charts
-
-`Add scheme`
-
 ### System components
 
 #### Algorithm blending
 
-This central component is responsible for applying the specific blending algorithm that determines the appropriate proportions of each wine to achieve the desired blend. We have defined our parameters as follows:
-<!-- ------------------------------ C# START ------------------------------- -->
-<!-- - **Input**
+This central component is responsible for applying the specific blending algorithm that determines the appropriate proportions of each wine to achieve the desired blend. It will be developed with Go.
 
-  - ``formula`` would be a ``Tuple<string, float>[]``, which means an array of tuples where each tuple contains a string (wine type) and a float (percentage in the formula).
+We have defined our parameters as follows:
 
-  ```cs
-  var formula = new Tuple<string, float>[] 
-        {
-            Tuple.Create("chardonnay", 37f)
-        };
-  ```
-
-  - ``tank`` would be a ``Tuple<int, float, string>[]`` which means an array of tuples where each tuple contains an integer (number of tanks), a float (capacity of tanks) and a string (empty or filled by a scpecific wine).
-
-  ```cs
-  var tank = new Tuple<int, float, string>[]
-        {
-            Tuple.Create(3, 50f, "empty"),
-            Tuple.Create(2, 100f, "pinot_noir")
-        };
-  ``` -->
-<!-- ------------------------------- C# END -------------------------------- -->
-
-<!-- ------------------------------ GO START ------------------------------- -->
 - **Input**
 
   - ``formula`` would be a ``f``, which means a **h** where each **h** has a field ``WineType`` of type string (wine type) and a field ``Percentage`` of type float32 (percentage in the formula).
 
   ```go
   formula := [1][2]interface{}{
-		  {"chardonnay", 37.00},
-	  }
+      {"chardonnay", 37.00},
+   }
   ```
 
   - ``tank`` would be a ``g``, which means a **h**s where each **h** has a field ``Tanks`` of type integer (number of tanks), a field ``Capacity`` of type float(capacity of tanks) and a field ``Status`` of type string (empty or filled by a scpecific wine).
@@ -233,28 +209,6 @@ This central component is responsible for applying the specific blending algorit
         {2, 100.0, "pinot_noir"},
     }
   ```
-<!-- ------------------------------- GO END -------------------------------- -->
-
-<!-- ---------------------------- PYTHON START ----------------------------- -->
-<!-- - **Input**
-
-  - ``formula`` would be a ``list[tuple[str, float]]``, which represents a list of tuples where each tuple has keys of type string (wine type) and values that can be either of type string or float (percentage in the formula).
-
-  ```py
-  formulas = [
-    ("chardonnay", 37.0),
-  ]
-  ```
-
-  - ``tank`` would be a ``list[tuple[int, float, str]]``, which represent a list of tuples where each tuple has keys of type integer (number of tanks), float (capacity of tanks) and string(empty or filled by a scpecific wine).
-
-```py
-tank = [
-    (3, 50.0, "empty"),
-    (2, 100.0, "pinot_noir")
-]
-``` -->
-<!-- ----------------------------- PYTHON END ------------------------------ -->
 
 - Output
 
@@ -278,9 +232,46 @@ This component manages wine tanks, their status, their capacities, their availab
 - ****
 - ****
 
-### Description of the interfaces between the components
+### System architecture diagram
+
+``schema``
 
 ### Technologies and tools used
+
+#### Language used
+
+We have decided to use [Go version 1.20.4](https://go.dev/doc/devel/release) to make this algorithm for the following reason:
+
+- **Simplicity and readability:** simple, concise syntax, making the code easier to read and understand. This can be advantageous for maintaining and developing the blending system over the long term.
+- **Efficiency and performance:** high performance and efficient programme execution. Goroutines can be used to efficiently execute several tasks in parallel. This is beneficial in a blending project where complex calculations can be performed on large amounts of data.
+- **Concurrent:** efficient thread management, making it suitable for distributed applications and systems that require efficient resource management and task parallelization. In this case, it will be used to simultaneously manage several operations on reservoirs, mixing data, etc.
+- **Ecosystem and libraries:** a host of ready-to-use functions.
+- **Easy compilation and deployment**
+
+Here is the list of best practices in Go that should be applied during this project:
+
+| Good practice name | description | When to use | Example |
+|-------------------|-------------|-------------|---------|
+| Clear and descriptive naming | Use clear and descriptive names for packages, functions, variables, and constants. | Always | `var count int` |
+| Meaningful comments | Write meaningful comments to explain the purpose and functionality of code elements. | Always | `// CalculateSum calculates the sum of two numbers` |
+| Concise functions | Divide code into logical and concise functions or methods. | Always | `func calculateSum(a, b int) int` |
+| Minimize Unnecessary Dependencies | Avoid unnecessary dependencies and favor using standard packages over third-party libraries. | Always | `import "fmt"` |
+| Proper error handling | Handle errors appropriately using error types and handle them gracefully in your code. | Always | `if err != nil { return err }` |
+| Concurrency with goroutines | Utilize goroutines and channels for efficient concurrency and parallelism. | When concurrent tasks are required | `go calculateSum(a, b)` |
+| Unit testing | Write automated unit tests to ensure code correctness and catch regressions. | Always | `func TestCalculateSum(t *testing.T) { ... }` |
+| Consistent code formatting | Follow Go's formatting conventions using `gofmt` for consistent and readable code. | Always | `$ gofmt -w main.go` |
+| Effective use of interfaces | Use interfaces effectively to make code flexible and extensible. | When working with multiple types | `type Writer interface { Write(data []byte) (int, error) }` |
+| Documentation with comments | Document your code using clear and concise comments. | Always | `// Package math provides basic mathematical functions` |
+| Avoid magic numbers | Avoid using hard-coded numbers in your code. Define constants or variables instead. | Always | `const maxRetry = 5` |
+
+#### Package used
+
+We have decided to create 4 custom packages for this project, named as follows:
+
+- **csvutils:** a custom package for CSV operations.
+- **sort:** a custom package for tank sorting.
+- **tanks:** a custom package for tank management.
+- **ui:** a custom package for the user interface."
 
 ## Features specifications
 
@@ -306,7 +297,7 @@ This component manages wine tanks, their status, their capacities, their availab
 
 ## Glossary
 
-| Word                  | Definition | Source |
+<!-- | Word                  | Definition | Source |
 |-----------------------|------------|--------|
 | Tank                  |            |        |
 | Cellar Master         |            |        |
@@ -315,7 +306,7 @@ This component manages wine tanks, their status, their capacities, their availab
 | Dosage                |            |        |
 | Riddling              |            |        |
 | Aging                 |            |        |
-| Stainless steel tanks |            |        |
+| Stainless steel tanks |            |        | -->
 
 <!-- ----------------------------------------------------------------------- -->
 <!--                                  NOTE                                   -->
