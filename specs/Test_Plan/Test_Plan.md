@@ -41,11 +41,11 @@ _____
 2. **Structuring the Data:** You can represent the tanks as nodes in a graph, where edges connect tanks that can be blended together. Each tank (node) can have attributes such as its current volume, its maximum volume, and the wine it contains. This way, you can keep track of which tanks are available for blending at any given time.
 3. **Blending Algorithm:** Use a greedy algorithm for blending, where at each step you choose the blend that gets you closest to the desired formula. This approach will aim to minimize the number of steps. However, a global optimization algorithm such as simulated annealing or genetic algorithm might be needed if the greedy algorithm doesn't give satisfactory results.
 4. **Handling Constraints:** To ensure no tank is left partially filled, the algorithm should only choose to blend wines if the resulting volume can be completely stored in one or multiple tanks.
-5. **Speeding up the Code:** To make the code run faster, you can consider techniques such as memoization (to avoid recalculating results) or parallel processing (to utilize all available CPU cores).
+5. **Speeding up the Code:** To make the code run faster, you can consider techniques such as memorization (to avoid recalculating results) or parallel processing (to utilize all available CPU cores).
 
 The Test Plan is designed to prescribe the scope, approach, resources, and schedule of all testing activities of the project Krug Champagne Algorithmics.
 
-The plan identify the items to be tested, the features to be tested, the types of testing to be performed, the personnel responsible for testing, the resources and schedule required to complete testing, and the risks associated with the plan.
+The plan identifies the items and the features to be tested, the types of testing to be performed, the STAF responsible for testing, the resources and schedule required to complete testing, and the risks associated with the plan.
 
 ### 1.1. Scope
 
@@ -78,7 +78,7 @@ For this specific project - the development of a software application to aid in 
 
 2. **Physical Infrastructure:** The project does not involve the creation or modification of physical infrastructure such as tanks, pumps, pipes, or vineyards.
 
-3. **Training Personnel:** While the software should be user-friendly, comprehensive training of personnel on how to use the software is not included. This would be a separate project or would require a separate training team.
+3. **Training Personnel:** While the software should be user-friendly, comprehensive training of personnel on how to use the software is not included. This would be a separate project or would require a separate training STAF.
 
 4. **Maintenance and Support:** Post-deployment maintenance, updates, and customer support are not part of this project. A separate agreement or project should be set up for ongoing support and maintenance.
 
@@ -158,7 +158,7 @@ Test completeness will be determined based on the following criteria:
 
 ## 3. Test Deliverables
 
-Test deliverables are provided as below
+Test deliverables are provided as below:
 
 Before testing phase
 
