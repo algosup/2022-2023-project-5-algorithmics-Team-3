@@ -193,24 +193,15 @@ We have defined our parameters as follows:
 
 - **Input**
 
-  - ``formula`` would be a ``f``, which means a **h** where each **h** has a field ``WineType`` of type string (wine type) and a field ``Percentage`` of type float32 (percentage in the formula).
+For the algorithm, the input is a CSV file filed with the following information:
 
-  ```go
-  formula := [1][2]interface{}{
-      {"chardonnay", 37.00},
-   }
-  ```
+- The formula 
+- The wine ID
+- The capacity
+<!-- --------------------------- Syntax example ---------------------------- -->
+All of these information will be filled by the customer in a web interface we have developed internally to facilitate the use of our algorithm for our client.
 
-  - ``tank`` would be a ``g``, which means a **h**s where each **h** has a field ``Tanks`` of type integer (number of tanks), a field ``Capacity`` of type float(capacity of tanks) and a field ``Status`` of type string (empty or filled by a scpecific wine).
-
-  ```go
-  tank := [1][2][3]interface{}{
-        {3, 50.0, "empty"},
-        {2, 100.0, "pinot_noir"},
-    }
-  ```
-
-- Output
+- **Output**
 
 ``WIP``
 
