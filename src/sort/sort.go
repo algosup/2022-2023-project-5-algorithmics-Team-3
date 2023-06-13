@@ -1,14 +1,18 @@
 package sort
 
+/*ஐఴஐ๑ஐఴஐஐஐఴஐ๑ஐఴஐஐஐఴ
+಄ะ Sorting Functions ะ಄
+ஐஐळஐ๑ஐळஐஐஐळஐ๑ஐळஐஐஐळ*/
+
 import (
 	"blend/tanks"
 	"sort"
 )
 
-// :===== This function is designed to sort lists of tanks by capacity =====:
+// :===== This function is designed to sort lists of tanks by capacity (decreasing order) =====:
 func SortTanks(tanks []tanks.Tank) []tanks.Tank {
 	sort.Slice(tanks, func(i, j int) bool {
-		return tanks[i].TankID < uint16(tanks[j].Capacity)
+		return uint16(tanks[i].Capacity) > uint16(tanks[j].Capacity)
 	})
 	return tanks
 
