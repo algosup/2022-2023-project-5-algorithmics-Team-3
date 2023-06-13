@@ -19,13 +19,13 @@ func main() {
 	// :===== Parse the CSV =====:
 	csvutils.ParseCSV(records)
 
-	// :===== Create the initial Tank SLice =====:
+	// :===== Create the initial Tank Slice =====:
 	var Tanks []tanks.Tank
 
 	// :===== Create the initial Formula Slice =====:
 	var Formula []float32
 
-	// :===== Parse the CSV to get the Tanks Back, as well as the formula =====:
+	// :===== Parse the Records to get the Tanks Back, as well as the formula =====:
 	Tanks, Formula = csvutils.ParseCSV(records)
 
 	// :===== Check if the formula doesn't add up to 100% =====: (LATER)
