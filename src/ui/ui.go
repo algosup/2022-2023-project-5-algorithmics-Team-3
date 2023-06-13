@@ -1,14 +1,24 @@
 package ui
 
-// // :===== User Interface =====:
+import (
+	"blend/tanks"
+	"fmt"
+)
 
-// // Inform the user of the number of Tanks found
-// fmt.Printf("🛢️  There are currently %d tanks in the warehouse, of which:\n", len(Tanks))
+func ConfirmCSVOpen() {
+	fmt.Println("✅ Successfully opened the CSV file")
+	fmt.Println("=====================================\n")
+}
 
-// // Inform the user of the number of Empty Tanks
-// fmt.Printf("\t - 🕳️  %d Empty Tanks\n", len(EmptyTanks))
-
-// // Inform the user of the number of Wine Tanks
-// fmt.Printf("\t - 🍷 %d Tanks full of wine\n", len(Tanks)-len(EmptyTanks))
+// :###### DEBUG: Function to display basic initalization debug info ######:
+func DebugInit(tanks []tanks.Tank, formula []float32, emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank) {
+	fmt.Printf("🛢️  Tanks: %d\n\n", tanks)
+	fmt.Println("🏗️  Tank Struct: ID, Capacity, WineNumber\n")
+	fmt.Printf("🧪  Formula: %f\n", formula)
+	fmt.Println("===========================================\n\n")
+	fmt.Printf("🍷  Number of wines used: %d\n\n", len(formula))
+	fmt.Printf("🕳️🛢️  Sorted Empty Tanks: %d\n\n", emptyTanks)
+	fmt.Printf("🍷🛢️  Sorted Wine Tanks: %d\n\n", wineTanks)
+}
 
 // Use https://github.com/Nexidian/gocliselect to build the UI

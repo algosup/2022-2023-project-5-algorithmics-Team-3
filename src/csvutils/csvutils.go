@@ -2,6 +2,7 @@ package csvutils
 
 import (
 	"blend/tanks"
+	"blend/ui"
 	"encoding/csv"
 	"fmt"
 	"os"
@@ -17,16 +18,14 @@ func OpenCSV(path string) [][]string {
 	}
 
 	// Inform The user that the file has been processed
-	fmt.Println("✅ Successfully opened the CSV file")
-	fmt.Println("=====================================\n")
+	ui.ConfirmCSVOpen()
 
 	// Close it to prevent memory Leak
 	defer fd.Close()
 
 	// Read csv file
 	fileReader := csv.NewReader(fd)
-	// This makes sure that no error is thrown due to the first line having a different number of columns than the rest of the file
-	fileReader.FieldsPerRecord = -1
+	fileReader.FieldsPerRecord = -1 // This makes sure that no error is thrown due to the first line having a different number of columns than the rest of the file
 	records, error := fileReader.ReadAll()
 
 	// Check if error while reading
@@ -35,27 +34,26 @@ func OpenCSV(path string) [][]string {
 	}
 
 	return records
-
 }
 
 // :===== Generating the main objects =====:
 func ParseCSV(records [][]string) ([]tanks.Tank, []float32) {
+	// Create the basic tanks list and formula
 	var Tanks []tanks.Tank
 	var formula []float32
-
-	// Create a map to store unique wine number values (used for inputting the formula later)
-	// wineCounter := make(map[uint32]bool)
+	var formulaSum float32
 
 	// Iterate over the CSV and parse the values
 	for index, record := range records {
 		// Parse the formula which is the first line of the CSV (by design)
 		if index < 1 {
-			for _, wineProportion := range record {
+			for i, wineProportion := range record {
 				proportion, err := strconv.ParseFloat(wineProportion, 32)
 				if err != nil {
 					fmt.Println("Failed to parse wine proportion", err)
 				}
 				formula = append(formula, float32(proportion))
+				formulaSum += formula[i]
 			}
 		}
 
@@ -81,19 +79,10 @@ func ParseCSV(records [][]string) ([]tanks.Tank, []float32) {
 		// Append it to a dynamic array
 		Tanks = append(Tanks, tank)
 
-		// Add the wineNumber to the map if it's not already present
-		// wineCounter[uint32(wineNumber)] = true
-
 	}
+	// Remove the intruder from the list
+	Tanks = Tanks[1:]
 
 	// Return the Tanks slice and formula to the main logic
 	return Tanks, formula
-
-	/* DEBUG
-	// Print the Tanks to the User
-		fmt.Println("Tanks:")
-		for _, tank := range Tanks {
-			fmt.Printf("TankID: %d, Capacity: %d, Wine Number: %d\n", tank.tankID, tank.capacity, tank.wineNumber)
-		}
-	*/
 }
