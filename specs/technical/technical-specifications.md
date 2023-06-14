@@ -23,6 +23,8 @@ Table of content
     - [System components](#system-components)
       - [Algorithm blending](#algorithm-blending)
       - [Tanks managment](#tanks-managment)
+      - [User interface](#user-interface)
+    - [Description of Interfaces between Components](#description-of-interfaces-between-components)
     - [System architecture diagram](#system-architecture-diagram)
     - [Technologies and tools used](#technologies-and-tools-used)
       - [Language used](#language-used)
@@ -195,11 +197,11 @@ We have defined our parameters as follows:
 
 For the algorithm, the input is a CSV file filed with the following information:
 
-- The formula 
+- The formula
 - The wine ID
 - The capacity
 <!-- --------------------------- Syntax example ---------------------------- -->
-All of these information will be filled by the customer in a web interface we have developed internally to facilitate the use of our algorithm for our client.
+All of these information will be filled by the customer in a user interface we have developed internally to facilitate the use of our algorithm for our client.
 
 - **Output**
 
@@ -222,6 +224,19 @@ This component manages wine tanks, their status, their capacities, their availab
 - ****
 - ****
 - ****
+
+#### User interface
+
+It's a web interface for data entry, designed to be user-friendly and responsive which allows users to enter the data required for blending. It provides functions for creating the CSV file containing the input data for the blending algorithm.
+
+- **Responsibility:** input data's collection and validation, generation of the CSV file according to the required specifications.
+- **Languages used:** HTML5, CSS3, JavaScript version 1.5.
+
+```text
+The user interface have to be designed in a mobile version first and then on a web version.
+```
+
+### Description of Interfaces between Components
 
 ### System architecture diagram
 
@@ -262,7 +277,7 @@ We have decided to create 4 custom packages for this project, named as follows:
 - **csvutils:** a custom package for CSV operations.
 - **sort:** a custom package for tank sorting.
 - **tanks:** a custom package for tank management.
-- **ui:** a custom package for the user interface."
+- **ui:** a custom package for the user interface.
 
 ## Features specifications
 
@@ -271,8 +286,6 @@ We have decided to create 4 custom packages for this project, named as follows:
 ### Features workflow
 
 ### User Interface Specifications
-
-<!-- ### Data and storage requirements -->
 
 ## Test and validation
 
