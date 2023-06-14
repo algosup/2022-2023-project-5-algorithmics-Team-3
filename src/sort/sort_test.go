@@ -17,7 +17,7 @@ var testFloating bool = false // disabled because floating point tank capacities
 
 // :===== This test function is designed to test the sorting capabilities of SortTanks (decreasing order) =====:
 func TestSortTanks(t *testing.T) {
-	// This test case is a simple test case
+	// :===== Simple 1D sort subtest =====:
 	t.Run("Simple 1D sort subtest", func(t *testing.T) {
 		if !simpleTests {
 			t.SkipNow()
@@ -52,10 +52,72 @@ func TestSortTanks(t *testing.T) {
 	})
 
 	// :===== 1D sort subtest when some tanks are empty =====:
-	// Already sorted 1D sort subtest
+	t.Run("1D sort with null tanks mixed in subtest", func(t *testing.T) {
+		if !simpleTests {
+			t.SkipNow()
+		}
+		tanks, expected :=
+			// The starting case
+			[]tanks.Tank{
+				{},
+				{TankID: 6, Capacity: 300, WineNumber: 1},
+				{},
+				{TankID: 2, Capacity: 1750, WineNumber: 1},
+				{TankID: 1, Capacity: 1898, WineNumber: 1},
+				{TankID: 3, Capacity: 1500, WineNumber: 1},
+			},
+			// The expected result
+			[]tanks.Tank{
+				{TankID: 1, Capacity: 1898, WineNumber: 1},
+				{TankID: 2, Capacity: 1750, WineNumber: 1},
+				{TankID: 3, Capacity: 1500, WineNumber: 1},
+				{TankID: 6, Capacity: 300, WineNumber: 1},
+				{},
+				{},
+			}
+
+		// Call the function to be tested
+		sortedTanks := SortTanks(tanks)
+
+		// The ID of the tanks is used to check if they have effectively sorted
+		if sortedTanks[0].TankID != expected[0].TankID || sortedTanks[1].TankID != expected[1].TankID || sortedTanks[2].TankID != expected[2].TankID || sortedTanks[3].TankID != expected[3].TankID || sortedTanks[4].TankID != expected[4].TankID || sortedTanks[5].TankID != expected[5].TankID {
+			t.Errorf("Tanks were not sorted correctly:\n Want: %+v \nGot: %+v", sortedTanks, expected)
+		}
+	})
 
 	// :===== 1D sort subtest when tanks are already in order =====:
-	// 1D sort with null tanks mixed in subtest
+	t.Run("Simple 1D sort subtest", func(t *testing.T) {
+		if !simpleTests {
+			t.SkipNow()
+		}
+		tanks, expected :=
+			// The starting case
+			[]tanks.Tank{
+				{TankID: 1, Capacity: 1898, WineNumber: 1},
+				{TankID: 2, Capacity: 1750, WineNumber: 1},
+				{TankID: 3, Capacity: 1500, WineNumber: 1},
+				{TankID: 4, Capacity: 1000, WineNumber: 1},
+				{TankID: 5, Capacity: 500, WineNumber: 1},
+				{TankID: 6, Capacity: 300, WineNumber: 1},
+			},
+			// The expected result
+			[]tanks.Tank{
+				{TankID: 1, Capacity: 1898, WineNumber: 1},
+				{TankID: 2, Capacity: 1750, WineNumber: 1},
+				{TankID: 3, Capacity: 1500, WineNumber: 1},
+				{TankID: 4, Capacity: 1000, WineNumber: 1},
+				{TankID: 5, Capacity: 500, WineNumber: 1},
+				{TankID: 6, Capacity: 300, WineNumber: 1},
+			}
+
+		// Call the function to be tested
+		sortedTanks := SortTanks(tanks)
+
+		// The ID of the tanks is used to check if they have effectively sorted
+		if sortedTanks[0].TankID != expected[0].TankID || sortedTanks[1].TankID != expected[1].TankID || sortedTanks[2].TankID != expected[2].TankID || sortedTanks[3].TankID != expected[3].TankID || sortedTanks[4].TankID != expected[4].TankID || sortedTanks[5].TankID != expected[5].TankID {
+			t.Errorf("Tanks were not sorted correctly:\n Want: %+v \nGot: %+v", sortedTanks, expected)
+		}
+	})
 
 	// :===== 1D sort subtest with floating point Capacities =====:
 	t.Run("1D Sort for floating point tank capacities subtest", func(t *testing.T) {
