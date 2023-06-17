@@ -23,7 +23,7 @@ func GetEmptyTanks(Tanks []Tank) []Tank {
 
 // :===== This function is meant to retrieve all theWine Tanks from the list of tanks  =====:
 func GetWineTanks(Tanks []Tank, len int) [][]Tank {
-	// Create the return List of list of wines initalize it to have as many empty spaces as the number of wines in the formula to avoid out of index
+	// Create the List of list of wines; initalize it to have as many empty spaces as the number of wines in the formula to avoid out of index error
 	WineTanks := make([][]Tank, len)
 
 	// Iterate on the Tanks list to regroup tanks by their wine number
