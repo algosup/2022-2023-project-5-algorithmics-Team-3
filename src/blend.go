@@ -25,7 +25,7 @@ func main() {
 	// :===== Parse the Records to get the Tanks Back, as well as the formula =====:
 	Tanks, Formula = csvutils.ParseCSV(records)
 
-	// Run the program if formula is not nil
+	// :===== Run the program if formula is not nil =====:
 	if Tanks != nil && Formula != nil {
 		// :===== Create the slice of EmptyTanks =====:
 		var EmptyTanks = tanks.GetEmptyTanks(Tanks)
