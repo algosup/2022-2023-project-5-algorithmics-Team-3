@@ -9,6 +9,10 @@ import (
 	"strconv"
 )
 
+/*ஐఴஐ๑ஐఴஐஐஐఴஐ๑ஐఴஐஐஐఴ
+಄ะ CSV Utilities ะ಄
+ஐஐळஐ๑ஐळஐஐஐळஐ๑ஐळஐஐஐळ*/
+
 // :===== Input File Handling =====:
 func OpenCSV(path string) [][]string {
 	// Open input file and check for errors
@@ -46,7 +50,7 @@ func ParseCSV(records [][]string) ([]tanks.Tank, []float32) {
 	// Iterate over the CSV and parse the values
 	for index, record := range records {
 		// Parse the formula which is the first line of the CSV (by design)
-		if index < 1 {
+		if index == 0 {
 			for i, wineProportion := range record {
 				proportion, err := strconv.ParseFloat(wineProportion, 32)
 				if err != nil {
@@ -57,32 +61,41 @@ func ParseCSV(records [][]string) ([]tanks.Tank, []float32) {
 			}
 		}
 
-		// Parse the Tank Capacity
-		capacity, err := strconv.ParseUint(record[0], 10, 32)
-		if err != nil {
-			fmt.Println("Failed to parse Tank Capacity", err)
+		if formulaSum == 100 {
+			// Parse the Tank Capacity
+			capacity, err := strconv.ParseUint(record[0], 10, 32)
+			if err != nil {
+				fmt.Println("Failed to parse Tank Capacity", err)
+			}
+
+			// Parse the Wine Number
+			wineNumber, err := strconv.ParseUint(record[1], 10, 32)
+			if err != nil {
+				fmt.Println("Failed to parse Wine Number", err)
+			}
+
+			// Create the tank object
+			tank := tanks.Tank{
+				TankID:     uint16(index),
+				Capacity:   uint32(capacity),
+				WineNumber: uint32(wineNumber),
+			}
+
+			// Append it to a dynamic array
+			Tanks = append(Tanks, tank)
+
 		}
-
-		// Parse the Wine Number
-		wineNumber, err := strconv.ParseUint(record[1], 10, 32)
-		if err != nil {
-			fmt.Println("Failed to parse Wine Number", err)
-		}
-
-		// Create the tank object
-		tank := tanks.Tank{
-			TankID:     uint16(index),
-			Capacity:   uint32(capacity),
-			WineNumber: uint32(wineNumber),
-		}
-
-		// Append it to a dynamic array
-		Tanks = append(Tanks, tank)
-
 	}
-	// Remove the intruder from the list
-	Tanks = Tanks[1:]
 
-	// Return the Tanks slice and formula to the main logic
-	return Tanks, formula
+	// Check if formula adds up to 100% before continuing
+	if formulaSum == 100 {
+		// Remove the intruder from the list
+		Tanks = Tanks[1:]
+		// Return the Tanks slice and formula to the main logic
+		return Tanks, formula
+	} else {
+		// Return the nothing if the formula doesn't add up
+		ui.Formula100(formulaSum)
+		return nil, nil
+	}
 }

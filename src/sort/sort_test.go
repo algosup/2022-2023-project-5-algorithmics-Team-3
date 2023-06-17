@@ -119,7 +119,7 @@ func TestSortTanks(t *testing.T) {
 		}
 	})
 
-	// :===== 1D sort subtest with floating point Capacities =====:
+	// :===== DISABLED 1D sort subtest with floating point Capacities =====:
 	t.Run("1D Sort for floating point tank capacities subtest", func(t *testing.T) {
 		// Disable test if set up to do so
 		if !testFloating {
@@ -344,7 +344,7 @@ func TestSortTanks2D(t *testing.T) {
 		}
 	})
 
-	// :===== 2D sort subtest for floating point capacities =====:
+	// :===== DISABLED 2D sort subtest for floating point capacities =====:
 	t.Run("2D sort for floating point tank capacities subtest", func(t *testing.T) {
 		if !testFloating {
 			t.SkipNow()
