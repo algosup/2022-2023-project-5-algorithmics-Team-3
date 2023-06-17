@@ -94,7 +94,7 @@ func ParseCSV(records [][]string) ([]tanks.Tank, []float32) {
 		// Return the Tanks slice and formula to the main logic
 		return Tanks, formula
 	} else {
-		// Return the nothing if the formula doesn't add up
+		// Return nil if the formula doesn't add up
 		ui.Formula100(formulaSum)
 		return nil, nil
 	}
