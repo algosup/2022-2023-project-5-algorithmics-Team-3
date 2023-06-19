@@ -37,7 +37,7 @@ func ProgramHalt() {
 ஐஐळஐ๑ஐळஐஐஐळஐ๑ஐळஐஐஐळ*/
 
 // :===== Print the full list of instructions to the user =====:
-func PrintInstructions(steps []treegen.Step) [][]string {
+func PrintInstructions(steps []treegen.Step) {
 	// The final list of steps to be printed to the user
 	var instructions [][]string
 
@@ -47,13 +47,14 @@ func PrintInstructions(steps []treegen.Step) [][]string {
 		for _, substep := range step.Substeps {
 			substepInstruction := fmt.Sprintf("Tank %d ==(%.2fhL)==> Tank %d\n", substep.SourceID, substep.Volume, substep.DestinationID)
 			stepInstructions = append(stepInstructions, substepInstruction)
+			fmt.Println(substepInstruction)
 		}
 		instructions = append(instructions, stepInstructions)
 
 		// Add step number to the beginning of stepInstructions
 		instructions[stepIndex] = append([]string{fmt.Sprintf("Step %d:\n=============\n", stepIndex+1)}, instructions[stepIndex]...)
 	}
-	return instructions
+	fmt.Println("Instructions: \n", instructions)
 }
 
 /*ஐఴஐ๑ஐఴஐஐஐఴஐ๑ஐఴஐஐஐఴ

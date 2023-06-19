@@ -36,11 +36,37 @@ func TestSolve(t *testing.T) {
 			}
 
 		// Calling the function
-		got := Solve(gotEmptyTanks, gotWineTanks, gotFormula)
+		got := Solve(gotEmptyTanks, gotWineTanks, gotFormula, nil)
 
 		// Assert the results
 		if !reflect.DeepEqual(got, expected) {
 			t.Errorf("got %v, expected %v", got, expected)
+		}
+
+	})
+}
+
+func TestTankFillingRatios(t *testing.T) {
+	t.Run("Test simple filling mapping", func(t *testing.T) {
+		// The initial tanks and formula
+		gotTanks, gotFormula :=
+			[]tanks.Tank{
+				{TankID: 1, Capacity: 100, WineNumber: 1},
+				{TankID: 2, Capacity: 100, WineNumber: 2},
+				{TankID: 3, Capacity: 100, WineNumber: 0},
+				{TankID: 4, Capacity: 100, WineNumber: 0},
+			}, []float32{
+				50.00,
+				50.00,
+			}
+
+		// Calling the function
+		got := TankFillingRatio(gotTanks, gotFormula)
+
+		// Assert the results
+		expected := []float32{50.0, 50.0} // Create a slice of float32
+		if !reflect.DeepEqual(got[100.0], expected) {
+			t.Errorf("got %v, expected %v", got[100.0], expected)
 		}
 
 	})

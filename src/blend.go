@@ -53,9 +53,23 @@ func main() {
 		// :###### DEBUG: display basic initalization debug info ######:
 		ui.DebugInit(Tanks, Formula, EmptyTanks, WineTanks)
 
-		// :===== CALL THE SOLVER 📞👨‍🔬 =====:
-		steps := treegen.Solve(EmptyTanks, WineTanks, Formula)
-		fmt.Printf("Steps: %v", steps)
+		// :===== Precompute the tank filling ratios =====:
+		fillingRatios := treegen.TankFillingRatio(Tanks, Formula)
+
+		// :###### DEBUG: print the fillingRatios
+		fmt.Println("Filling Ratios:")
+		for capacity, ratios := range fillingRatios {
+			fmt.Printf("\nCapacity: %.2f\n", capacity)
+			fmt.Println("Ratios:", ratios)
+			fmt.Println("------------------------")
+		}
+
+		// :===== CALL THE SOLVER 📞👨‍🔬allo?? =====:
+		steps := treegen.Solve(EmptyTanks, WineTanks, Formula, fillingRatios)
+
+		ui.PrintInstructions(steps)
+
+		// fmt.Printf("Steps: %v", steps)
 
 		/*
 			instructions := ui.PrintInstructions(steps)
