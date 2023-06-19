@@ -50,23 +50,19 @@ func main() {
 		EmptyTanks = sort.SortTanks(EmptyTanks)
 		WineTanks = sort.SortTanks2D(WineTanks)
 
-		// :###### DEBUG: display basic initalization debug info ######:
+		// :!!!!!! DEBUG: display basic initalization debug info !!!!!!:
 		ui.DebugInit(Tanks, Formula, EmptyTanks, WineTanks)
 
 		// :===== Precompute the tank filling ratios =====:
 		fillingRatios := treegen.TankFillingRatio(Tanks, Formula)
 
-		// :###### DEBUG: print the fillingRatios
-		fmt.Println("Filling Ratios:")
-		for capacity, ratios := range fillingRatios {
-			fmt.Printf("\nCapacity: %.2f\n", capacity)
-			fmt.Println("Ratios:", ratios)
-			fmt.Println("------------------------")
-		}
+		// :!!!!!! DEBUG: print the filling Ratios !!!!!!:
+		ui.DebugTankFillingRatios(fillingRatios)
 
 		// :===== CALL THE SOLVER 📞👨‍🔬allo?? =====:
 		steps := treegen.Solve(EmptyTanks, WineTanks, Formula, fillingRatios)
 
+		// :!!!!!!  DEBUG: print the final instructions !!!!!!:
 		ui.PrintInstructions(steps)
 
 		// fmt.Printf("Steps: %v", steps)

@@ -74,4 +74,13 @@ func DebugInit(tanks []tanks.Tank, formula []float32, emptyTanks []tanks.Tank, w
 	fmt.Println("")
 }
 
+func DebugTankFillingRatios(fillingRatios map[float32][]float32) {
+	fmt.Println("Filling Ratios:")
+	for capacity, ratios := range fillingRatios {
+		fmt.Printf("\nCapacity: %.2f\n", capacity)
+		fmt.Println("Ratios:", ratios)
+		fmt.Println("------------------------")
+	}
+}
+
 // Use https://github.com/Nexidian/gocliselect to build the UI
