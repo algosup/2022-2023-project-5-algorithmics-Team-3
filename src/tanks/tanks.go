@@ -1,5 +1,9 @@
 package tanks
 
+/*ஐఴஐ๑ஐఴஐஐஐఴஐ๑ஐఴஐஐஐఴ
+಄ะ Tanks Logic & Structureะ಄
+ஐஐळஐ๑ஐळஐஐஐळஐ๑ஐळஐஐஐळ*/
+
 // :===== The main Tank data structure =====:
 type Tank struct {
 	TankID     uint16

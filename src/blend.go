@@ -4,7 +4,9 @@ import (
 	"blend/csvutils"
 	"blend/sort"
 	"blend/tanks"
+	"blend/treegen"
 	"blend/ui"
+	"fmt"
 )
 
 func main() {
@@ -14,7 +16,7 @@ func main() {
 	ஐஐळஐ๑ஐळஐஐஐळஐ๑ஐळஐஐஐळ*/
 
 	// :===== Open the selected CSV =====:
-	records := csvutils.OpenCSV("UseCase2.csv")
+	records := csvutils.OpenCSV("UseCase1.csv")
 
 	// :===== Create the initial Tank Slice =====:
 	var Tanks []tanks.Tank
@@ -39,11 +41,18 @@ func main() {
 
 		// :###### DEBUG: display basic initalization debug info ######:
 		ui.DebugInit(Tanks, Formula, EmptyTanks, WineTanks)
-	} else {
-		println("Program halted due to error.")
-	}
 
-	/*ஐఴஐ๑ஐఴஐஐஐఴஐ๑ஐఴஐஐஐఴ
-	಄ะ Part 2: Combinations ะ಄
-	ஐஐळஐ๑ஐळஐஐஐळஐ๑ஐळஐஐஐळ*/
+		// CALL THE SOLVER 📞👨‍🔬
+		steps := treegen.Solve(EmptyTanks, WineTanks, Formula)
+		fmt.Printf("Steps: %v", steps)
+
+		/*
+			instructions := ui.PrintInstructions(steps)
+			// Print the steps to the User
+			fmt.Printf("Instructions: %v", instructions)
+		*/
+
+	} else {
+		println("Program halted due to error reading/parsing the tanks.")
+	}
 }
