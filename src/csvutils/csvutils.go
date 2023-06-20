@@ -41,11 +41,11 @@ func OpenCSV(path string) [][]string {
 }
 
 // :===== Generating the main objects =====:
-func ParseCSV(records [][]string) ([]tanks.Tank, []float32) {
+func ParseCSV(records [][]string) ([]tanks.Tank, []float64) {
 	// Create the basic tanks list and formula
 	var Tanks []tanks.Tank
-	var formula []float32
-	var formulaSum float32
+	var formula []float64
+	var formulaSum float64
 
 	// Iterate over the CSV and parse the values
 	for index, record := range records {
@@ -56,7 +56,7 @@ func ParseCSV(records [][]string) ([]tanks.Tank, []float32) {
 				if err != nil {
 					fmt.Println("Failed to parse wine proportion", err)
 				}
-				formula = append(formula, float32(proportion))
+				formula = append(formula, float64(proportion))
 				formulaSum += formula[i]
 			}
 		}

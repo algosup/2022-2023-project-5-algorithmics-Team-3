@@ -35,7 +35,7 @@ func main() {
 	var Tanks []tanks.Tank
 
 	// :===== Create the initial Formula Slice =====:
-	var Formula []float32
+	var Formula []float64
 
 	// :===== Parse the Records to get the Tanks Back, as well as the formula =====:
 	Tanks, Formula = csvutils.ParseCSV(records)

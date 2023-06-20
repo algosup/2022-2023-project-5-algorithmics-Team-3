@@ -20,7 +20,7 @@ func TestSolve(t *testing.T) {
 				{{TankID: 1, Capacity: 100, WineNumber: 1}},
 				{{TankID: 2, Capacity: 100, WineNumber: 2}},
 			},
-			[]float32{50.00, 50.00}
+			[]float64{50.00, 50.00}
 
 		// The expected list of steps after processing the previous input
 		expected :=
@@ -57,7 +57,7 @@ func TestTankFillingRatios(t *testing.T) {
 				{TankID: 2, Capacity: 100, WineNumber: 2},
 				{TankID: 3, Capacity: 100, WineNumber: 0},
 				{TankID: 4, Capacity: 100, WineNumber: 0},
-			}, []float32{
+			}, []float64{
 				50.00,
 				50.00,
 			}
@@ -66,7 +66,7 @@ func TestTankFillingRatios(t *testing.T) {
 		got := TankFillingRatio(gotTanks, gotFormula)
 
 		// Assert the results
-		expected := []float32{50.0, 50.0}
+		expected := []float64{50.0, 50.0}
 		if !reflect.DeepEqual(got[100.0], expected) {
 			t.Errorf("got %v, expected %v", got[100.0], expected)
 		}
