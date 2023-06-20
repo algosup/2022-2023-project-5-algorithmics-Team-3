@@ -1,0 +1,372 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    background: rgb(0,170,204);
+    background: radial-gradient(circle, rgba(0,170,204,1) 0%, rgba(0,143,172,1) 34%, rgba(0,114,134,1) 66%, rgba(0,75,85,1) 100%);
+    background-attachment: fixed;
+}
+
+.tanks_sidebar, .formula_sidebar , .wines_sidebar {
+    height: 88%;
+    width: 300px;
+    padding: 15px;
+    position: fixed;
+    z-index: 1;
+    top: 11%;
+    left: 0;
+    background: rgba( 255, 255, 255, 0.3 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.tanks_sidebar > h1 , .formula_sidebar > h1 , .wines_sidebar > h1 {
+    text-align: center;
+    color: #ffffff;
+}
+
+.tanks_sidebar > #inputForm > p , .wines_sidebar > #wineForm > p{
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.tanks_sidebar > #inputForm > input, .tanks_sidebar > #inputForm > select, .wines_sidebar > #wineForm > input{
+    width: 80%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 0px;
+}
+
+.wines_sidebar > #wineForm > input[type="color"] {
+    width: 80%;
+    height: 30px;
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    padding: 0px;
+}
+
+.tanks_sidebar > #inputForm > button , .wines_sidebar > #wineForm > button{
+    margin-top: 25px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: 0px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.tanks_sidebar > #clearBtn > button, .wines_sidebar > #clearWineBtn {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #d71e1e;
+    border: 0px;
+    cursor: pointer;
+    margin-bottom: 60px;
+}
+
+.tanks_sidebar > #downloadBtn, .formula_sidebar > #downloadBtn {
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #28b708;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.tanks_sidebar > #downloadBtn > a, .formula_sidebar > #downloadBtn > a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.tanks_sidebar >#downloadBtn > a > i, .formula_sidebar > #downloadBtn > a > i{
+    margin-left: 10px;
+}
+
+
+.tanks_sidebar > #downloadBtn , .tanks_sidebar > #clearBtn , .wines_sidebar > #clearWineBtn , .formula_sidebar > #downloadBtn {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+}
+
+.global_container_tanks, .global_container_formula, .global_container_wines {
+    margin-left: 300px;
+    min-height: 100%;
+    max-height: fit-content;
+    background: rgba( 255, 255, 255, 0.3 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.views, .winesViews {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 20px 30px 20px;; 
+
+    background: rgba( 255, 255, 255, 0.3 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+}
+
+
+.views > button, .winesViews > button {
+    padding: 10px;
+    width: 50%;
+    border: 0px;
+    background-color: transparent;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.views > button.active, .winesViews > button.active {
+    background-color: #fff;
+    border-radius: 10px;
+    color: #000000;
+}
+
+.tanks_display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: end;
+    padding: 10px;
+}
+
+.tank {
+    position: relative;
+    width: 100px;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.tankLabel{
+    font-size: 12px;
+    color: #000000;
+    background-color: #ffffff57;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 95%;
+    margin: 0 auto;
+    border: #000000 2px solid;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    font-weight: bold;
+}
+
+thead > tr > th {background-color: #0089a5; color: #ffffff;}
+
+tr:nth-child(odd) {background-color: #ffffff;}
+tr:nth-child(even) {background-color: #b5f3ff;}
+
+tr > td > button {
+    padding: 5px;
+    border: 0px;
+    background-color: transparent;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.navigation{
+    background: rgba( 255, 255, 255, 0.3 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    width: 300px;
+    height: 10%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9;
+}
+
+.navigation > a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 15px;
+    border: 0px;
+    cursor: pointer;
+    margin: 0 20px;
+    
+}
+
+.navigation > a:hover {
+    background-color: #ffffff;
+    color: #000000;
+    scale: 0.9;
+    rotate: 10deg;
+    transition: all 0.3s ease-in-out;
+}
+
+.navigation > a.active {
+    border: #ffffff 2px solid;
+    border-radius: 50%;
+}
+
+.winesBottlesView {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.wine-container {
+    background: rgba( 255, 255, 255, 0.3 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.wine-container > p {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px;
+    text-transform: uppercase;
+}
+
+.horizontal_bar_chart_container {
+    width: 95%;
+    height: 50px;
+    border-radius: 10px;
+    padding: 0px;
+    margin: 20 auto;
+    display: flex;
+    background-color: #ffffff39;
+}
+
+.horizontal_bar_chart_container > div {
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.horizontal_bar_chart_container> div:first-child  {
+    border-radius: 10px 0px 0px 10px;
+}
+
+.horizontal_bar_chart_container> div:last-child  {
+    border-radius: 0px 10px 10px 0px;
+}
+
+.wines_percent_list > ul {
+    margin-top: 60px;
+}
+
+.wines_percent_list > ul > li {
+    list-style: none;
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background: rgba( 255, 255, 255, 0.3 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    padding: 5px;
+    margin: 20px 0px;
+}
+
+.wines_percent_list > ul > li > div.color {
+    width: 40px;
+    height: 40px;
+    border-radius: 25%;
+    border: #000000 2px solid;
+    /* margin: 10px; */
+}
+
+.wines_percent_list > ul > li > div.wineType {
+    height: 40px;
+    width: 250px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: #000000 2px solid;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-size: 1.3em;
+}
+
+.wines_percent_list > ul > li > input.percent {
+    width: 100px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: #000000 2px solid;
+    /* margin: 10px; */
+    padding: 5px;
+    padding-left: 10px;
+    font-size: 1.3em;
+}
+
+.wines_percent_list > ul > li > p.percentSymbol {
+    font-size: 1.3em;
+    transform: translateX(-55px);
+}
+
+.wines_percent_list > ul > li > button {
+    width: 40px;
+    height: 40px;
+    border-radius: 25%;
+    border: #000000 2px solid;
+    transform: translateX(-20px);
+    cursor: pointer;
+    font-size: 1.4em;
+}
+
+.horizontal_bar_chart_container > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3em;
+    color: #ffffff;
+}

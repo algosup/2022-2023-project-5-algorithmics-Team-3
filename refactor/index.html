@@ -1,0 +1,122 @@
+<html>
+
+<head>
+    <title>Tanks Generation</title>
+
+    <link rel="stylesheet" href="src/css/style.css">
+    <script src="https://kit.fontawesome.com/7cca3309d0.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="navigation">
+            <a href="#" id="nav_formula"><i class="fa-solid fa-flask-vial"></i></a>
+            <a href="#" id="nav_wines"><i class="fa-solid fa-wine-bottle"></i></a>
+            <a href="#" id="nav_tanks"><i class="fa-solid fa-database"></i></a>
+        </div>
+
+        <div class="tanks_sidebar" style="display: none;">
+            <h1>Tanks Collection</h1>
+            <form id="inputForm">
+                <p>Capacity (in hL):</p>
+                <input type="number" id="capacityField" min="0" max="1000"><br>
+                <p>Filled with:</p>
+                <select id="numberField">
+                </select><br>
+                <button id="inputAdd"> Add <i class="fa-solid fa-circle-plus"></i></button>
+            </form>
+
+            <div id="clearBtn">
+                <button id="clearButton">Reset Tanks<i class="fa-solid fa-eraser"></i></button>
+            </div>
+
+            <div id="downloadBtn">
+                <a href="" onclick="downloadCSV()">Download CSV <i class="fa-solid fa-download"></i></a>
+            </div>
+        </div>
+        <div class="formula_sidebar">
+            <h1>Blend Formula</h1>
+            <div id="downloadBtn">
+                <a href="" onclick="downloadCSV()">Download CSV <i class="fa-solid fa-download"></i></a>
+            </div>
+        </div>
+        <div class="wines_sidebar" style="display: none;">
+            <h1>Wines Collection</h1>
+            <form id="wineForm">
+                <p>Wine Type:</p>
+                <input type="text" id="wineInput" Enter a wine type><br>
+                <p>Color Label:</p>
+                <input type="color" id="wineColorLabel"><br>
+
+                <button id="addWineBtn"> Add <i class="fa-solid fa-circle-plus"></i></button>
+
+            </form>
+            <button id="clearWineBtn">Reset Wines <i class="fa-solid fa-eraser"></i></button>
+        </div>
+    </div>
+
+
+    <div class="global_container_tanks" style="display: none;">
+        <div class="views">
+            <button id="tableView" class="active">Table</button>
+            <button id="tanksView">Display</button>
+        </div>
+
+        <div class="tableView">
+            <table id="tankTable">
+                <thead>
+                    <tr>
+                        <th>Capacity</th>
+                        <th>Filled With</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div class="tanksView" style="display: none;">
+            <div id="tanks_display" class="tanks_display">
+            </div>
+        </div>
+    </div>
+
+    <div class="global_container_formula">
+        <div class="horizontal_bar_chart_container">
+        </div>
+        <div class="wines_percent_list">
+            <ul id="wines_percent_list_children">
+            </ul>
+        </div>
+        <div class="pie_chart_container"></div>
+    </div>
+    <div class="global_container_wines" style="display: none;">
+        <div class="winesViews">
+            <button id="winesTableView" class="active">Table</button>
+            <button id="winesBottlesView">Display</button>
+        </div>
+        <div class="winesTableView">
+            <table id="wineTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Wine Type</th>
+                        <th>Color Label</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="winesBottlesView" style="display: none;"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="src/js/navigation.js"></script>
+    <script src="src/js/tanks.js"></script>
+    <script src="src/js/wines.js"></script>
+    <script src="src/js/formula.js"></script>
+    <script src="src/js/root.js"></script>
+    <script src="src/js/csv.js"></script>
+</body>
+</html>
