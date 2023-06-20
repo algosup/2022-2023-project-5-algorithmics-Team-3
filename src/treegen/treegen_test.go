@@ -46,7 +46,9 @@ func TestSolve(t *testing.T) {
 	})
 }
 
+// :===== This test function is designed to test the orecomputation of the TankFillingRatios =====:
 func TestTankFillingRatios(t *testing.T) {
+	// :===== This subtest is designed to try out mapping simple filling ratios =====:
 	t.Run("Test simple filling mapping", func(t *testing.T) {
 		// The initial tanks and formula
 		gotTanks, gotFormula :=
@@ -64,7 +66,7 @@ func TestTankFillingRatios(t *testing.T) {
 		got := TankFillingRatio(gotTanks, gotFormula)
 
 		// Assert the results
-		expected := []float32{50.0, 50.0} // Create a slice of float32
+		expected := []float32{50.0, 50.0}
 		if !reflect.DeepEqual(got[100.0], expected) {
 			t.Errorf("got %v, expected %v", got[100.0], expected)
 		}

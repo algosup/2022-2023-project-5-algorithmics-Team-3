@@ -6,7 +6,6 @@ import (
 	"blend/tanks"
 	"blend/treegen"
 	"blend/ui"
-	"fmt"
 )
 
 func main() {
@@ -15,19 +14,22 @@ func main() {
 	಄ะ Part 1: Initialize ะ಄
 	ஐஐळஐ๑ஐळஐஐஐळஐ๑ஐळஐஐஐळ*/
 
-	// :===== Use Case Selection =====:
-	var ucNumber int
-	fmt.Printf("Please select a use case number: ")
-	// Scan user input & throw error if needed
-	_, err := fmt.Scan(&ucNumber)
-	if err != nil {
-		fmt.Println("Error Reading input:", err)
-		return
-	}
-	fmt.Println("Use case selected:", ucNumber)
+	/*
+		// :===== Use Case Selection =====:
+		var ucNumber int
+		fmt.Printf("Please select a use case number: ")
+		// Scan user input & throw error if needed
+		_, err := fmt.Scan(&ucNumber)
+		if err != nil {
+			fmt.Println("Error Reading input:", err)
+			return
+		}
+		fmt.Println("Use case selected:", ucNumber)
 
-	// :===== Open the selected CSV =====:
-	records := csvutils.OpenCSV(fmt.Sprintf("UseCase%d.csv", ucNumber))
+		// :===== Open the selected CSV =====:
+		records := csvutils.OpenCSV(fmt.Sprintf("UseCase%d.csv", ucNumber))
+	*/
+	records := csvutils.OpenCSV("UseCase2.csv")
 
 	// :===== Create the initial Tank Slice =====:
 	var Tanks []tanks.Tank

@@ -54,7 +54,7 @@ func PrintInstructions(steps []treegen.Step) {
 		// Add step number to the beginning of stepInstructions
 		instructions[stepIndex] = append([]string{fmt.Sprintf("Step %d:\n=============\n", stepIndex+1)}, instructions[stepIndex]...)
 	}
-	fmt.Println("Instructions: \n", instructions)
+	// fmt.Println("Instructions: \n", instructions)
 }
 
 /*ஐఴஐ๑ஐఴஐஐஐఴஐ๑ஐఴஐஐஐఴ

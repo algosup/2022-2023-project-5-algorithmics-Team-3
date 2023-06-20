@@ -22,6 +22,8 @@ type Step struct {
 
 // :===== The main solving function =====:
 func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float32, fillingRatios map[float32][]float32) []Step {
+	var steps []Step
+	var step Step
 
 	// :===== Create the list of active tanks =====:
 	selectedTanks := make([][]tanks.Tank, 0)
@@ -30,19 +32,28 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float32,
 			selectedTanks = append(selectedTanks, []tanks.Tank{sublist[0]})
 		}
 	}
-	fmt.Println("selectedTanks:", selectedTanks)
 
-	/*
-		// Try to pour the tanks
-		for _, destinationTank := range emptyTanks {
-			for i, sourceTank := range selectedTanks {
-
+	// :===== Try pouring =====:
+	// Select an empty (destination) Tank
+	for _, destinationTank := range emptyTanks {
+		// Reset the substeps for each destination tank
+		step.Substeps = nil
+		// Select a source Tank
+		for i, sourceTanksByWine := range selectedTanks {
+			// Verify if it has the capacity to pour into the destination tank
+			sourceTank := sourceTanksByWine[0]
+			if float32(sourceTank.Capacity) >= fillingRatios[float32(destinationTank.Capacity)][i] {
+				substep := Substep{SourceID: sourceTank.TankID, DestinationID: destinationTank.TankID, Volume: float64(fillingRatios[float32(destinationTank.Capacity)][i])}
+				step.Substeps = append(step.Substeps, substep)
 			}
-
 		}
-	*/
+		steps = append(steps, step)
+		fmt.Println(steps)
+	}
 
-	return nil
+	// :===== Update the tanks with their new contents =====:
+
+	return steps
 }
 
 // :===== This function is designed to precompute the tank filling ratios =====:
@@ -106,5 +117,43 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float32)
 	}
 
 	return steps
+}
+*/
+
+/*
+// :===== The main solving function =====:
+func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float32, fillingRatios map[float32][]float32) []Step {
+	var steps []Step
+	var step Step
+
+	// :===== Create the list of active tanks =====:
+	selectedTanks := make([][]tanks.Tank, 0)
+	for _, sublist := range wineTanks {
+		if len(sublist) > 0 {
+			selectedTanks = append(selectedTanks, []tanks.Tank{sublist[0]})
+		}
+	}
+	fmt.Println("")
+	fmt.Println("ALL selectedTanks:", selectedTanks)
+	fmt.Println("")
+
+	// :===== Try pouring =====:
+	// Select an empty (destination) Tank
+	for j, destinationTank := range emptyTanks {
+		fmt.Println("destinationTank:", destinationTank)
+		// Select a source Tank
+		for i, sourceTanksByWine := range selectedTanks {
+			fmt.Println("sourceTanksByWine:", sourceTanksByWine)
+			// Verify if it has the capacity to pour into the destination tank
+			fmt.Println("selectedTanks[i][0]:", selectedTanks[i][0])
+			sourceTank := selectedTanks[i][0]
+			if float32(sourceTank.Capacity) >= fillingRatios[float32(sourceTank.Capacity)][i] {
+				substep := Substep{SourceID: sourceTank.TankID, DestinationID: destinationTank.TankID, Volume: float64(fillingRatios[float32(sourceTank.Capacity)][i])}
+
+			}
+		}
+	}
+
+	return nil
 }
 */

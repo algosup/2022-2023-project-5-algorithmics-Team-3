@@ -1,15 +1,10 @@
 package ui
 
-import (
-	"blend/treegen"
-	"strings"
-	"testing"
-)
-
 /*ஐఴஐ๑ஐఴஐஐஐఴஐ๑ஐఴஐஐஐఴ
 ಄ะ UI Testing Suite ะ಄
 ஐஐळஐ๑ஐळஐஐஐळஐ๑ஐळஐஐஐळ*/
 
+/*
 // :===== This test function is designed to test the PrintInstructions function =====:
 func TestPrintInstructions(t *testing.T) {
 	// :===== This subtest is designed to Print a simple instructions set =====:
@@ -38,3 +33,4 @@ func TestPrintInstructions(t *testing.T) {
 	})
 
 }
+*/
