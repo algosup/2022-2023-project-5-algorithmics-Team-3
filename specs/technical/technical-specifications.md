@@ -28,7 +28,6 @@ Table of content
       - [Language used](#language-used)
       - [Package used](#package-used)
       - [Extension used](#extension-used)
-    - [Description of Interfaces between Components](#description-of-interfaces-between-components)
     - [System architecture diagram](#system-architecture-diagram)
   - [Features specifications](#features-specifications)
     - [Description](#description)
@@ -278,11 +277,9 @@ We have decided to create 4 custom packages for this project, named as follows:
 
 ``WIP``
 
-### Description of Interfaces between Components
-
 ### System architecture diagram
 
-``schema``
+<img src="img/architectureDiagram.png" width="800">
 
 ## Features specifications
 
