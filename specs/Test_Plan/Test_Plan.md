@@ -55,8 +55,8 @@ All the feature of the project which were defined in software requirement [specs
 | Test Case ID | Description                                                                                             | Test Status    |
 | ------------ | ------------------------------------------------------------------------------------------------------- | -------------- |
 | `TC-001`     | `Test loading wine data from the input source (e.g., a file or a database).`                            | `Passed`       |
-| `TC-002`     | `Test blending of two wines with equal proportions.`                                                    | `Not Executed` |
-| `TC-003`     | `Test blending of multiple wines with different proportions.`                                           | `Not Executed` |
+| `TC-002`     | `Test blending of two wines with equal proportions.`                                                    | `Passed` |
+| `TC-003`     | `Test blending of multiple wines with different proportions.`                                           | `Failed` |
 | `TC-004`     | `Test blending operation with an insufficient number of empty tanks.`                                   | `Not Executed` |
 | `TC-005`     | `Test blending operation with invalid input (e.g., incorrect tank IDs or proportions).`                 | `Not Executed` |
 | `TC-006`     | `Test optimization algorithm to find the minimum number of blending steps.`                             | `Not Executed` |
