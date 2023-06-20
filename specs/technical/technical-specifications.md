@@ -34,10 +34,6 @@ Table of content
     - [Features workflow](#features-workflow)
     - [User Interface Specifications](#user-interface-specifications)
   - [Test and validation](#test-and-validation)
-  - [Maintenance and upgradeability](#maintenance-and-upgradeability)
-    - [Maintenance strategy](#maintenance-strategy)
-    - [Maintenance procedures](#maintenance-procedures)
-    - [Improvements](#improvements)
   - [Glossary](#glossary)
 
 </details>
@@ -155,8 +151,6 @@ Suppose the Cellar Master has determined the perfect wine blend formula to produ
 The system can generate a production plan that specifies the required volumes of each wine to be blended to produce the total amount of Krug Grande Cuvée needed. The cellar workers can then use the system to locate the appropriate tanks and pump the required volumes of wine into the blending tanks. The system can also monitor the blending process to ensure that the correct volumes of each wine are mixed together to produce the perfect blend.
 
 By using this system, the wine blending process can be carried out quickly and efficiently, saving time and resources while ensuring the quality and consistency of the final product.
-
-`Add scheme`
 
 ### Performance requirements
 
@@ -314,16 +308,6 @@ We have decided to create 4 custom packages for this project, named as follows:
 ### User Interface Specifications
 
 ## Test and validation
-
-## Maintenance and upgradeability
-
-### Maintenance strategy
-
-### Maintenance procedures
-
-### Improvements
-
-<!-- ## Annexes -->
 
 ## Glossary
 
