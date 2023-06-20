@@ -8,11 +8,12 @@
 </head>
 
 <body>
-    <div class="sidebar">
+    <d class="sidebar">
         <div class="navigation">
             <a href="#" id="nav_formula"><i class="fa-solid fa-flask-vial"></i></a>
             <a href="#" id="nav_wines"><i class="fa-solid fa-wine-bottle"></i></a>
             <a href="#" id="nav_tanks"><i class="fa-solid fa-database"></i></a>
+            <a href="#" id="nav_actions"><i class="fa-solid fa-wrench"></i></a>
         </div>
 
         <div class="tanks_sidebar" style="display: none;">
@@ -27,19 +28,17 @@
             </form>
 
             <div id="clearBtn">
-                <button id="clearButton">Reset Tanks<i class="fa-solid fa-eraser"></i></button>
-            </div>
-
-            <div id="downloadBtn">
-                <a href="" onclick="downloadCSV()">Download CSV <i class="fa-solid fa-download"></i></a>
+                <button id="clearButton">Reset Tanks <i class="fa-solid fa-eraser"></i></button>
             </div>
         </div>
+
         <div class="formula_sidebar">
             <h1>Blend Formula</h1>
             <div id="downloadBtn">
-                <a href="" onclick="downloadCSV()">Download CSV <i class="fa-solid fa-download"></i></a>
+                <a href="#" onclick="downloadCSV()">Download CSV <i class="fa-solid fa-download"></i></a>
             </div>
         </div>
+
         <div class="wines_sidebar" style="display: none;">
             <h1>Wines Collection</h1>
             <form id="wineForm">
@@ -53,7 +52,18 @@
             </form>
             <button id="clearWineBtn">Reset Wines <i class="fa-solid fa-eraser"></i></button>
         </div>
-    </div>
+
+        <div class="actions_sidebar" style="display: none;">
+            <h1>Actions</h1>
+            <div id="downloadInputBtn">
+                <a href="#" onclick="downloadCSV()">Download Input CSV <i class="fa-solid fa-download"></i></a>
+            </div>
+            <div id="downloadBtn">
+                <a href="#" onclick="downloadCSV()">Download CSV <i class="fa-solid fa-download"></i></a>
+            </div>
+            <input type="file" id="presetFileInput">
+        </div>
+    </d iv>
 
 
     <div class="global_container_tanks" style="display: none;">
@@ -111,6 +121,13 @@
         <div class="winesBottlesView" style="display: none;"></div>
     </div>
 
+    <div class="global_container_actions" style="display: none;">
+        <div class="OutputBlendFile"></div>
+        <div class="InputBlendFile"></div>
+        <div class="uploadPresetFile"></div>
+        <div class="downloadPresetFile"></div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="src/js/navigation.js"></script>
     <script src="src/js/tanks.js"></script>
@@ -118,5 +135,6 @@
     <script src="src/js/formula.js"></script>
     <script src="src/js/root.js"></script>
     <script src="src/js/csv.js"></script>
+    <script src="src/js/preset.js"></script>
 </body>
 </html>

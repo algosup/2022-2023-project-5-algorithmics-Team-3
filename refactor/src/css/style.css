@@ -9,7 +9,7 @@ html{
     background-attachment: fixed;
 }
 
-.tanks_sidebar, .formula_sidebar , .wines_sidebar {
+.tanks_sidebar, .formula_sidebar , .wines_sidebar, .actions_sidebar {
     height: 88%;
     width: 300px;
     padding: 15px;
@@ -24,7 +24,7 @@ html{
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-.tanks_sidebar > h1 , .formula_sidebar > h1 , .wines_sidebar > h1 {
+.tanks_sidebar > h1 , .formula_sidebar > h1 , .wines_sidebar > h1, .actions_sidebar > h1 {
     text-align: center;
     color: #ffffff;
 }
@@ -73,7 +73,7 @@ html{
     background-color: #d71e1e;
     border: 0px;
     cursor: pointer;
-    margin-bottom: 60px;
+    margin-bottom: 0px;
 }
 
 .tanks_sidebar > #downloadBtn, .formula_sidebar > #downloadBtn {
@@ -102,7 +102,7 @@ html{
     margin-bottom: 20px;
 }
 
-.global_container_tanks, .global_container_formula, .global_container_wines {
+.global_container_tanks, .global_container_formula, .global_container_wines, .global_container_actions {
     margin-left: 300px;
     min-height: 100%;
     max-height: fit-content;
@@ -219,14 +219,14 @@ tr > td > button {
 .navigation > a {
     text-decoration: none;
     color: #ffffff;
-    font-size: 30px;
-    width: 60px;
-    height: 60px;
+    font-size: 25px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
-    padding: 15px;
+    padding: 10px;
     border: 0px;
     cursor: pointer;
-    margin: 0 20px;
+    margin: 0 15px;
     
 }
 

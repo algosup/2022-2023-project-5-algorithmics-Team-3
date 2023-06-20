@@ -55,9 +55,11 @@ function generateWineFormulaOptions() {
         percentInput.type = 'number';
         percentInput.min = '0';
         percentInput.max = '100';
+        percentInput.step = '0.1';
         percentInput.onchange = function () {
             addWineToFormula();
             displayFormulaInBarChart();
+            alertWhenFormulaIsUpTo100();
         }
 
         const percentSymbol = document.createElement('p');
@@ -80,4 +82,22 @@ function getFormulaFromLocalStorage() {
     for (var i = 0; i < formula.length; i++) {
         winesInputs[i].value = formula[i].winePercent;
     }
+}
+
+function alertWhenFormulaIsUpTo100() {
+    var sum = 0.0;
+    for (var i = 0; i < winesInputs.length; i++) {
+        sum += parseFloat(winesInputs[i].value);
+        console.log(sum);
+    }
+    if (sum > 100) {
+        swal({
+            title: "Warning!",
+            text: "Your formula is up to 100%!",
+            icon: "warning",
+            button: "OK",
+            timer: 1500,
+        });
+            
+    }   
 }

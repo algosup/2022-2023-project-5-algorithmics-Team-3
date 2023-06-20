@@ -41,43 +41,53 @@ wineBottlesView.addEventListener('click', function () {
 var navFormula = document.getElementById('nav_formula');
 var navTanks = document.getElementById('nav_tanks');
 var navWines = document.getElementById('nav_wines');
+var navActions = document.getElementById('nav_actions');
 
 var sidebarFormula = document.getElementsByClassName('formula_sidebar')[0];
 var sidebarTanks = document.getElementsByClassName('tanks_sidebar')[0];
 var sidebarWines = document.getElementsByClassName('wines_sidebar')[0];
+var sidebarActions = document.getElementsByClassName('actions_sidebar')[0];
 
 var containerFormula = document.getElementsByClassName('global_container_formula')[0];
 var containerTanks = document.getElementsByClassName('global_container_tanks')[0];
 var containerWines = document.getElementsByClassName('global_container_wines')[0];
+var containerActions = document.getElementsByClassName('global_container_actions')[0];
 
 document.getElementById('nav_formula').addEventListener('click', function () {
     navFormula.classList.add = 'active';
     navTanks.classList.remove = 'active';
     navWines.classList.remove = 'active';
-
+    navActions.classList.remove = 'active';
 
     sidebarFormula.style.display = 'block';
     sidebarTanks.style.display = 'none';
     sidebarWines.style.display = 'none';
+    sidebarActions.style.display = 'none';
 
     containerFormula.style.display = 'block';
     containerTanks.style.display = 'none';
     containerWines.style.display = 'none';
-    // location.reload();
+    containerActions.style.display = 'none';
+
+    location.reload();
 });
 
 document.getElementById('nav_tanks').addEventListener('click', function () {
     navFormula.classList.remove = 'active';
     navTanks.classList.add = 'active';
     navWines.classList.remove = 'active';
+    navActions.classList.remove = 'active';
 
     sidebarFormula.style.display = 'none';
     sidebarTanks.style.display = 'block';
     sidebarWines.style.display = 'none';
+    sidebarActions.style.display = 'none';
 
     containerFormula.style.display = 'none';
     containerTanks.style.display = 'block';
     containerWines.style.display = 'none';
+    containerActions.style.display = 'none';
+
     generateSelectOptions();
 });
 
@@ -85,12 +95,32 @@ document.getElementById('nav_wines').addEventListener('click', function () {
     navFormula.classList.remove = 'active';
     navTanks.classList.remove = 'active';
     navWines.classList.add = 'active';
+    navActions.classList.remove = 'active';
 
     sidebarFormula.style.display = 'none';
     sidebarTanks.style.display = 'none';
     sidebarWines.style.display = 'block';
+    sidebarActions.style.display = 'none';
 
     containerFormula.style.display = 'none';
     containerTanks.style.display = 'none';
     containerWines.style.display = 'block';
+    containerActions.style.display = 'none';
+});
+
+document.getElementById('nav_actions').addEventListener('click', function () {
+    navFormula.classList.remove = 'active';
+    navTanks.classList.remove = 'active';
+    navWines.classList.remove = 'active';
+    navActions.classList.add = 'active';
+
+    sidebarFormula.style.display = 'none';
+    sidebarTanks.style.display = 'none';
+    sidebarWines.style.display = 'none';
+    sidebarActions.style.display = 'block';
+
+    containerFormula.style.display = 'none';
+    containerTanks.style.display = 'none';
+    containerWines.style.display = 'none';
+    containerActions.style.display = 'block';
 });
