@@ -25,30 +25,54 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float32,
 	var steps []Step
 	var step Step
 
+	/*
+		// :===== Create the list of active tanks =====:
+		selectedTanks := make([][]tanks.Tank, 0)
+		for _, sublist := range wineTanks {
+			if len(sublist) > 0 {
+				selectedTanks = append(selectedTanks, []tanks.Tank{sublist[0]})
+			}
+		}
+	*/
+
 	// :===== Create the list of active tanks =====:
-	selectedTanks := make([][]tanks.Tank, 0)
+	selectedTanks := make([][]tanks.ActiveTank, 0)
 	for _, sublist := range wineTanks {
 		if len(sublist) > 0 {
-			selectedTanks = append(selectedTanks, []tanks.Tank{sublist[0]})
+			// creating new ActiveTank based on the Tank
+			activeTank := tanks.ActiveTank{
+				TankID:     sublist[0].TankID,
+				Capacity:   sublist[0].Capacity,
+				WineNumber: sublist[0].WineNumber,
+				Volume:     float64(sublist[0].Capacity),
+				Blend:      []float64{},
+			}
+			selectedTanks = append(selectedTanks, []tanks.ActiveTank{activeTank})
 		}
 	}
+
+	fmt.Println(selectedTanks)
 
 	// :===== Try pouring =====:
 	// Select an empty (destination) Tank
 	for _, destinationTank := range emptyTanks {
 		// Reset the substeps for each destination tank
 		step.Substeps = nil
-		// Select a source Tank
+		// Select a source Tank from the tank
 		for i, sourceTanksByWine := range selectedTanks {
 			// Verify if it has the capacity to pour into the destination tank
 			sourceTank := sourceTanksByWine[0]
-			if float32(sourceTank.Capacity) >= fillingRatios[float32(destinationTank.Capacity)][i] {
+			if float32(sourceTank.Volume) >= fillingRatios[float32(destinationTank.Capacity)][i] {
+				// Remove the volume from the sourceTank
+				sourceTank.Volume -= float64(fillingRatios[float32(destinationTank.Capacity)][i])
+
+				// Add the instruction the substep to the list of substeps
 				substep := Substep{SourceID: sourceTank.TankID, DestinationID: destinationTank.TankID, Volume: float64(fillingRatios[float32(destinationTank.Capacity)][i])}
 				step.Substeps = append(step.Substeps, substep)
 			}
+			fmt.Println(sourceTank.Volume)
 		}
 		steps = append(steps, step)
-		fmt.Println(steps)
 	}
 
 	// :===== Update the tanks with their new contents =====:
@@ -59,7 +83,6 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float32,
 // :===== This function is designed to precompute the tank filling ratios =====:
 func TankFillingRatio(tanks []tanks.Tank, formula []float32) map[float32][]float32 {
 	fillingRatios := make(map[float32][]float32)
-
 	// Iterate on tanks to get their capacities
 	for _, tank := range tanks {
 		capacity := float32(tank.Capacity)

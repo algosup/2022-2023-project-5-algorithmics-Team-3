@@ -11,6 +11,14 @@ type Tank struct {
 	WineNumber uint32
 }
 
+type ActiveTank struct {
+	TankID     uint16
+	Capacity   uint32
+	WineNumber uint32
+	Volume     float64
+	Blend      []float64
+}
+
 // :===== This function is meant to retrieve all the empty tanks from the list of tanks =====:
 func GetEmptyTanks(Tanks []Tank) []Tank {
 	// Create the return slice
