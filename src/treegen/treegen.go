@@ -56,21 +56,27 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64,
 	// :===== Try pouring =====:
 	// Select an empty (destination) Tank
 	for _, destinationTank := range emptyTanks {
+
 		// Reset the substeps for each destination tank
 		step.Substeps = nil
+
 		// Select a source Tank from the tank
 		for i, sourceTanksByWine := range selectedTanks {
+			fmt.Println(i)
 			// Verify if it has the capacity to pour into the destination tank
 			sourceTank := sourceTanksByWine[0]
 			if float64(sourceTank.Volume) >= fillingRatios[float64(destinationTank.Capacity)][i] {
+
 				// Remove the volume from the sourceTank
-				sourceTank.Volume -= float64(fillingRatios[float64(destinationTank.Capacity)][i])
+				selectedTanks[i][0].Volume -= fillingRatios[float64(destinationTank.Capacity)][i]
+
+				// Add the volume to the destination tank HERE HERE
 
 				// Add the instruction the substep to the list of substeps
 				substep := Substep{SourceID: sourceTank.TankID, DestinationID: destinationTank.TankID, Volume: float64(fillingRatios[float64(destinationTank.Capacity)][i])}
 				step.Substeps = append(step.Substeps, substep)
+				fmt.Println(sourceTank.Volume)
 			}
-			fmt.Println(sourceTank.Volume)
 		}
 		steps = append(steps, step)
 	}
