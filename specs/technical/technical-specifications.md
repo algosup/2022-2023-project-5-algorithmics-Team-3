@@ -24,11 +24,12 @@ Table of content
       - [Algorithm blending](#algorithm-blending)
       - [Tanks managment](#tanks-managment)
       - [User interface](#user-interface)
-    - [Description of Interfaces between Components](#description-of-interfaces-between-components)
-    - [System architecture diagram](#system-architecture-diagram)
     - [Technologies and tools used](#technologies-and-tools-used)
       - [Language used](#language-used)
       - [Package used](#package-used)
+      - [Extension used](#extension-used)
+    - [Description of Interfaces between Components](#description-of-interfaces-between-components)
+    - [System architecture diagram](#system-architecture-diagram)
   - [Features specifications](#features-specifications)
     - [Description](#description)
     - [Features workflow](#features-workflow)
@@ -236,12 +237,6 @@ It's a web interface for data entry, designed to be user-friendly and responsive
 The user interface have to be designed in a mobile version first and then on a web version.
 ```
 
-### Description of Interfaces between Components
-
-### System architecture diagram
-
-``schema``
-
 ### Technologies and tools used
 
 #### Language used
@@ -279,7 +274,41 @@ We have decided to create 4 custom packages for this project, named as follows:
 - **tanks:** a custom package for tank management.
 - **ui:** a custom package for the user interface.
 
+#### Extension used
+
+``WIP``
+
+### Description of Interfaces between Components
+
+### System architecture diagram
+
+``schema``
+
 ## Features specifications
+
+- **Opening and analysing a CSV file**
+  - The code uses the **csvutils package** to open and parse a specified CSV file (UseCase.csv) provided by the user. Records from the CSV file are retrieved and used later.
+
+- **Creation of tank slices**
+  - The code creates tank slices and formula slices from the records in the CSV file analysed.
+
+- **Sorting tanks**
+  - Empty tank slices (EmptyTanks) and Wine tank slices (WineTanks) are sorted using the **sort package**. This allows them to be organised in a certain order for further processing.
+
+- **Debug display**
+  - The code uses the **ui package** to display debug information relating to initialisation, tank fill ratios, etc. This can be useful for understanding and checking that the program is working correctly. This can be useful for understanding and checking the correct operation of the program.
+
+- **Calculation of tank fill ratios**
+  - The code uses the **treegen package** to calculate tank fill ratios based on tank slices and formula slices.
+
+- **Solving the problem**
+  - The code uses the **treegen package** to solve the problem by calling the Solve function. This probably involves some problem-specific resolution logic, which is not detailed in the code provided.
+
+- **Display final instructions**
+  - The final instructions resulting from the resolution of the problems are displayed using the PrintInstructions function in the **ui package**. This is used to provide the steps or recommendations to follow to reach the solution to the problem.
+
+- **Error handling**
+  - If an error occurs while opening or analysing the CSV file, an error message is displayed and the program stops.
 
 ### Description
 
