@@ -21,7 +21,7 @@ func ConfirmCSVOpen() {
 ஐஐळஐ๑ஐळஐஐஐळஐ๑ஐळஐஐஐळ*/
 
 // :===== Print error for Formula not equal to 100 =====:
-func Formula100(formulaSum float32) {
+func Formula100(formulaSum float64) {
 	fmt.Printf("❌ Formula adds up to: %.5f\n", formulaSum)
 	fmt.Println("Formula should add up to 100%")
 	fmt.Println("Please check again")
@@ -61,7 +61,7 @@ func PrintInstructions(steps []treegen.Step) {
 ஐஐळஐ๑ஐळஐஐஐळஐ๑ஐळஐஐஐळ*/
 
 // :###### DEBUG: Function to display basic initalization debug info ######:
-func DebugInit(tanks []tanks.Tank, formula []float32, emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank) {
+func DebugInit(tanks []tanks.Tank, formula []float64, emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank) {
 	fmt.Printf("\n🛢️  Tanks: %d\n\n", tanks)
 	fmt.Println("🏗️  Tank Struct: ID, Capacity, WineNumber")
 	fmt.Printf("\n🧪  Formula: %.5f\n\n", formula)
@@ -73,7 +73,7 @@ func DebugInit(tanks []tanks.Tank, formula []float32, emptyTanks []tanks.Tank, w
 	fmt.Println("")
 }
 
-func DebugTankFillingRatios(fillingRatios map[float32][]float32) {
+func DebugTankFillingRatios(fillingRatios map[float64][]float64) {
 	/*
 		fmt.Println("Filling Ratios:")
 		for capacity, ratios := range fillingRatios {

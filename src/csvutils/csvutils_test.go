@@ -56,7 +56,7 @@ func TestParseCSV(t *testing.T) {
 				{TankID: 10, Capacity: 50, WineNumber: 0},
 			},
 			// The expected formula
-			[]float32{
+			[]float64{
 				40.000,
 				45.000,
 				15.000,
@@ -82,7 +82,7 @@ func TestParseCSV(t *testing.T) {
 				{TankID: 501, Capacity: 234, WineNumber: 81726},
 				{TankID: 1000, Capacity: 1395711, WineNumber: 28464},
 			},
-			[]float32{
+			[]float64{
 				1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 			}
 
@@ -122,7 +122,7 @@ func TestParseCSV(t *testing.T) {
 				{TankID: 10, Capacity: 50, WineNumber: 0},
 			},
 			// The expected formula
-			[]float32{
+			[]float64{
 				40.000,
 				45.000,
 				15.000,
@@ -154,7 +154,7 @@ func TestParseCSV(t *testing.T) {
 				{TankID: 501, Capacity: 234, WineNumber: 81726},
 				{TankID: 1000, Capacity: 1395711, WineNumber: 28464},
 			},
-			[]float32{
+			[]float64{
 				1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 			}
 

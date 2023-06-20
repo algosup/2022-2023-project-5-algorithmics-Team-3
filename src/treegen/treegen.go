@@ -21,7 +21,7 @@ type Step struct {
 ஐஐळஐ๑ஐळஐஐஐळஐ๑ஐळஐஐஐळ*/
 
 // :===== The main solving function =====:
-func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float32, fillingRatios map[float32][]float32) []Step {
+func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64, fillingRatios map[float64][]float64) []Step {
 	var steps []Step
 	var step Step
 
@@ -56,21 +56,27 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float32,
 	// :===== Try pouring =====:
 	// Select an empty (destination) Tank
 	for _, destinationTank := range emptyTanks {
+
 		// Reset the substeps for each destination tank
 		step.Substeps = nil
+
 		// Select a source Tank from the tank
 		for i, sourceTanksByWine := range selectedTanks {
+			fmt.Println(i)
 			// Verify if it has the capacity to pour into the destination tank
 			sourceTank := sourceTanksByWine[0]
-			if float32(sourceTank.Volume) >= fillingRatios[float32(destinationTank.Capacity)][i] {
+			if float64(sourceTank.Volume) >= fillingRatios[float64(destinationTank.Capacity)][i] {
+
 				// Remove the volume from the sourceTank
-				sourceTank.Volume -= float64(fillingRatios[float32(destinationTank.Capacity)][i])
+				selectedTanks[i][0].Volume -= fillingRatios[float64(destinationTank.Capacity)][i]
+
+				// Add the volume to the destination tank HERE HERE
 
 				// Add the instruction the substep to the list of substeps
-				substep := Substep{SourceID: sourceTank.TankID, DestinationID: destinationTank.TankID, Volume: float64(fillingRatios[float32(destinationTank.Capacity)][i])}
+				substep := Substep{SourceID: sourceTank.TankID, DestinationID: destinationTank.TankID, Volume: float64(fillingRatios[float64(destinationTank.Capacity)][i])}
 				step.Substeps = append(step.Substeps, substep)
+				fmt.Println(sourceTank.Volume)
 			}
-			fmt.Println(sourceTank.Volume)
 		}
 		steps = append(steps, step)
 	}
@@ -81,17 +87,17 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float32,
 }
 
 // :===== This function is designed to precompute the tank filling ratios =====:
-func TankFillingRatio(tanks []tanks.Tank, formula []float32) map[float32][]float32 {
-	fillingRatios := make(map[float32][]float32)
+func TankFillingRatio(tanks []tanks.Tank, formula []float64) map[float64][]float64 {
+	fillingRatios := make(map[float64][]float64)
 	// Iterate on tanks to get their capacities
 	for _, tank := range tanks {
-		capacity := float32(tank.Capacity)
+		capacity := float64(tank.Capacity)
 		// If it hasn't already been added as a key to the map, add it
 		if _, exists := fillingRatios[capacity]; !exists {
 			// Calculate the proratas for each capacity
-			var proRatas []float32
+			var proRatas []float64
 			for _, element := range formula {
-				var proRata float32 = element * float32(tank.Capacity) / 100
+				var proRata float64 = element * float64(tank.Capacity) / 100
 				// Add them to the list of proRatas
 				proRatas = append(proRatas, proRata)
 			}
@@ -105,7 +111,7 @@ func TankFillingRatio(tanks []tanks.Tank, formula []float32) map[float32][]float
 
 /* OLD VERSION
 // :===== The main solving function =====:
-func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float32) []Step {
+func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64) []Step {
 	steps := []Step{}
 
 
@@ -145,7 +151,7 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float32)
 
 /*
 // :===== The main solving function =====:
-func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float32, fillingRatios map[float32][]float32) []Step {
+func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64, fillingRatios map[float64][]float64) []Step {
 	var steps []Step
 	var step Step
 
@@ -170,8 +176,8 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float32,
 			// Verify if it has the capacity to pour into the destination tank
 			fmt.Println("selectedTanks[i][0]:", selectedTanks[i][0])
 			sourceTank := selectedTanks[i][0]
-			if float32(sourceTank.Capacity) >= fillingRatios[float32(sourceTank.Capacity)][i] {
-				substep := Substep{SourceID: sourceTank.TankID, DestinationID: destinationTank.TankID, Volume: float64(fillingRatios[float32(sourceTank.Capacity)][i])}
+			if float64(sourceTank.Capacity) >= fillingRatios[float64(sourceTank.Capacity)][i] {
+				substep := Substep{SourceID: sourceTank.TankID, DestinationID: destinationTank.TankID, Volume: float64(fillingRatios[float64(sourceTank.Capacity)][i])}
 
 			}
 		}
