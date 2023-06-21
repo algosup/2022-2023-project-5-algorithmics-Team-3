@@ -36,7 +36,6 @@ Table of content
     - [Folders structure](#folders-structure)
   - [Features specifications](#features-specifications)
     - [Execution](#execution)
-    - [User Interface Specifications](#user-interface-specifications)
   - [Test and validation](#test-and-validation)
   - [Glossary](#glossary)
 
@@ -488,9 +487,9 @@ In the main file, **blend.go**, ```func main()``` is called. This is the primary
 
 - If the Tanks or Formula variables are zero, this indicates an error when reading or analysing the tanks from the CSV file.
 
-### User Interface Specifications
-
 ## Test and validation
+
+Our testing strategy is listed in the test plan, along with the various use cases.
 
 ## Glossary
 
