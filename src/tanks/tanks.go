@@ -5,13 +5,13 @@ package tanks
 ஐஐळஐ๑ஐळஐஐஐळஐ๑ஐळஐஐஐळ*/
 
 // :===== The main Tank data structure =====:
-type Tank struct {
+type OldTank struct {
 	TankID     uint16
 	Capacity   uint32
 	WineNumber uint32
 }
 
-type ActiveTank struct {
+type Tank struct {
 	TankID     uint16
 	Capacity   uint32
 	WineNumber uint32

@@ -36,18 +36,18 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64,
 	*/
 
 	// :===== Create the list of active tanks =====:
-	selectedTanks := make([][]tanks.ActiveTank, 0)
+	selectedTanks := make([][]tanks.Tank, 0)
 	for _, sublist := range wineTanks {
 		if len(sublist) > 0 {
-			// creating new ActiveTank based on the Tank
-			activeTank := tanks.ActiveTank{
+			// creating new Tank based on the Tank
+			activeTank := tanks.Tank{
 				TankID:     sublist[0].TankID,
 				Capacity:   sublist[0].Capacity,
 				WineNumber: sublist[0].WineNumber,
 				Volume:     float64(sublist[0].Capacity),
 				Blend:      []float64{},
 			}
-			selectedTanks = append(selectedTanks, []tanks.ActiveTank{activeTank})
+			selectedTanks = append(selectedTanks, []tanks.Tank{activeTank})
 		}
 	}
 
