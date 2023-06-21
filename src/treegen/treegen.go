@@ -31,7 +31,7 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64,
 		selectedTanks := make([][]tanks.Tank, 0)
 		for _, sublist := range wineTanks {
 			if len(sublist) > 0 {
-				selectedTanks = append(selectedTanks, []tanks.Tank{sublist[0]})
+				selectedTanks = append(selectedTanks, []tanks.Tank{sublist[len(CHANGEME)-1]})
 			}
 		}
 	*/
@@ -43,10 +43,10 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64,
 
 			// creating new Tank based on the Tank
 			activeTank := tanks.Tank{
-				TankID:        sublist[0].TankID,
-				Capacity:      sublist[0].Capacity,
-				BlendNewField: sublist[0].BlendNewField,
-				Volume:        float64(sublist[0].Capacity),
+				TankID:        sublist[len(sublist)-1].TankID,
+				Capacity:      sublist[len(sublist)-1].Capacity,
+				BlendNewField: sublist[len(sublist)-1].BlendNewField,
+				Volume:        float64(sublist[len(sublist)-1].Capacity),
 				Blend:         []float64{},
 			}
 			selectedTanks = append(selectedTanks, []tanks.Tank{activeTank})
@@ -80,7 +80,7 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64,
 				for i, sourceTanksByWine := range selectedTanks {
 
 					// HERE HERE HERE i think lies the problem, why is it reset every time ?
-					sourceTank := &sourceTanksByWine[0]
+					sourceTank := &sourceTanksByWine[len(sourceTanksByWine)-1]
 
 					sourceTanksInStep++
 					fmt.Println(" 🛢️  #️⃣  sourceTanksInStep: ", sourceTanksInStep)
@@ -89,11 +89,11 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64,
 					// Verify that source has the capacity to pour in destination tank
 					if float64(sourceTank.Volume) >= fillingRatios[float64(destinationTank.Capacity)][i] {
 						// Remove the volume from the sourceTank
-						// selectedTanks[i][0].Volume -= fillingRatios[float64(destinationTank.Capacity)][i]
+						// selectedTanks[i][len(CHANGEME)-1].Volume -= fillingRatios[float64(destinationTank.Capacity)][i]
 
 						fmt.Println("Is about to be removed: ", fillingRatios[float64(destinationTank.Capacity)][i])
 						// Remove the volume from the sourceTank
-						sourceTanksByWine[0].Volume -= fillingRatios[float64(destinationTank.Capacity)][i]
+						sourceTanksByWine[len(sourceTanksByWine)-1].Volume -= fillingRatios[float64(destinationTank.Capacity)][i]
 
 						// Add the volume to the destination tank HERE HERE
 						fmt.Println(destinationTank.Volume)
@@ -103,14 +103,14 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64,
 						// If maximum reached, remove this tank from emptyTanks and put it in fullTanks
 						if destinationTank.Volume == float64(destinationTank.Capacity) {
 							fullTanks = append(fullTanks, destinationTank)
-							emptyTanks = emptyTanks[1:]
+							emptyTanks = removeLastTank(emptyTanks)
 						}
 
 						// If the sourceTank doesn't have the capacity to pour into destination tank:
 						//  remove it from sourceTanksbyWine and put in emptyTanks if totally empty
 						if sourceTank.Volume < fillingRatios[float64(destinationTank.Capacity)][i] {
 							if sourceTank.Volume == 0 {
-								//  CURRENTLY WORKING HERE
+
 							}
 
 						}
@@ -126,7 +126,7 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64,
 			} else {
 				fullTanks = append(fullTanks, destinationTank)
 				fmt.Println(fullTanks)
-				emptyTanks = emptyTanks[1:]
+				emptyTanks = removeLastTank(emptyTanks)
 				fmt.Println(emptyTanks)
 			}
 		}
@@ -164,6 +164,14 @@ func TankFillingRatio(tanks []tanks.Tank, formula []float64) map[float64][]float
 	}
 
 	return fillingRatios
+}
+
+// :===== This function is designed to remove the last element of a slice =====:
+func removeLastTank(slice []tanks.Tank) []tanks.Tank {
+	if len(slice) == 0 {
+		return slice // Return the same slice if it's empty
+	}
+	return slice[:len(slice)-1]
 }
 
 //
@@ -240,7 +248,7 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64,
 	selectedTanks := make([][]tanks.Tank, 0)
 	for _, sublist := range wineTanks {
 		if len(sublist) > 0 {
-			selectedTanks = append(selectedTanks, []tanks.Tank{sublist[0]})
+			selectedTanks = append(selectedTanks, []tanks.Tank{sublist[len(CHANGEME)-1]})
 		}
 	}
 	fmt.Println("")
@@ -255,8 +263,8 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64,
 		for i, sourceTanksByWine := range selectedTanks {
 			fmt.Println("sourceTanksByWine:", sourceTanksByWine)
 			// Verify if it has the capacity to pour into the destination tank
-			fmt.Println("selectedTanks[i][0]:", selectedTanks[i][0])
-			sourceTank := selectedTanks[i][0]
+			fmt.Println("selectedTanks[i][len(CHANGEME)-1]:", selectedTanks[i][len(CHANGEME)-1])
+			sourceTank := selectedTanks[i][len(CHANGEME)-1]
 			if float64(sourceTank.Capacity) >= fillingRatios[float64(sourceTank.Capacity)][i] {
 				substep := Substep{SourceID: sourceTank.TankID, DestinationID: destinationTank.TankID, Volume: float64(fillingRatios[float64(sourceTank.Capacity)][i])}
 

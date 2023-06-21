@@ -34,12 +34,12 @@ func TestSortTanks(t *testing.T) {
 			},
 			// The expected result
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 1898, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 2, Capacity: 1750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 3, Capacity: 1500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 4, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 5, Capacity: 500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 				{TankID: 6, Capacity: 300, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 5, Capacity: 500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 4, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 3, Capacity: 1500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 2, Capacity: 1750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 1, Capacity: 1898, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 			}
 
 		// Call the function to be tested
@@ -68,12 +68,12 @@ func TestSortTanks(t *testing.T) {
 			},
 			// The expected result
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 1898, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 2, Capacity: 1750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 3, Capacity: 1500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{},
+				{},
 				{TankID: 6, Capacity: 300, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{},
-				{},
+				{TankID: 3, Capacity: 1500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 2, Capacity: 1750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 1, Capacity: 1898, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 			}
 
 		// Call the function to be tested
@@ -93,21 +93,21 @@ func TestSortTanks(t *testing.T) {
 		tanks, expected :=
 			// The starting case
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 1898, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 2, Capacity: 1750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 3, Capacity: 1500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 4, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 5, Capacity: 500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 				{TankID: 6, Capacity: 300, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 5, Capacity: 500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 4, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 3, Capacity: 1500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 2, Capacity: 1750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 1, Capacity: 1898, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 			},
 			// The expected result
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 1898, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 2, Capacity: 1750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 3, Capacity: 1500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 4, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 5, Capacity: 500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 				{TankID: 6, Capacity: 300, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 5, Capacity: 500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 4, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 3, Capacity: 1500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 2, Capacity: 1750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 1, Capacity: 1898, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 			}
 
 		// Call the function to be tested
@@ -189,19 +189,19 @@ func TestSortTanks2D(t *testing.T) {
 			// The expected result
 			[][]tanks.Tank{
 				{
-					{TankID: 1, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-					{TankID: 2, Capacity: 750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 					{TankID: 3, Capacity: 500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+					{TankID: 2, Capacity: 750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+					{TankID: 1, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 				},
 				{
-					{TankID: 1, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-					{TankID: 2, Capacity: 750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 					{TankID: 3, Capacity: 500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+					{TankID: 2, Capacity: 750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+					{TankID: 1, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 				},
 				{
-					{TankID: 1, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-					{TankID: 2, Capacity: 750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 					{TankID: 3, Capacity: 500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+					{TankID: 2, Capacity: 750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+					{TankID: 1, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 				},
 			}
 
@@ -232,37 +232,37 @@ func TestSortTanks2D(t *testing.T) {
 			// The starting case
 			[][]tanks.Tank{
 				{
-					{TankID: 1, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-					{TankID: 2, Capacity: 750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 					{TankID: 3, Capacity: 500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+					{TankID: 2, Capacity: 750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+					{TankID: 1, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 				},
 				{
-					{TankID: 1, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-					{TankID: 2, Capacity: 750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 					{TankID: 3, Capacity: 500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+					{TankID: 2, Capacity: 750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+					{TankID: 1, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 				},
 				{
-					{TankID: 1, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-					{TankID: 2, Capacity: 750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 					{TankID: 3, Capacity: 500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+					{TankID: 2, Capacity: 750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+					{TankID: 1, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 				},
 			},
 			// The expected result
 			[][]tanks.Tank{
 				{
-					{TankID: 1, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-					{TankID: 2, Capacity: 750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 					{TankID: 3, Capacity: 500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+					{TankID: 2, Capacity: 750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+					{TankID: 1, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 				},
 				{
-					{TankID: 1, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-					{TankID: 2, Capacity: 750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 					{TankID: 3, Capacity: 500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+					{TankID: 2, Capacity: 750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+					{TankID: 1, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 				},
 				{
-					{TankID: 1, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-					{TankID: 2, Capacity: 750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 					{TankID: 3, Capacity: 500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+					{TankID: 2, Capacity: 750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+					{TankID: 1, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 				},
 			}
 
@@ -311,19 +311,19 @@ func TestSortTanks2D(t *testing.T) {
 			// The expected result
 			[][]tanks.Tank{
 				{
-					{TankID: 1, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-					{TankID: 3, Capacity: 500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 					{},
+					{TankID: 3, Capacity: 500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+					{TankID: 1, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 				},
 				{
-					{TankID: 1, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-					{TankID: 2, Capacity: 750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 					{},
+					{TankID: 2, Capacity: 750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+					{TankID: 1, Capacity: 1000, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 				},
 				{
-					{TankID: 2, Capacity: 750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-					{TankID: 3, Capacity: 500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 					{},
+					{TankID: 3, Capacity: 500, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+					{TankID: 2, Capacity: 750, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 				},
 			}
 
