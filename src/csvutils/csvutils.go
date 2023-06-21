@@ -79,7 +79,6 @@ func ParseCSV(records [][]string) ([]tanks.Tank, []float64) {
 				if wineNumber != 0 {
 					blendNewField[wineNumber-1] = 100
 				}
-				fmt.Println(blendNewField)
 
 				tank := tanks.Tank{
 					TankID:        uint16(index),
@@ -104,8 +103,6 @@ func ParseCSV(records [][]string) ([]tanks.Tank, []float64) {
 
 			} else {
 				return nil, nil
-				fmt.Println(Tanks)
-				fmt.Println(formula)
 			}
 		}
 	}
@@ -124,8 +121,5 @@ func ParseCSV(records [][]string) ([]tanks.Tank, []float64) {
 			return nil, nil
 		}
 	*/
-	fmt.Println(Tanks)
-	fmt.Println(formula)
-	fmt.Println(formulaSum)
 	return Tanks, formula
 }

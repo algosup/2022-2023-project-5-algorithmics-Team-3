@@ -24,6 +24,7 @@ type Step struct {
 func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64, fillingRatios map[float64][]float64) []Step {
 	var steps []Step
 	var step Step
+	var fullTanks []tanks.Tank
 
 	/*
 		// :===== Create the list of active tanks =====:
@@ -39,6 +40,7 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64,
 	selectedTanks := make([][]tanks.Tank, 0)
 	for _, sublist := range wineTanks {
 		if len(sublist) > 0 {
+
 			// creating new Tank based on the Tank
 			activeTank := tanks.Tank{
 				TankID:        sublist[0].TankID,
@@ -51,56 +53,111 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64,
 		}
 	}
 
-	fmt.Println(selectedTanks)
+	// Variables to count when to create a new step
+	var sourceTanksInStep uint8
+	var destinationTanksInStep uint8
 
-	// :===== Try pouring =====:
-	// Select an empty (destination) Tank
-	for _, destinationTank := range emptyTanks {
+	// :===== Try  =====:
+	for sourceTanksInStep < 6 && destinationTanksInStep < 6 {
 
-		// Reset the substeps for each destination tank
-		step.Substeps = nil
+		// Select an empty (destination) Tank
+		for _, destinationTank := range emptyTanks {
+			fmt.Println(" ⭕ Destination Tank ⭕ ")
+			fmt.Println(destinationTank)
 
-		// Select a source Tank from the tank
-		for i, sourceTanksByWine := range selectedTanks {
-			fmt.Println(i)
-			// Verify if it has the capacity to pour into the destination tank
-			sourceTank := sourceTanksByWine[0]
-			if float64(sourceTank.Volume) >= fillingRatios[float64(destinationTank.Capacity)][i] {
+			destinationTanksInStep++
+			fmt.Println("destinationTanksInStep: ", destinationTanksInStep)
 
-				// Remove the volume from the sourceTank
-				selectedTanks[i][0].Volume -= fillingRatios[float64(destinationTank.Capacity)][i]
+			// If the tank is not filled yet, do:
+			if destinationTank.Volume < float64(destinationTank.Capacity) {
 
-				// Add the volume to the destination tank HERE HERE
+				// If there is enough of each wine type (in the sourceTanksByWine), proceed, otherwise go get another tank
 
-				// Add the instruction the substep to the list of substeps
-				substep := Substep{SourceID: sourceTank.TankID, DestinationID: destinationTank.TankID, Volume: float64(fillingRatios[float64(destinationTank.Capacity)][i])}
-				step.Substeps = append(step.Substeps, substep)
-				fmt.Println(sourceTank.Volume)
+				// Reset the substeps for each destination tank
+				step.Substeps = nil
+
+				// Select a source Tank from the tank
+				for i, sourceTanksByWine := range selectedTanks {
+
+					// HERE HERE HERE i think lies the problem, why is it reset every time ?
+					sourceTank := &sourceTanksByWine[0]
+
+					sourceTanksInStep++
+					fmt.Println(" 🛢️  #️⃣  sourceTanksInStep: ", sourceTanksInStep)
+					fmt.Println(" 🛢️  ↩️  sourceTankBeforePour: ", sourceTank)
+
+					// Verify that source has the capacity to pour in destination tank
+					if float64(sourceTank.Volume) >= fillingRatios[float64(destinationTank.Capacity)][i] {
+						// Remove the volume from the sourceTank
+						// selectedTanks[i][0].Volume -= fillingRatios[float64(destinationTank.Capacity)][i]
+
+						fmt.Println("Is about to be removed: ", fillingRatios[float64(destinationTank.Capacity)][i])
+						// Remove the volume from the sourceTank
+						sourceTanksByWine[0].Volume -= fillingRatios[float64(destinationTank.Capacity)][i]
+
+						// Add the volume to the destination tank HERE HERE
+						fmt.Println(destinationTank.Volume)
+						destinationTank.Volume += fillingRatios[float64(destinationTank.Capacity)][i]
+						fmt.Println(destinationTank.Volume)
+
+						// If maximum reached, remove this tank from emptyTanks and put it in fullTanks
+						if destinationTank.Volume == float64(destinationTank.Capacity) {
+							fullTanks = append(fullTanks, destinationTank)
+							emptyTanks = emptyTanks[1:]
+						}
+
+						// If the sourceTank doesn't have the capacity to pour into destination tank:
+						//  remove it from sourceTanksbyWine and put in emptyTanks if totally empty
+						if sourceTank.Volume < fillingRatios[float64(destinationTank.Capacity)][i] {
+							if sourceTank.Volume == 0 {
+								//  CURRENTLY WORKING HERE
+							}
+
+						}
+
+						// Add the instruction the substep to the list of substeps
+						substep := Substep{SourceID: sourceTank.TankID, DestinationID: destinationTank.TankID, Volume: float64(fillingRatios[float64(destinationTank.Capacity)][i])}
+						step.Substeps = append(step.Substeps, substep)
+					}
+
+					fmt.Println(" 🛢️  ↪️  sourceTankAfterPour: ", sourceTank)
+					fmt.Println("====================================================")
+				}
+			} else {
+				fullTanks = append(fullTanks, destinationTank)
+				fmt.Println(fullTanks)
+				emptyTanks = emptyTanks[1:]
+				fmt.Println(emptyTanks)
 			}
 		}
-		steps = append(steps, step)
 	}
 
-	// :===== Update the tanks with their new contents =====:
+	steps = append(steps, step)
 
+	// :===== Update the tanks with their new contents =====:
 	return steps
 }
 
 // :===== This function is designed to precompute the tank filling ratios =====:
 func TankFillingRatio(tanks []tanks.Tank, formula []float64) map[float64][]float64 {
 	fillingRatios := make(map[float64][]float64)
+
 	// Iterate on tanks to get their capacities
 	for _, tank := range tanks {
 		capacity := float64(tank.Capacity)
+
 		// If it hasn't already been added as a key to the map, add it
 		if _, exists := fillingRatios[capacity]; !exists {
+
 			// Calculate the proratas for each capacity
 			var proRatas []float64
 			for _, element := range formula {
 				var proRata float64 = element * float64(tank.Capacity) / 100
+
 				// Add them to the list of proRatas
 				proRatas = append(proRatas, proRata)
 			}
+
 			// Which itself becomes the value of the current key of the map
 			fillingRatios[capacity] = proRatas
 		}

@@ -8,19 +8,30 @@ import (
 
 // :===== This test function is designed to test the Solving function =====:
 func TestSolve(t *testing.T) {
+
 	// :===== This subtest is designed to test a simple 3 tank solving =====:
 	t.Run("Simple Solve", func(t *testing.T) {
+		// DISABLE
+
 		// The initial tanks
-		gotEmptyTanks, gotWineTanks, gotFormula :=
+		gotEmptyTanks, gotWineTanks, gotTanks, gotFormula :=
 			[]tanks.Tank{
 				{TankID: 3, Capacity: 100, BlendNewField: []float64{0, 0}, Volume: 0, Blend: []float64{999.9}},
 				{TankID: 4, Capacity: 100, BlendNewField: []float64{0, 0}, Volume: 0, Blend: []float64{999.9}},
 			},
 			[][]tanks.Tank{
-				{{TankID: 1, Capacity: 100, BlendNewField: []float64{100, 0}, Volume: 0, Blend: []float64{999.9}}},
-				{{TankID: 2, Capacity: 100, BlendNewField: []float64{0, 100}, Volume: 0, Blend: []float64{999.9}}},
+				{{TankID: 1, Capacity: 100, BlendNewField: []float64{100, 0}, Volume: 100, Blend: []float64{999.9}}},
+				{{TankID: 2, Capacity: 100, BlendNewField: []float64{0, 100}, Volume: 100, Blend: []float64{999.9}}},
+			},
+			[]tanks.Tank{
+				{TankID: 1, Capacity: 100, BlendNewField: []float64{100, 0}, Volume: 100, Blend: []float64{999.9}},
+				{TankID: 2, Capacity: 100, BlendNewField: []float64{0, 100}, Volume: 100, Blend: []float64{999.9}},
+				{TankID: 3, Capacity: 100, BlendNewField: []float64{0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 4, Capacity: 100, BlendNewField: []float64{0, 0}, Volume: 0, Blend: []float64{999.9}},
 			},
 			[]float64{50.00, 50.00}
+
+		gotTankFillingRatios := TankFillingRatio(gotTanks, gotFormula)
 
 		// The expected list of steps after processing the previous input
 		expected :=
@@ -36,11 +47,11 @@ func TestSolve(t *testing.T) {
 			}
 
 		// Calling the function
-		got := Solve(gotEmptyTanks, gotWineTanks, gotFormula, nil)
+		got := Solve(gotEmptyTanks, gotWineTanks, gotFormula, gotTankFillingRatios)
 
 		// Assert the results
 		if !reflect.DeepEqual(got, expected) {
-			t.Errorf("got %v, expected %v", got, expected)
+			t.Errorf("\ngot %v\n, get %v", got, expected)
 		}
 
 	})
@@ -48,8 +59,10 @@ func TestSolve(t *testing.T) {
 
 // :===== This test function is designed to test the precomputation of the TankFillingRatios =====:
 func TestTankFillingRatios(t *testing.T) {
+
 	// :===== This subtest is designed to try out mapping simple filling ratios =====:
 	t.Run("Test simple filling mapping", func(t *testing.T) {
+
 		// The initial tanks and formula
 		gotTanks, gotFormula :=
 			[]tanks.Tank{
