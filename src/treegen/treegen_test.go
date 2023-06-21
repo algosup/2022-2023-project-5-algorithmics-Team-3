@@ -13,12 +13,12 @@ func TestSolve(t *testing.T) {
 		// The initial tanks
 		gotEmptyTanks, gotWineTanks, gotFormula :=
 			[]tanks.Tank{
-				{TankID: 3, Capacity: 100, BlendNewField: 0},
-				{TankID: 4, Capacity: 100, BlendNewField: 0},
+				{TankID: 3, Capacity: 100, BlendNewField: []float64{0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 4, Capacity: 100, BlendNewField: []float64{0, 0}, Volume: 0, Blend: []float64{999.9}},
 			},
 			[][]tanks.Tank{
-				{{TankID: 1, Capacity: 100, BlendNewField: 1}},
-				{{TankID: 2, Capacity: 100, BlendNewField: 2}},
+				{{TankID: 1, Capacity: 100, BlendNewField: []float64{100, 0}, Volume: 0, Blend: []float64{999.9}}},
+				{{TankID: 2, Capacity: 100, BlendNewField: []float64{0, 100}, Volume: 0, Blend: []float64{999.9}}},
 			},
 			[]float64{50.00, 50.00}
 
@@ -46,17 +46,17 @@ func TestSolve(t *testing.T) {
 	})
 }
 
-// :===== This test function is designed to test the orecomputation of the TankFillingRatios =====:
+// :===== This test function is designed to test the precomputation of the TankFillingRatios =====:
 func TestTankFillingRatios(t *testing.T) {
 	// :===== This subtest is designed to try out mapping simple filling ratios =====:
 	t.Run("Test simple filling mapping", func(t *testing.T) {
 		// The initial tanks and formula
 		gotTanks, gotFormula :=
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 100, BlendNewField: 1},
-				{TankID: 2, Capacity: 100, BlendNewField: 2},
-				{TankID: 3, Capacity: 100, BlendNewField: 0},
-				{TankID: 4, Capacity: 100, BlendNewField: 0},
+				{TankID: 1, Capacity: 100, BlendNewField: []float64{100, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 2, Capacity: 100, BlendNewField: []float64{0, 100}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 3, Capacity: 100, BlendNewField: []float64{0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 4, Capacity: 100, BlendNewField: []float64{0, 0}, Volume: 0, Blend: []float64{999.9}},
 			}, []float64{
 				50.00,
 				50.00,

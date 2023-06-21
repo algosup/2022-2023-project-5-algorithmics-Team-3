@@ -109,7 +109,31 @@ func TankFillingRatio(tanks []tanks.Tank, formula []float64) map[float64][]float
 	return fillingRatios
 }
 
-/* OLD VERSION
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* OLDEST VERSION
 // :===== The main solving function =====:
 func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64) []Step {
 	steps := []Step{}
@@ -149,7 +173,7 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64)
 }
 */
 
-/*
+/* OLDER VERSION
 // :===== The main solving function =====:
 func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64, fillingRatios map[float64][]float64) []Step {
 	var steps []Step
