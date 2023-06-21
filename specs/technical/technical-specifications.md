@@ -29,9 +29,9 @@ Table of content
       - [Package used](#package-used)
       - [Extension used](#extension-used)
     - [System architecture diagram](#system-architecture-diagram)
-    - [Folder structure](#folder-structure)
+    - [Folders structure](#folders-structure)
   - [Features specifications](#features-specifications)
-    - [Description](#description)
+    - [Execution](#execution)
     - [Features workflow](#features-workflow)
     - [User Interface Specifications](#user-interface-specifications)
   - [Test and validation](#test-and-validation)
@@ -276,7 +276,7 @@ We have decided to create 4 custom packages for this project, named as follows:
 
 <img src="img/architectureDiagram.png" width="800">
 
-### Folder structure
+### Folders structure
 
 ```text
 .
@@ -334,7 +334,29 @@ We have decided to create 4 custom packages for this project, named as follows:
 - **Error handling**
   - If an error occurs while opening or analysing the CSV file, an error message is displayed and the program stops.
 
-### Description
+### Execution
+
+- The user executes the program by running the main file, **blend.go** using the following commands in the terminal: ```cd``` to move in the correct folder and ```go run``to execute the program
+
+  - ```bash
+      cd src
+      ```
+
+  - ```go
+      go run blend
+      ```
+
+- In the main file, **blend.go**, ```func main()``` is called. This is the primary function that is executed first.
+
+- Inside ```func main()```, the program may wait for the user to provide an input, such as by asking the user to specify a use case number or by prompting them to provide the path to the CSV file.
+
+- Once the user's input is received, **blend.go**, invokes other packages and utilizes their functions to process the input.
+
+- For example, **blend.go**, uses functions from the **csvutils package** to open the CSV file specified by the user and retrieve the records contained in the file.
+  
+- Then, **blend.go**, uses functions from the **tanks package** to parse the CSV records and obtain slices of empty tanks and slices of wine tanks.
+  
+- **blend.go**, then coordinates the execution of other program steps, such as sorting the tanks, generating the tank tree, solving the problem, and displaying instructions to the user.
 
 ### Features workflow
 
