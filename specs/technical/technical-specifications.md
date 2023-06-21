@@ -32,7 +32,6 @@ Table of content
     - [Folders structure](#folders-structure)
   - [Features specifications](#features-specifications)
     - [Execution](#execution)
-    - [Features workflow](#features-workflow)
     - [User Interface Specifications](#user-interface-specifications)
   - [Test and validation](#test-and-validation)
   - [Glossary](#glossary)
@@ -336,7 +335,7 @@ We have decided to create 4 custom packages for this project, named as follows:
 
 ### Execution
 
-- The user executes the program by running the main file, **blend.go** using the following commands in the terminal: ```cd``` to move in the correct folder and ```go run``to execute the program
+- The user executes the program by running the main file, **blend.go** using the following commands in the terminal: ```cd``` to move in the correct folder and ```go run``to execute the program:
 
   - ```bash
       cd src
@@ -346,19 +345,83 @@ We have decided to create 4 custom packages for this project, named as follows:
       go run blend
       ```
 
-- In the main file, **blend.go**, ```func main()``` is called. This is the primary function that is executed first.
+In the main file, **blend.go**, ```func main()``` is called. This is the primary function that is executed first.
 
-- Inside ```func main()```, the program may wait for the user to provide an input, such as by asking the user to specify a use case number or by prompting them to provide the path to the CSV file.
+- Inside ```func main()```, the program may wait for an input, such as by asking the user to specify a use case number or by prompting them to provide the path to the CSV file wich will be open by the **csvutils package**.
 
-- Once the user's input is received, **blend.go**, invokes other packages and utilizes their functions to process the input.
+  - ```go
+    csvutils.OpenCSV("UseCase.csv")
+    ```
 
-- For example, **blend.go**, uses functions from the **csvutils package** to open the CSV file specified by the user and retrieve the records contained in the file.
+- The data in the CSV file is then analysed using the followin function:
+
+  - ```go
+    csvutils.ParseCSV(records)
+    ```
+
+  - This function extracts the necessary information from the CSV file, such as tanks and formulas, and assigns them to the **Tanks** and **Formula** variables respectively.
+
+- A check is made to ensure that the variables Tanks and Formula are not zero, which would indicate an error when reading or analysing the CSV file.
+
+  - ```go
+    if Tanks != nil && Formula != nil {
+
+    }
+    ```
+
+- Then, creation of a slice of empty tanks from the **Tanks** variable with the following function of the **tanks package**:
+
+  - ```go
+    tanks.GetEmptyTanks(Tanks)
+    ```
+
+- Create a slice of wine tanks using the variable **Tanks** and the length of the variable **Formula** with the **tanks package**.
   
-- Then, **blend.go**, uses functions from the **tanks package** to parse the CSV records and obtain slices of empty tanks and slices of wine tanks.
-  
-- **blend.go**, then coordinates the execution of other program steps, such as sorting the tanks, generating the tank tree, solving the problem, and displaying instructions to the user.
+  - ```go
+    tanks.GetWineTanks(Tanks, len(Formula))
+    ```
 
-### Features workflow
+- The slices of empty tanks and wine tanks are sorted using the **sort package**:
+  
+  - ```go
+    sort.SortTanks(EmptyTanks)
+    ```
+
+  - ```go
+    WineTanks = sort.SortTanks2D(WineTanks)
+    ```
+
+- Using the **ui package**, displays debugging information on the initialisation of **Tanks**, **Formula**, **EmptyTanks** and **WineTanks** variables.
+  
+  - ```go
+    ui.DebugInit()
+    ```
+
+- Pre-calculates tank fill ratios using the Tanks and Formula variables using the **treegen package**.
+  
+  - ```go
+    treegen.TankFillingRatio()
+    ```
+
+- Display of tank fill ratios for debugging purposes with the **ui package**.
+  
+  - ```go
+    ui.DebugTankFillingRatios()
+    ```
+
+- The ```treegen.solve function``` is called with the parameters **EmptyTanks**, **WineTanks, Formula**.
+  
+  - ```go
+    treegen.Solve()
+    ```
+
+- Display the instructions in the terminal using the **ui package**.
+  
+  - ```go
+    PrintInstructions()
+    ```
+
+- If the Tanks or Formula variables are zero, this indicates an error when reading or analysing the tanks from the CSV file.
 
 ### User Interface Specifications
 
