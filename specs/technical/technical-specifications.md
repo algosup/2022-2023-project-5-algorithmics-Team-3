@@ -29,6 +29,7 @@ Table of content
       - [Package used](#package-used)
       - [Extension used](#extension-used)
     - [System architecture diagram](#system-architecture-diagram)
+    - [Folder structure](#folder-structure)
   - [Features specifications](#features-specifications)
     - [Description](#description)
     - [Features workflow](#features-workflow)
@@ -274,6 +275,38 @@ We have decided to create 4 custom packages for this project, named as follows:
 ### System architecture diagram
 
 <img src="img/architectureDiagram.png" width="800">
+
+### Folder structure
+
+```text
+.
+└── 2022-2023-project-5-algorithmics-Team-3/
+    ├── src/
+    │   ├── csvutils/
+    │   │   ├── csvTests/
+    │   │   │   ├── formula.csv
+    │   │   │   └── openTest.csv
+    │   │   ├── csvutils.go
+    │   │   └── csvutils_test.go
+    │   ├── sort/
+    │   │   ├── sort.go
+    │   │   └── sort_test.go
+    │   ├── tanks/
+    │   │   ├── tanks.go
+    │   │   └── tnaks_test.go
+    │   ├── treegen/
+    │   │   ├── treegen.go
+    │   │   └── treegen_test.go
+    │   └── ui/
+    │       ├── ui.go
+    │       └── ui_test.go
+    ├── .gitignore
+    ├── blend.go
+    ├── go.mod
+    ├── go.sum
+    ├── README.md
+    └── UseCase.csv
+```
 
 ## Features specifications
 
