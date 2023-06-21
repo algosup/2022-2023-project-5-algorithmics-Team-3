@@ -22,12 +22,11 @@ Table of content
     - [System architecture overview](#system-architecture-overview)
     - [System components](#system-components)
       - [Algorithm blending](#algorithm-blending)
-      - [Tanks managment](#tanks-managment)
       - [User interface](#user-interface)
     - [Technologies and tools used](#technologies-and-tools-used)
       - [Language used](#language-used)
       - [Package used](#package-used)
-      - [Extension used](#extension-used)
+      - [Other tools used](#other-tools-used)
     - [System architecture diagram](#system-architecture-diagram)
     - [Folders structure](#folders-structure)
   - [Features specifications](#features-specifications)
@@ -154,10 +153,13 @@ By using this system, the wine blending process can be carried out quickly and e
 
 ### Performance requirements
 
-- **Response time:** `WIP`
-- **Scalability:** `WIP`
-- **Optimization:** `WIP`
-- **No crashes:** `WIP`
+- **Response time:** The desired response time for the program to process and generate the instructions could be defined as an acceptable duration within which the program should provide the results to the user.
+
+- **Scalability:** If scalability is a requirement, it means that the program should be able to handle increasing amounts of data or user requests without a significant decrease in performance. This could involve designing the program to efficiently process large CSV files or support a growing number of users.
+
+- **Optimization:** Optimization refers to the improvement of the program's efficiency and resource utilization. It could involve optimizing algorithms, data structures, or code to reduce execution time or memory usage.
+
+- **No crashes:** The requirement for the program to avoid crashes means that it should be stable and able to handle various scenarios without encountering fatal errors or unexpected terminations. This could involve implementing error handling mechanisms, input validation, and thorough testing to ensure the program can gracefully handle different situations.
 
 ### Security requirements
 
@@ -197,7 +199,7 @@ For the algorithm, the input is a CSV file filed with the following information:
 <!-- --------------------------- Syntax example ---------------------------- -->
 All of these information will be filled by the customer in a user interface we have developed internally to facilitate the use of our algorithm for our client.
 
-**Note:** The code is preconfigured to use a specific CSV file. If you wish to use another CSV file, you will need to modify the line records := csvutils.OpenCSV("UseCase.csv") to specify the path to the desired CSV file, like this:
+**Note:** The code is preconfigured to use a specific CSV file. If you wish to use another CSV file, you will need to modify the line ```records := csvutils.OpenCSV("UseCase.csv")``` in **blend.go** to specify the path to the desired CSV file, like this:
 
 ```go
 records := csvutils.OpenCSV("UseCase1.csv")
@@ -210,20 +212,6 @@ records := csvutils.OpenCSV("UseCase1.csv")
 - Time response
 
 ``WIP``
-
-#### Tanks managment
-
-This component manages wine tanks, their status, their capacities, their availability, and facilitates the transfer of necessary volumes between tanks.
-
-  | Parameter    | Information about it           |
-  |--------------|--------------------------------|
-  | Status       | `Full`, `Empty` or `Wine type` |
-  | Capacity     | `Scalable`                     |
-  | Availability | `Available` or `Not available` |
-
-- ****
-- ****
-- ****
 
 #### User interface
 
@@ -273,9 +261,11 @@ We have decided to create 4 custom packages for this project, named as follows:
 - **tanks:** a custom package for tank management.
 - **ui:** a custom package for the user interface.
 
-#### Extension used
+#### Other tools used
 
-``WIP``
+- [delve](https://github.com/go-delve/delve)
+- [staticheck](https://staticcheck.io/)
+- [goplay](https://github.com/haya14busa/goplay)
 
 ### System architecture diagram
 
