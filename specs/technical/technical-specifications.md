@@ -26,6 +26,11 @@ Table of content
     - [Technologies and tools used](#technologies-and-tools-used)
       - [Language used](#language-used)
       - [Package used](#package-used)
+        - [csvutils package](#csvutils-package)
+        - [sort package](#sort-package)
+        - [tanks package](#tanks-package)
+        - [treegen package](#treegen-package)
+        - [ui package](#ui-package)
       - [Other tools used](#other-tools-used)
     - [System architecture diagram](#system-architecture-diagram)
     - [Folders structure](#folders-structure)
@@ -281,12 +286,49 @@ Here is the list of best practices in Go that should be applied during this proj
 
 #### Package used
 
-We have decided to create 4 custom packages for this project, named as follows:
+We have decided to create 5 custom packages for this project, named as follows:
 
-- **csvutils:** a custom package for CSV operations.
-- **sort:** a custom package for tank sorting.
-- **tanks:** a custom package for tank management.
-- **ui:** a custom package for the user interface.
+##### csvutils package
+
+A custom package for CSV operations.
+
+##### sort package
+
+A custom package for tank sorting.
+
+##### tanks package
+
+A custom package for tank management.
+
+- **Data structure**
+
+  - ```go
+    type Tank struct {
+    TankID        uint16
+    Capacity      uint32
+    BlendNewField []float64
+    Volume        float64
+    Blend         []float64
+    }
+    ```
+
+##### treegen package
+
+A custom package for generating and solving a tree structure related to tank blending.
+
+- **Data structure**
+
+  - ```go
+    type Substep struct {
+    SourceID      uint16
+    DestinationID uint16
+    Volume        float64
+    }
+    ```
+
+##### ui package
+
+A custom package for the user interface.
 
 #### Other tools used
 
@@ -379,7 +421,7 @@ In the main file, **blend.go**, ```func main()``` is called. This is the primary
 - The data in the CSV file is then analysed using the followin function:
 
   - ```go
-    csvutils.ParseCSV(records)
+    csvutils.ParseCSV()
     ```
 
   - This function extracts the necessary information from the CSV file, such as tanks and formulas, and assigns them to the **Tanks** and **Formula** variables respectively.
@@ -395,19 +437,19 @@ In the main file, **blend.go**, ```func main()``` is called. This is the primary
 - Then, creation of a slice of empty tanks from the **Tanks** variable with the following function of the **tanks package**:
 
   - ```go
-    tanks.GetEmptyTanks(Tanks)
+    tanks.GetEmptyTanks()
     ```
 
 - Create a slice of wine tanks using the variable **Tanks** and the length of the variable **Formula** with the **tanks package**.
   
   - ```go
-    tanks.GetWineTanks(Tanks, len(Formula))
+    tanks.GetWineTanks()
     ```
 
 - The slices of empty tanks and wine tanks are sorted using the **sort package**:
   
   - ```go
-    sort.SortTanks(EmptyTanks)
+    sort.SortTanks()
     ```
 
   - ```go
