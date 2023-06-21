@@ -197,6 +197,12 @@ For the algorithm, the input is a CSV file filed with the following information:
 <!-- --------------------------- Syntax example ---------------------------- -->
 All of these information will be filled by the customer in a user interface we have developed internally to facilitate the use of our algorithm for our client.
 
+**Note:** The code is preconfigured to use a specific CSV file. If you wish to use another CSV file, you will need to modify the line records := csvutils.OpenCSV("UseCase.csv") to specify the path to the desired CSV file, like this:
+
+```go
+records := csvutils.OpenCSV("UseCase1.csv")
+```
+
 - **Output**
 
 ``WIP``
