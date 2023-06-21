@@ -50,7 +50,7 @@ It is important to take into account these three documents together for a better
 
 #### Context
 
-Krug Champagne (part of LVMH) is building a new winery and needs a software solution for their blending process. The traditional method for making champagne involves several complex steps, and blending is a critical step in creating a consistent flavor profile. The challenge is to blend large quantities of wine in the right proportions while minimizing the number of steps to produce the closest result to the formula. The software solution will need to leverage the 330 tanks of various sizes and a system of pumps and pipes that can connect any tank with any other tank.
+Krug Champagne[^1] (part of LVMH) is building a new winery and needs a software solution for their blending process. The traditional method for making champagne involves several complex steps, and blending is a critical step in creating a consistent flavor profile. The challenge is to blend large quantities of wine in the right proportions while minimizing the number of steps to produce the closest result to the formula. The software solution will need to leverage the 330 tanks of various sizes and a system of pumps and pipes that can connect any tank with any other tank.
 
 #### Goals
 
@@ -137,15 +137,7 @@ Reminder of the project elements:
 
 - **Production Monitoring Functionality**
 
-  - Track wine production and blending process in real-time
   - Set alerts for out-of-range values
-
-- **Reporting functionality**
-
-  - Generate production reports based on selected parameters
-  - View inventory reports and trends over time
-  - Track production costs and margins
-  - Analyze production data to optimize processes and identify areas for improvement
 
 ### System use cases
 
@@ -195,12 +187,12 @@ We have defined our parameters as follows:
 
 - **Input**
 
-For the algorithm, the input is a CSV file filed with the following information:
+For the algorithm, the input is a CSV file[^2] filed with the following information:
 
 - The formula
 - The wine ID
 - The capacity
-<!-- --------------------------- Syntax example ---------------------------- -->
+
 All of these information will be filled by the customer in a user interface we have developed internally to facilitate the use of our algorithm for our client.
 
 **Note:** The code is preconfigured to use a specific CSV file. If you wish to use another CSV file, you will need to modify the line ```records := csvutils.OpenCSV("UseCase.csv")``` in **blend.go** to specify the path to the desired CSV file, like this:
@@ -492,6 +484,12 @@ In the main file, **blend.go**, ```func main()``` is called. This is the primary
 Our testing strategy is listed in the test plan, along with the various use cases.
 
 ## Glossary
+
+[^1]: Krug Champagne is a Champagne house founded by Joseph Krug in 1843.
+*source : [Krug Champagne](https://www.krug.com/)*
+
+[^2]: A CSV (Comma-Separated Value) file is a delimited text file that uses a comma to separate values
+*source : [Wikipedia](https://en.wikipedia.org/wiki/Comma-separated_values)*
 
 <!-- | Word                  | Definition | Source |
 |-----------------------|------------|--------|
