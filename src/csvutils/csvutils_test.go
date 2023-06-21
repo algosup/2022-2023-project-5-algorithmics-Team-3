@@ -44,25 +44,20 @@ func TestParseCSV(t *testing.T) {
 		wantedTanks, wantedFormula :=
 			// The expected tanks
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 100, BlendNewField: 1},
-				{TankID: 2, Capacity: 50, BlendNewField: 1},
-				{TankID: 3, Capacity: 25, BlendNewField: 2},
-				{TankID: 4, Capacity: 100, BlendNewField: 2},
-				{TankID: 5, Capacity: 200, BlendNewField: 3},
-				{TankID: 6, Capacity: 100, BlendNewField: 0},
-				{TankID: 7, Capacity: 200, BlendNewField: 0},
-				{TankID: 8, Capacity: 50, BlendNewField: 0},
-				{TankID: 9, Capacity: 25, BlendNewField: 0},
-				{TankID: 10, Capacity: 50, BlendNewField: 0},
+				{TankID: 1, Capacity: 100, BlendNewField: []float64{100, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 2, Capacity: 50, BlendNewField: []float64{100, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 3, Capacity: 25, BlendNewField: []float64{0, 100, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 4, Capacity: 100, BlendNewField: []float64{0, 100, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 5, Capacity: 200, BlendNewField: []float64{0, 0, 100}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 6, Capacity: 100, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 7, Capacity: 200, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 8, Capacity: 50, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 9, Capacity: 25, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 10, Capacity: 50, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 			},
 			// The expected formula
-			[]float64{
-				40.000,
-				45.000,
-				15.000,
-			}
+			[]float64{40, 45, 15}
 
-		//
 		gotOpenedCSV := OpenCSV("csvTests/ftsf.csv")
 
 		gotTanks, gotFormula := ParseCSV(gotOpenedCSV)
@@ -73,18 +68,16 @@ func TestParseCSV(t *testing.T) {
 
 	// :===== Many tanks & big formula subtest =====:
 	t.Run("Many tanks & big formula", func(t *testing.T) {
-		// As the csv is to big we will cherry pick specific values to compare and assume the rest is OK
+		// As the csv is too big, we will cherry-pick specific values to compare and assume the rest is OK
 		// The expected formula
 
 		wantedTanks, wantedFormula :=
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 73453868, BlendNewField: 699860},
-				{TankID: 501, Capacity: 234, BlendNewField: 81726},
-				{TankID: 1000, Capacity: 1395711, BlendNewField: 28464},
+				{TankID: 1, Capacity: 401, BlendNewField: []float64{100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 501, Capacity: 161, BlendNewField: []float64{0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 1000, Capacity: 343, BlendNewField: []float64{0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
 			},
-			[]float64{
-				1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-			}
+			[]float64{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
 
 		gotOpenedCSV := OpenCSV("csvTests/mtbf.csv")
 
@@ -95,7 +88,7 @@ func TestParseCSV(t *testing.T) {
 
 		assert.Equal(t, gotTanks[0], wantedTanks[0], "The tanks n°1 do not match.")
 		assert.Equal(t, gotTanks[500], wantedTanks[1], "The tanks n°501 do not match.")
-		assert.Equal(t, gotTanks[999], wantedTanks[2], "The tanks n°1000 doe not match.")
+		assert.Equal(t, gotTanks[999], wantedTanks[2], "The tanks n°1000 does not match.")
 		assert.Equal(t, gotFormula, wantedFormula, "The formulas do not match.")
 	})
 
@@ -110,25 +103,20 @@ func TestParseCSV(t *testing.T) {
 		wantedTanks, wantedFormula :=
 			// The expected tanks
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 100, BlendNewField: 1},
-				{TankID: 2, Capacity: 50, BlendNewField: 1},
-				{TankID: 3, Capacity: 25, BlendNewField: 2},
-				{TankID: 4, Capacity: 100, BlendNewField: 2},
-				{TankID: 5, Capacity: 200, BlendNewField: 3},
-				{TankID: 6, Capacity: 100, BlendNewField: 0},
-				{TankID: 7, Capacity: 200, BlendNewField: 0},
-				{TankID: 8, Capacity: 50, BlendNewField: 0},
-				{TankID: 9, Capacity: 25, BlendNewField: 0},
-				{TankID: 10, Capacity: 50, BlendNewField: 0},
+				{TankID: 1, Capacity: 100, BlendNewField: []float64{0, 0, 0}},
+				{TankID: 2, Capacity: 50, BlendNewField: []float64{0, 0, 0}},
+				{TankID: 3, Capacity: 25, BlendNewField: []float64{0, 0, 0}},
+				{TankID: 4, Capacity: 100, BlendNewField: []float64{0, 0, 0}},
+				{TankID: 5, Capacity: 200, BlendNewField: []float64{0, 0, 0}},
+				{TankID: 6, Capacity: 100, BlendNewField: []float64{0, 0, 0}},
+				{TankID: 7, Capacity: 200, BlendNewField: []float64{0, 0, 0}},
+				{TankID: 8, Capacity: 50, BlendNewField: []float64{0, 0, 0}},
+				{TankID: 9, Capacity: 25, BlendNewField: []float64{0, 0, 0}},
+				{TankID: 10, Capacity: 50, BlendNewField: []float64{0, 0, 0}},
 			},
 			// The expected formula
-			[]float64{
-				40.000,
-				45.000,
-				15.000,
-			}
+			[]float64{0, 0, 0}
 
-		//
 		gotOpenedCSV := OpenCSV("csvTests/ftsf.csv")
 
 		gotTanks, gotFormula := ParseCSV(gotOpenedCSV)
@@ -139,8 +127,8 @@ func TestParseCSV(t *testing.T) {
 	})
 
 	// :===== DISABLED Many tanks &  big formula with floating points subtest =====:
-	t.Run("Many tanks & big formula", func(t *testing.T) {
-		// As the csv is to big we will cherry pick specific values to compare and assume the rest is OK
+	t.Run("Many tanks & big formula with floating points", func(t *testing.T) {
+		// As the csv is too big, we will cherry-pick specific values to compare and assume the rest is OK
 		// The expected formula
 
 		// Disable/enable test
@@ -150,13 +138,11 @@ func TestParseCSV(t *testing.T) {
 
 		wantedTanks, wantedFormula :=
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 73453868, BlendNewField: 699860},
-				{TankID: 501, Capacity: 234, BlendNewField: 81726},
-				{TankID: 1000, Capacity: 1395711, BlendNewField: 28464},
+				{TankID: 1, Capacity: 73453868, BlendNewField: []float64{0, 0, 0}},
+				{TankID: 501, Capacity: 234, BlendNewField: []float64{0, 0, 0}},
+				{TankID: 1000, Capacity: 1395711, BlendNewField: []float64{0, 0, 0}},
 			},
-			[]float64{
-				1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-			}
+			[]float64{0, 0, 0}
 
 		gotOpenedCSV := OpenCSV("csvTests/mtbf.csv")
 
@@ -167,7 +153,7 @@ func TestParseCSV(t *testing.T) {
 
 		assert.Equal(t, gotTanks[0], wantedTanks[0], "The tanks n°1 do not match.")
 		assert.Equal(t, gotTanks[500], wantedTanks[1], "The tanks n°501 do not match.")
-		assert.Equal(t, gotTanks[999], wantedTanks[2], "The tanks n°1000 doe not match.")
+		assert.Equal(t, gotTanks[999], wantedTanks[2], "The tanks n°1000 does not match.")
 		assert.Equal(t, gotFormula, wantedFormula, "The formulas do not match.")
 	})
 
@@ -175,7 +161,13 @@ func TestParseCSV(t *testing.T) {
 	t.Run("Formula incorrect (doesn't add up to 100%)", func(t *testing.T) {
 		gotOpenedCSV := OpenCSV("csvTests/formula100.csv")
 
+		var formulaSum float64 = 0.0
+
 		gotTanks, gotFormula := ParseCSV(gotOpenedCSV)
+
+		for _, proportion := range gotFormula {
+			formulaSum += proportion
+		}
 
 		// Check if gotTanks or gotFormula are not nil, and report a failure if so
 		if gotTanks != nil || gotFormula != nil {

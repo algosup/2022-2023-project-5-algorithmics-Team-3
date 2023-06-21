@@ -59,43 +59,73 @@ func ParseCSV(records [][]string) ([]tanks.Tank, []float64) {
 				formula = append(formula, float64(proportion))
 				formulaSum += formula[i]
 			}
-		}
+		} else if index != 0 {
+			if formulaSum == 100 {
+				// Parse the Tank Capacity
+				capacity, err := strconv.ParseUint(record[0], 10, 32)
+				if err != nil {
+					fmt.Println("Failed to parse Tank Capacity", err)
+				}
 
+				// Parse the Wine Number
+				wineNumber, err := strconv.ParseUint(record[1], 10, 32)
+				if err != nil {
+					fmt.Println("Failed to parse Wine Number", err)
+				}
+
+				// Create the tank object
+				blendNewField := make([]float64, len(formula))
+				// Make sure wineNumber doesn't exceed the length of the formula
+				if wineNumber != 0 {
+					blendNewField[wineNumber-1] = 100
+				}
+				fmt.Println(blendNewField)
+
+				tank := tanks.Tank{
+					TankID:        uint16(index),
+					Capacity:      uint32(capacity),
+					BlendNewField: blendNewField,
+					Volume:        0,
+					// DEPRECATED
+					Blend: []float64{999.9},
+				}
+
+				/* DEPRECATED
+				// Create the tank object
+				tank := tanks.Tank{
+					TankID:        uint16(index),
+					Capacity:      uint32(capacity),
+					BlendNewField: uint32(wineNumber),
+				}
+				*/
+
+				// Append it to a dynamic array
+				Tanks = append(Tanks, tank)
+
+			} else {
+				return nil, nil
+				fmt.Println(Tanks)
+				fmt.Println(formula)
+			}
+		}
+	}
+
+	// TESTING SOMETHING
+	/*
+		// Check if formula adds up to 100% before continuing
 		if formulaSum == 100 {
-			// Parse the Tank Capacity
-			capacity, err := strconv.ParseUint(record[0], 10, 32)
-			if err != nil {
-				fmt.Println("Failed to parse Tank Capacity", err)
-			}
-
-			// Parse the Wine Number
-			wineNumber, err := strconv.ParseUint(record[1], 10, 32)
-			if err != nil {
-				fmt.Println("Failed to parse Wine Number", err)
-			}
-
-			// Create the tank object
-			tank := tanks.Tank{
-				TankID:        uint16(index),
-				Capacity:      uint32(capacity),
-				BlendNewField: uint32(wineNumber),
-			}
-
-			// Append it to a dynamic array
-			Tanks = append(Tanks, tank)
-
+			// Remove the intruder from the list
+			Tanks = Tanks[1:]
+			// Return the Tanks slice and formula to the main logic
+			return Tanks, formula
+		} else {
+			// Return nil if the formula doesn't add up
+			ui.Formula100(formulaSum)
+			return nil, nil
 		}
-	}
-
-	// Check if formula adds up to 100% before continuing
-	if formulaSum == 100 {
-		// Remove the intruder from the list
-		Tanks = Tanks[1:]
-		// Return the Tanks slice and formula to the main logic
-		return Tanks, formula
-	} else {
-		// Return nil if the formula doesn't add up
-		ui.Formula100(formulaSum)
-		return nil, nil
-	}
+	*/
+	fmt.Println(Tanks)
+	fmt.Println(formula)
+	fmt.Println(formulaSum)
+	return Tanks, formula
 }
