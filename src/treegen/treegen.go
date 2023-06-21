@@ -41,11 +41,11 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64,
 		if len(sublist) > 0 {
 			// creating new Tank based on the Tank
 			activeTank := tanks.Tank{
-				TankID:     sublist[0].TankID,
-				Capacity:   sublist[0].Capacity,
-				WineNumber: sublist[0].WineNumber,
-				Volume:     float64(sublist[0].Capacity),
-				Blend:      []float64{},
+				TankID:        sublist[0].TankID,
+				Capacity:      sublist[0].Capacity,
+				BlendNewField: sublist[0].BlendNewField,
+				Volume:        float64(sublist[0].Capacity),
+				Blend:         []float64{},
 			}
 			selectedTanks = append(selectedTanks, []tanks.Tank{activeTank})
 		}

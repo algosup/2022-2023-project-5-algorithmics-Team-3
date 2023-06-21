@@ -76,9 +76,9 @@ func ParseCSV(records [][]string) ([]tanks.Tank, []float64) {
 
 			// Create the tank object
 			tank := tanks.Tank{
-				TankID:     uint16(index),
-				Capacity:   uint32(capacity),
-				WineNumber: uint32(wineNumber),
+				TankID:        uint16(index),
+				Capacity:      uint32(capacity),
+				BlendNewField: uint32(wineNumber),
 			}
 
 			// Append it to a dynamic array

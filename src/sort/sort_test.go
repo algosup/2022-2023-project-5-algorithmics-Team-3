@@ -25,21 +25,21 @@ func TestSortTanks(t *testing.T) {
 		tanks, expected :=
 			// The starting case
 			[]tanks.Tank{
-				{TankID: 5, Capacity: 500, WineNumber: 1},
-				{TankID: 6, Capacity: 300, WineNumber: 1},
-				{TankID: 4, Capacity: 1000, WineNumber: 1},
-				{TankID: 2, Capacity: 1750, WineNumber: 1},
-				{TankID: 1, Capacity: 1898, WineNumber: 1},
-				{TankID: 3, Capacity: 1500, WineNumber: 1},
+				{TankID: 5, Capacity: 500, BlendNewField: 1},
+				{TankID: 6, Capacity: 300, BlendNewField: 1},
+				{TankID: 4, Capacity: 1000, BlendNewField: 1},
+				{TankID: 2, Capacity: 1750, BlendNewField: 1},
+				{TankID: 1, Capacity: 1898, BlendNewField: 1},
+				{TankID: 3, Capacity: 1500, BlendNewField: 1},
 			},
 			// The expected result
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 1898, WineNumber: 1},
-				{TankID: 2, Capacity: 1750, WineNumber: 1},
-				{TankID: 3, Capacity: 1500, WineNumber: 1},
-				{TankID: 4, Capacity: 1000, WineNumber: 1},
-				{TankID: 5, Capacity: 500, WineNumber: 1},
-				{TankID: 6, Capacity: 300, WineNumber: 1},
+				{TankID: 1, Capacity: 1898, BlendNewField: 1},
+				{TankID: 2, Capacity: 1750, BlendNewField: 1},
+				{TankID: 3, Capacity: 1500, BlendNewField: 1},
+				{TankID: 4, Capacity: 1000, BlendNewField: 1},
+				{TankID: 5, Capacity: 500, BlendNewField: 1},
+				{TankID: 6, Capacity: 300, BlendNewField: 1},
 			}
 
 		// Call the function to be tested
@@ -60,18 +60,18 @@ func TestSortTanks(t *testing.T) {
 			// The starting case
 			[]tanks.Tank{
 				{},
-				{TankID: 6, Capacity: 300, WineNumber: 1},
+				{TankID: 6, Capacity: 300, BlendNewField: 1},
 				{},
-				{TankID: 2, Capacity: 1750, WineNumber: 1},
-				{TankID: 1, Capacity: 1898, WineNumber: 1},
-				{TankID: 3, Capacity: 1500, WineNumber: 1},
+				{TankID: 2, Capacity: 1750, BlendNewField: 1},
+				{TankID: 1, Capacity: 1898, BlendNewField: 1},
+				{TankID: 3, Capacity: 1500, BlendNewField: 1},
 			},
 			// The expected result
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 1898, WineNumber: 1},
-				{TankID: 2, Capacity: 1750, WineNumber: 1},
-				{TankID: 3, Capacity: 1500, WineNumber: 1},
-				{TankID: 6, Capacity: 300, WineNumber: 1},
+				{TankID: 1, Capacity: 1898, BlendNewField: 1},
+				{TankID: 2, Capacity: 1750, BlendNewField: 1},
+				{TankID: 3, Capacity: 1500, BlendNewField: 1},
+				{TankID: 6, Capacity: 300, BlendNewField: 1},
 				{},
 				{},
 			}
@@ -93,21 +93,21 @@ func TestSortTanks(t *testing.T) {
 		tanks, expected :=
 			// The starting case
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 1898, WineNumber: 1},
-				{TankID: 2, Capacity: 1750, WineNumber: 1},
-				{TankID: 3, Capacity: 1500, WineNumber: 1},
-				{TankID: 4, Capacity: 1000, WineNumber: 1},
-				{TankID: 5, Capacity: 500, WineNumber: 1},
-				{TankID: 6, Capacity: 300, WineNumber: 1},
+				{TankID: 1, Capacity: 1898, BlendNewField: 1},
+				{TankID: 2, Capacity: 1750, BlendNewField: 1},
+				{TankID: 3, Capacity: 1500, BlendNewField: 1},
+				{TankID: 4, Capacity: 1000, BlendNewField: 1},
+				{TankID: 5, Capacity: 500, BlendNewField: 1},
+				{TankID: 6, Capacity: 300, BlendNewField: 1},
 			},
 			// The expected result
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 1898, WineNumber: 1},
-				{TankID: 2, Capacity: 1750, WineNumber: 1},
-				{TankID: 3, Capacity: 1500, WineNumber: 1},
-				{TankID: 4, Capacity: 1000, WineNumber: 1},
-				{TankID: 5, Capacity: 500, WineNumber: 1},
-				{TankID: 6, Capacity: 300, WineNumber: 1},
+				{TankID: 1, Capacity: 1898, BlendNewField: 1},
+				{TankID: 2, Capacity: 1750, BlendNewField: 1},
+				{TankID: 3, Capacity: 1500, BlendNewField: 1},
+				{TankID: 4, Capacity: 1000, BlendNewField: 1},
+				{TankID: 5, Capacity: 500, BlendNewField: 1},
+				{TankID: 6, Capacity: 300, BlendNewField: 1},
 			}
 
 		// Call the function to be tested
@@ -128,21 +128,21 @@ func TestSortTanks(t *testing.T) {
 		tanks, expected :=
 			// The starting case
 			[]tanks.Tank{
-				{TankID: 2, Capacity: 100, WineNumber: 1},
-				{TankID: 1, Capacity: 300, WineNumber: 1},
-				{TankID: 3, Capacity: 1000, WineNumber: 1},
-				{TankID: 5, Capacity: 1750, WineNumber: 1},
-				{TankID: 6, Capacity: 1898, WineNumber: 1},
-				{TankID: 4, Capacity: 1500, WineNumber: 1},
+				{TankID: 2, Capacity: 100, BlendNewField: 1},
+				{TankID: 1, Capacity: 300, BlendNewField: 1},
+				{TankID: 3, Capacity: 1000, BlendNewField: 1},
+				{TankID: 5, Capacity: 1750, BlendNewField: 1},
+				{TankID: 6, Capacity: 1898, BlendNewField: 1},
+				{TankID: 4, Capacity: 1500, BlendNewField: 1},
 			},
 			// The expected result
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 300, WineNumber: 1},
-				{TankID: 2, Capacity: 500, WineNumber: 1},
-				{TankID: 3, Capacity: 1000, WineNumber: 1},
-				{TankID: 4, Capacity: 1500, WineNumber: 1},
-				{TankID: 5, Capacity: 1750, WineNumber: 1},
-				{TankID: 6, Capacity: 1898, WineNumber: 1},
+				{TankID: 1, Capacity: 300, BlendNewField: 1},
+				{TankID: 2, Capacity: 500, BlendNewField: 1},
+				{TankID: 3, Capacity: 1000, BlendNewField: 1},
+				{TankID: 4, Capacity: 1500, BlendNewField: 1},
+				{TankID: 5, Capacity: 1750, BlendNewField: 1},
+				{TankID: 6, Capacity: 1898, BlendNewField: 1},
 			}
 
 		// Call the function to be tested
@@ -171,37 +171,37 @@ func TestSortTanks2D(t *testing.T) {
 			// The starting case
 			[][]tanks.Tank{
 				{
-					{TankID: 3, Capacity: 500, WineNumber: 1},
-					{TankID: 1, Capacity: 1000, WineNumber: 1},
-					{TankID: 2, Capacity: 750, WineNumber: 1},
+					{TankID: 3, Capacity: 500, BlendNewField: 1},
+					{TankID: 1, Capacity: 1000, BlendNewField: 1},
+					{TankID: 2, Capacity: 750, BlendNewField: 1},
 				},
 				{
-					{TankID: 1, Capacity: 1000, WineNumber: 1},
-					{TankID: 3, Capacity: 500, WineNumber: 1},
-					{TankID: 2, Capacity: 750, WineNumber: 1},
+					{TankID: 1, Capacity: 1000, BlendNewField: 1},
+					{TankID: 3, Capacity: 500, BlendNewField: 1},
+					{TankID: 2, Capacity: 750, BlendNewField: 1},
 				},
 				{
-					{TankID: 2, Capacity: 750, WineNumber: 1},
-					{TankID: 1, Capacity: 1000, WineNumber: 1},
-					{TankID: 3, Capacity: 500, WineNumber: 1},
+					{TankID: 2, Capacity: 750, BlendNewField: 1},
+					{TankID: 1, Capacity: 1000, BlendNewField: 1},
+					{TankID: 3, Capacity: 500, BlendNewField: 1},
 				},
 			},
 			// The expected result
 			[][]tanks.Tank{
 				{
-					{TankID: 1, Capacity: 1000, WineNumber: 1},
-					{TankID: 2, Capacity: 750, WineNumber: 1},
-					{TankID: 3, Capacity: 500, WineNumber: 1},
+					{TankID: 1, Capacity: 1000, BlendNewField: 1},
+					{TankID: 2, Capacity: 750, BlendNewField: 1},
+					{TankID: 3, Capacity: 500, BlendNewField: 1},
 				},
 				{
-					{TankID: 1, Capacity: 1000, WineNumber: 1},
-					{TankID: 2, Capacity: 750, WineNumber: 1},
-					{TankID: 3, Capacity: 500, WineNumber: 1},
+					{TankID: 1, Capacity: 1000, BlendNewField: 1},
+					{TankID: 2, Capacity: 750, BlendNewField: 1},
+					{TankID: 3, Capacity: 500, BlendNewField: 1},
 				},
 				{
-					{TankID: 1, Capacity: 1000, WineNumber: 1},
-					{TankID: 2, Capacity: 750, WineNumber: 1},
-					{TankID: 3, Capacity: 500, WineNumber: 1},
+					{TankID: 1, Capacity: 1000, BlendNewField: 1},
+					{TankID: 2, Capacity: 750, BlendNewField: 1},
+					{TankID: 3, Capacity: 500, BlendNewField: 1},
 				},
 			}
 
@@ -232,37 +232,37 @@ func TestSortTanks2D(t *testing.T) {
 			// The starting case
 			[][]tanks.Tank{
 				{
-					{TankID: 1, Capacity: 1000, WineNumber: 1},
-					{TankID: 2, Capacity: 750, WineNumber: 1},
-					{TankID: 3, Capacity: 500, WineNumber: 1},
+					{TankID: 1, Capacity: 1000, BlendNewField: 1},
+					{TankID: 2, Capacity: 750, BlendNewField: 1},
+					{TankID: 3, Capacity: 500, BlendNewField: 1},
 				},
 				{
-					{TankID: 1, Capacity: 1000, WineNumber: 1},
-					{TankID: 2, Capacity: 750, WineNumber: 1},
-					{TankID: 3, Capacity: 500, WineNumber: 1},
+					{TankID: 1, Capacity: 1000, BlendNewField: 1},
+					{TankID: 2, Capacity: 750, BlendNewField: 1},
+					{TankID: 3, Capacity: 500, BlendNewField: 1},
 				},
 				{
-					{TankID: 1, Capacity: 1000, WineNumber: 1},
-					{TankID: 2, Capacity: 750, WineNumber: 1},
-					{TankID: 3, Capacity: 500, WineNumber: 1},
+					{TankID: 1, Capacity: 1000, BlendNewField: 1},
+					{TankID: 2, Capacity: 750, BlendNewField: 1},
+					{TankID: 3, Capacity: 500, BlendNewField: 1},
 				},
 			},
 			// The expected result
 			[][]tanks.Tank{
 				{
-					{TankID: 1, Capacity: 1000, WineNumber: 1},
-					{TankID: 2, Capacity: 750, WineNumber: 1},
-					{TankID: 3, Capacity: 500, WineNumber: 1},
+					{TankID: 1, Capacity: 1000, BlendNewField: 1},
+					{TankID: 2, Capacity: 750, BlendNewField: 1},
+					{TankID: 3, Capacity: 500, BlendNewField: 1},
 				},
 				{
-					{TankID: 1, Capacity: 1000, WineNumber: 1},
-					{TankID: 2, Capacity: 750, WineNumber: 1},
-					{TankID: 3, Capacity: 500, WineNumber: 1},
+					{TankID: 1, Capacity: 1000, BlendNewField: 1},
+					{TankID: 2, Capacity: 750, BlendNewField: 1},
+					{TankID: 3, Capacity: 500, BlendNewField: 1},
 				},
 				{
-					{TankID: 1, Capacity: 1000, WineNumber: 1},
-					{TankID: 2, Capacity: 750, WineNumber: 1},
-					{TankID: 3, Capacity: 500, WineNumber: 1},
+					{TankID: 1, Capacity: 1000, BlendNewField: 1},
+					{TankID: 2, Capacity: 750, BlendNewField: 1},
+					{TankID: 3, Capacity: 500, BlendNewField: 1},
 				},
 			}
 
@@ -294,35 +294,35 @@ func TestSortTanks2D(t *testing.T) {
 			[][]tanks.Tank{
 				{
 					{},
-					{TankID: 1, Capacity: 1000, WineNumber: 1},
-					{TankID: 3, Capacity: 500, WineNumber: 1},
+					{TankID: 1, Capacity: 1000, BlendNewField: 1},
+					{TankID: 3, Capacity: 500, BlendNewField: 1},
 				},
 				{
-					{TankID: 2, Capacity: 750, WineNumber: 1},
+					{TankID: 2, Capacity: 750, BlendNewField: 1},
 					{},
-					{TankID: 1, Capacity: 1000, WineNumber: 1},
+					{TankID: 1, Capacity: 1000, BlendNewField: 1},
 				},
 				{
 					{},
-					{TankID: 3, Capacity: 500, WineNumber: 1},
-					{TankID: 2, Capacity: 750, WineNumber: 1},
+					{TankID: 3, Capacity: 500, BlendNewField: 1},
+					{TankID: 2, Capacity: 750, BlendNewField: 1},
 				},
 			},
 			// The expected result
 			[][]tanks.Tank{
 				{
-					{TankID: 1, Capacity: 1000, WineNumber: 1},
-					{TankID: 3, Capacity: 500, WineNumber: 1},
+					{TankID: 1, Capacity: 1000, BlendNewField: 1},
+					{TankID: 3, Capacity: 500, BlendNewField: 1},
 					{},
 				},
 				{
-					{TankID: 1, Capacity: 1000, WineNumber: 1},
-					{TankID: 2, Capacity: 750, WineNumber: 1},
+					{TankID: 1, Capacity: 1000, BlendNewField: 1},
+					{TankID: 2, Capacity: 750, BlendNewField: 1},
 					{},
 				},
 				{
-					{TankID: 2, Capacity: 750, WineNumber: 1},
-					{TankID: 3, Capacity: 500, WineNumber: 1},
+					{TankID: 2, Capacity: 750, BlendNewField: 1},
+					{TankID: 3, Capacity: 500, BlendNewField: 1},
 					{},
 				},
 			}
@@ -353,37 +353,37 @@ func TestSortTanks2D(t *testing.T) {
 			// The starting case
 			[][]tanks.Tank{
 				{
-					{TankID: 3, Capacity: 500, WineNumber: 1},
-					{TankID: 1, Capacity: 1000, WineNumber: 1},
-					{TankID: 2, Capacity: 750, WineNumber: 1},
+					{TankID: 3, Capacity: 500, BlendNewField: 1},
+					{TankID: 1, Capacity: 1000, BlendNewField: 1},
+					{TankID: 2, Capacity: 750, BlendNewField: 1},
 				},
 				{
-					{TankID: 1, Capacity: 1000, WineNumber: 1},
-					{TankID: 3, Capacity: 500, WineNumber: 1},
-					{TankID: 2, Capacity: 750, WineNumber: 1},
+					{TankID: 1, Capacity: 1000, BlendNewField: 1},
+					{TankID: 3, Capacity: 500, BlendNewField: 1},
+					{TankID: 2, Capacity: 750, BlendNewField: 1},
 				},
 				{
-					{TankID: 2, Capacity: 750, WineNumber: 1},
-					{TankID: 1, Capacity: 1000, WineNumber: 1},
-					{TankID: 3, Capacity: 500, WineNumber: 1},
+					{TankID: 2, Capacity: 750, BlendNewField: 1},
+					{TankID: 1, Capacity: 1000, BlendNewField: 1},
+					{TankID: 3, Capacity: 500, BlendNewField: 1},
 				},
 			},
 			// The expected result
 			[][]tanks.Tank{
 				{
-					{TankID: 1, Capacity: 1000, WineNumber: 1},
-					{TankID: 2, Capacity: 750, WineNumber: 1},
-					{TankID: 3, Capacity: 500, WineNumber: 1},
+					{TankID: 1, Capacity: 1000, BlendNewField: 1},
+					{TankID: 2, Capacity: 750, BlendNewField: 1},
+					{TankID: 3, Capacity: 500, BlendNewField: 1},
 				},
 				{
-					{TankID: 1, Capacity: 1000, WineNumber: 1},
-					{TankID: 2, Capacity: 750, WineNumber: 1},
-					{TankID: 3, Capacity: 500, WineNumber: 1},
+					{TankID: 1, Capacity: 1000, BlendNewField: 1},
+					{TankID: 2, Capacity: 750, BlendNewField: 1},
+					{TankID: 3, Capacity: 500, BlendNewField: 1},
 				},
 				{
-					{TankID: 1, Capacity: 1000, WineNumber: 1},
-					{TankID: 2, Capacity: 750, WineNumber: 1},
-					{TankID: 3, Capacity: 500, WineNumber: 1},
+					{TankID: 1, Capacity: 1000, BlendNewField: 1},
+					{TankID: 2, Capacity: 750, BlendNewField: 1},
+					{TankID: 3, Capacity: 500, BlendNewField: 1},
 				},
 			}
 

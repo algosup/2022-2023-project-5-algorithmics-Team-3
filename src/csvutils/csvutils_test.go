@@ -44,16 +44,16 @@ func TestParseCSV(t *testing.T) {
 		wantedTanks, wantedFormula :=
 			// The expected tanks
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 100, WineNumber: 1},
-				{TankID: 2, Capacity: 50, WineNumber: 1},
-				{TankID: 3, Capacity: 25, WineNumber: 2},
-				{TankID: 4, Capacity: 100, WineNumber: 2},
-				{TankID: 5, Capacity: 200, WineNumber: 3},
-				{TankID: 6, Capacity: 100, WineNumber: 0},
-				{TankID: 7, Capacity: 200, WineNumber: 0},
-				{TankID: 8, Capacity: 50, WineNumber: 0},
-				{TankID: 9, Capacity: 25, WineNumber: 0},
-				{TankID: 10, Capacity: 50, WineNumber: 0},
+				{TankID: 1, Capacity: 100, BlendNewField: 1},
+				{TankID: 2, Capacity: 50, BlendNewField: 1},
+				{TankID: 3, Capacity: 25, BlendNewField: 2},
+				{TankID: 4, Capacity: 100, BlendNewField: 2},
+				{TankID: 5, Capacity: 200, BlendNewField: 3},
+				{TankID: 6, Capacity: 100, BlendNewField: 0},
+				{TankID: 7, Capacity: 200, BlendNewField: 0},
+				{TankID: 8, Capacity: 50, BlendNewField: 0},
+				{TankID: 9, Capacity: 25, BlendNewField: 0},
+				{TankID: 10, Capacity: 50, BlendNewField: 0},
 			},
 			// The expected formula
 			[]float64{
@@ -78,9 +78,9 @@ func TestParseCSV(t *testing.T) {
 
 		wantedTanks, wantedFormula :=
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 73453868, WineNumber: 699860},
-				{TankID: 501, Capacity: 234, WineNumber: 81726},
-				{TankID: 1000, Capacity: 1395711, WineNumber: 28464},
+				{TankID: 1, Capacity: 73453868, BlendNewField: 699860},
+				{TankID: 501, Capacity: 234, BlendNewField: 81726},
+				{TankID: 1000, Capacity: 1395711, BlendNewField: 28464},
 			},
 			[]float64{
 				1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -110,16 +110,16 @@ func TestParseCSV(t *testing.T) {
 		wantedTanks, wantedFormula :=
 			// The expected tanks
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 100, WineNumber: 1},
-				{TankID: 2, Capacity: 50, WineNumber: 1},
-				{TankID: 3, Capacity: 25, WineNumber: 2},
-				{TankID: 4, Capacity: 100, WineNumber: 2},
-				{TankID: 5, Capacity: 200, WineNumber: 3},
-				{TankID: 6, Capacity: 100, WineNumber: 0},
-				{TankID: 7, Capacity: 200, WineNumber: 0},
-				{TankID: 8, Capacity: 50, WineNumber: 0},
-				{TankID: 9, Capacity: 25, WineNumber: 0},
-				{TankID: 10, Capacity: 50, WineNumber: 0},
+				{TankID: 1, Capacity: 100, BlendNewField: 1},
+				{TankID: 2, Capacity: 50, BlendNewField: 1},
+				{TankID: 3, Capacity: 25, BlendNewField: 2},
+				{TankID: 4, Capacity: 100, BlendNewField: 2},
+				{TankID: 5, Capacity: 200, BlendNewField: 3},
+				{TankID: 6, Capacity: 100, BlendNewField: 0},
+				{TankID: 7, Capacity: 200, BlendNewField: 0},
+				{TankID: 8, Capacity: 50, BlendNewField: 0},
+				{TankID: 9, Capacity: 25, BlendNewField: 0},
+				{TankID: 10, Capacity: 50, BlendNewField: 0},
 			},
 			// The expected formula
 			[]float64{
@@ -150,9 +150,9 @@ func TestParseCSV(t *testing.T) {
 
 		wantedTanks, wantedFormula :=
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 73453868, WineNumber: 699860},
-				{TankID: 501, Capacity: 234, WineNumber: 81726},
-				{TankID: 1000, Capacity: 1395711, WineNumber: 28464},
+				{TankID: 1, Capacity: 73453868, BlendNewField: 699860},
+				{TankID: 501, Capacity: 234, BlendNewField: 81726},
+				{TankID: 1000, Capacity: 1395711, BlendNewField: 28464},
 			},
 			[]float64{
 				1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,

@@ -13,12 +13,12 @@ func TestSolve(t *testing.T) {
 		// The initial tanks
 		gotEmptyTanks, gotWineTanks, gotFormula :=
 			[]tanks.Tank{
-				{TankID: 3, Capacity: 100, WineNumber: 0},
-				{TankID: 4, Capacity: 100, WineNumber: 0},
+				{TankID: 3, Capacity: 100, BlendNewField: 0},
+				{TankID: 4, Capacity: 100, BlendNewField: 0},
 			},
 			[][]tanks.Tank{
-				{{TankID: 1, Capacity: 100, WineNumber: 1}},
-				{{TankID: 2, Capacity: 100, WineNumber: 2}},
+				{{TankID: 1, Capacity: 100, BlendNewField: 1}},
+				{{TankID: 2, Capacity: 100, BlendNewField: 2}},
 			},
 			[]float64{50.00, 50.00}
 
@@ -53,10 +53,10 @@ func TestTankFillingRatios(t *testing.T) {
 		// The initial tanks and formula
 		gotTanks, gotFormula :=
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 100, WineNumber: 1},
-				{TankID: 2, Capacity: 100, WineNumber: 2},
-				{TankID: 3, Capacity: 100, WineNumber: 0},
-				{TankID: 4, Capacity: 100, WineNumber: 0},
+				{TankID: 1, Capacity: 100, BlendNewField: 1},
+				{TankID: 2, Capacity: 100, BlendNewField: 2},
+				{TankID: 3, Capacity: 100, BlendNewField: 0},
+				{TankID: 4, Capacity: 100, BlendNewField: 0},
 			}, []float64{
 				50.00,
 				50.00,

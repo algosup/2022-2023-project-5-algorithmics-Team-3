@@ -63,7 +63,7 @@ func PrintInstructions(steps []treegen.Step) {
 // :###### DEBUG: Function to display basic initalization debug info ######:
 func DebugInit(tanks []tanks.Tank, formula []float64, emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank) {
 	fmt.Printf("\n🛢️  Tanks: %d\n\n", tanks)
-	fmt.Println("🏗️  Tank Struct: ID, Capacity, WineNumber")
+	fmt.Println("🏗️  Tank Struct: ID, Capacity, BlendNewField")
 	fmt.Printf("\n🧪  Formula: %.5f\n\n", formula)
 	fmt.Println("=====================================")
 	fmt.Printf("\n🍷  Number of wines used: %d\n\n", len(formula))
