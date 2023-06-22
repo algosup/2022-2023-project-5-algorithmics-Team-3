@@ -16,18 +16,18 @@ func TestSolve(t *testing.T) {
 		// The initial tanks
 		gotEmptyTanks, gotWineTanks, gotTanks, gotFormula :=
 			[]tanks.Tank{
-				{TankID: 3, Capacity: 100, BlendNewField: []float64{0, 0}, Volume: 0},
-				{TankID: 4, Capacity: 100, BlendNewField: []float64{0, 0}, Volume: 0},
+				{TankID: 3, Capacity: 100, Blend: []float64{0, 0}, Volume: 0},
+				{TankID: 4, Capacity: 100, Blend: []float64{0, 0}, Volume: 0},
 			},
 			[][]tanks.Tank{
-				{{TankID: 1, Capacity: 100, BlendNewField: []float64{100, 0}, Volume: 100}},
-				{{TankID: 2, Capacity: 100, BlendNewField: []float64{0, 100}, Volume: 100}},
+				{{TankID: 1, Capacity: 100, Blend: []float64{100, 0}, Volume: 100}},
+				{{TankID: 2, Capacity: 100, Blend: []float64{0, 100}, Volume: 100}},
 			},
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 100, BlendNewField: []float64{100, 0}, Volume: 100},
-				{TankID: 2, Capacity: 100, BlendNewField: []float64{0, 100}, Volume: 100},
-				{TankID: 3, Capacity: 100, BlendNewField: []float64{0, 0}, Volume: 0},
-				{TankID: 4, Capacity: 100, BlendNewField: []float64{0, 0}, Volume: 0},
+				{TankID: 1, Capacity: 100, Blend: []float64{100, 0}, Volume: 100},
+				{TankID: 2, Capacity: 100, Blend: []float64{0, 100}, Volume: 100},
+				{TankID: 3, Capacity: 100, Blend: []float64{0, 0}, Volume: 0},
+				{TankID: 4, Capacity: 100, Blend: []float64{0, 0}, Volume: 0},
 			},
 			[]float64{50.00, 50.00}
 
@@ -66,10 +66,10 @@ func TestTankFillingRatios(t *testing.T) {
 		// The initial tanks and formula
 		gotTanks, gotFormula :=
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 100, BlendNewField: []float64{100, 0}, Volume: 0},
-				{TankID: 2, Capacity: 100, BlendNewField: []float64{0, 100}, Volume: 0},
-				{TankID: 3, Capacity: 100, BlendNewField: []float64{0, 0}, Volume: 0},
-				{TankID: 4, Capacity: 100, BlendNewField: []float64{0, 0}, Volume: 0},
+				{TankID: 1, Capacity: 100, Blend: []float64{100, 0}, Volume: 0},
+				{TankID: 2, Capacity: 100, Blend: []float64{0, 100}, Volume: 0},
+				{TankID: 3, Capacity: 100, Blend: []float64{0, 0}, Volume: 0},
+				{TankID: 4, Capacity: 100, Blend: []float64{0, 0}, Volume: 0},
 			}, []float64{
 				50.00,
 				50.00,

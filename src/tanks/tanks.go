@@ -14,10 +14,10 @@ type OldTank struct {
 
 // :===== The main Tank data structure =====:
 type Tank struct {
-	TankID        uint16
-	Capacity      uint32
-	BlendNewField []float64
-	Volume        float64
+	TankID   uint16
+	Capacity uint32
+	Blend    []float64
+	Volume   float64
 }
 
 // :===== This function is meant to retrieve all the empty tanks from the list of tanks =====:
@@ -28,7 +28,7 @@ func GetEmptyTanks(Tanks []Tank) []Tank {
 	// Add all the empty tanks to a slice
 	for _, tank := range Tanks {
 		var wineProportionSum float64 = 0
-		for _, wineProportion := range tank.BlendNewField {
+		for _, wineProportion := range tank.Blend {
 			wineProportionSum += wineProportion
 		}
 		if wineProportionSum == 0 {
@@ -45,15 +45,15 @@ func GetWineTanks(Tanks []Tank, len int) [][]Tank {
 
 	// Iterate on the Tanks list to regroup tanks by their wine number
 	for _, tank := range Tanks {
-		for i, wineProportion := range tank.BlendNewField {
+		for i, wineProportion := range tank.Blend {
 			if wineProportion != 0.0 {
 				WineTanks[i] = append(WineTanks[i], tank)
 			}
 		}
 
 		/*
-			if tank.BlendNewField != 0 {
-				WineTanks[tank.BlendNewField-1] = append(WineTanks[tank.BlendNewField-1], tank)
+			if tank.Blend != 0 {
+				WineTanks[tank.Blend-1] = append(WineTanks[tank.Blend-1], tank)
 			}
 		*/
 	}

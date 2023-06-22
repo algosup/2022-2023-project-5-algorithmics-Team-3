@@ -107,10 +107,6 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64,
 
 						}
 
-						// Add the instruction the substep to the list of substeps
-						substep := Substep{SourceID: sourceTank.TankID, DestinationID: destinationTank.TankID, Volume: float64(fillingRatios[float64(destinationTank.Capacity)][i])}
-						step.Substeps = append(step.Substeps, substep)
-
 						// Otherwise, if it is empty, add it to emptyTanks and remove it from sourceTanksByWine, then replace it with a fresh one if possible
 					} else if sourceTank.Volume == 0.0 {
 						fmt.Println("Empty tank found")
@@ -147,7 +143,15 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64,
 
 						leftoverTanks[i] = append(leftoverTanks[i], *sourceTank)
 						sourceTanksByWine = removeLastTank(sourceTanksByWine)
-						selectedTanks[i] = append(selectedTanks[i], wineTanks[i][len(wineTanks)-1])
+						if len(selectedTanks) < i {
+							fmt.Println("OUT OF TANKS")
+							break
+
+						} else {
+							fmt.Println("OUT OF RANGE:: ", selectedTanks)
+							selectedTanks[i] = append(selectedTanks[i], wineTanks[i][len(wineTanks)-1])
+
+						}
 
 						fmt.Println("sourceTanksByWine After: ")
 						fmt.Println(sourceTanksByWine)
@@ -159,17 +163,21 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64,
 
 					fmt.Println(" 🛢️  ↪️  sourceTankAfterPour: ", sourceTank)
 					fmt.Println("====================================================")
+
+					// Add the instruction the substep to the list of substeps
+					substep := Substep{SourceID: sourceTank.TankID, DestinationID: destinationTank.TankID, Volume: float64(fillingRatios[float64(destinationTank.Capacity)][i])}
+					step.Substeps = append(step.Substeps, substep)
 				}
 			} else {
+
 				fullTanks = append(fullTanks, destinationTank)
 				fmt.Println(fullTanks)
 				emptyTanks = removeLastTank(emptyTanks)
 				fmt.Println(emptyTanks)
 			}
+			steps = append(steps, step)
 		}
 	}
-
-	steps = append(steps, step)
 
 	// :===== Update the tanks with their new contents =====:
 	return steps
@@ -218,10 +226,10 @@ func TankSelector(wineTanks [][]tanks.Tank, selectedTanks [][]tanks.Tank) [][]ta
 
 			// creating new Tank based on the Tank
 			activeTank := tanks.Tank{
-				TankID:        sublist[len(sublist)-1].TankID,
-				Capacity:      sublist[len(sublist)-1].Capacity,
-				BlendNewField: sublist[len(sublist)-1].BlendNewField,
-				Volume:        float64(sublist[len(sublist)-1].Capacity),
+				TankID:   sublist[len(sublist)-1].TankID,
+				Capacity: sublist[len(sublist)-1].Capacity,
+				Blend:    sublist[len(sublist)-1].Blend,
+				Volume:   float64(sublist[len(sublist)-1].Capacity),
 			}
 			selectedTanks = append(selectedTanks, []tanks.Tank{activeTank})
 		}
