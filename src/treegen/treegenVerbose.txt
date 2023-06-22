@@ -36,10 +36,22 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64,
 		}
 	*/
 
-	// WAIT A MINUTE, WHAT IF I TRY TO EXTERNALIZE THIS FUNCTION AND CALL IT AGAIN TO REPOPULATE SELECTED TANKS
 	// :===== Create the list of active tanks =====:
 	selectedTanks := make([][]tanks.Tank, 0)
-	selectedTanks = TankSelector(wineTanks, selectedTanks)
+	for _, sublist := range wineTanks {
+		if len(sublist) > 0 {
+
+			// creating new Tank based on the Tank
+			activeTank := tanks.Tank{
+				TankID:        sublist[len(sublist)-1].TankID,
+				Capacity:      sublist[len(sublist)-1].Capacity,
+				BlendNewField: sublist[len(sublist)-1].BlendNewField,
+				Volume:        float64(sublist[len(sublist)-1].Capacity),
+				Blend:         []float64{},
+			}
+			selectedTanks = append(selectedTanks, []tanks.Tank{activeTank})
+		}
+	}
 
 	// :===== Create the list of leftover tanks =====:
 	leftoverTanks := make([][]tanks.Tank, len(formula))
@@ -111,50 +123,40 @@ func Solve(emptyTanks []tanks.Tank, wineTanks [][]tanks.Tank, formula []float64,
 						substep := Substep{SourceID: sourceTank.TankID, DestinationID: destinationTank.TankID, Volume: float64(fillingRatios[float64(destinationTank.Capacity)][i])}
 						step.Substeps = append(step.Substeps, substep)
 
-						// Otherwise, if it is empty, add it to emptyTanks and remove it from sourceTanksByWine, then replace it with a fresh one if possible
+						// Otherwise, if it is empty, add it to emptyTanks and remove it from sourceTanksByWine
 					} else if sourceTank.Volume == 0.0 {
 						fmt.Println("Empty tank found")
 						fmt.Println("sourceTanksByWine Before: ")
 						fmt.Println(sourceTanksByWine)
 						fmt.Println("emptyTanks before: ")
 						fmt.Println(emptyTanks)
-						fmt.Println("selectedTanks before: ")
-						fmt.Println(selectedTanks)
 						fmt.Println("++++++++++++++++++++++++++")
 
 						emptyTanks = append(emptyTanks, *sourceTank)
 						sourceTanksByWine = removeLastTank(sourceTanksByWine)
-						selectedTanks[i] = removeLastTank(selectedTanks[i])
-						selectedTanks[i] = append(selectedTanks[i], wineTanks[i][0]) // len(wineTanks)-1
 
 						fmt.Println("sourceTanksByWine After: ")
 						fmt.Println(sourceTanksByWine)
 						fmt.Println("emptyTanks After: ")
 						fmt.Println(emptyTanks)
-						fmt.Println("selectedTanks after: ")
-						fmt.Println(selectedTanks)
 
-						// Otherwise, add it to leftover tanks where it belongs (in terms of wineType), then replace it with a fresh one if possible
+						// Otherwise, add it to leftover tanks where it belongs (in terms of wineType)
 					} else {
 						fmt.Println("Leftover tank found")
 						fmt.Println("sourceTanksByWine Before: ")
 						fmt.Println(sourceTanksByWine)
 						fmt.Println("leftoverTanks before: ")
 						fmt.Println(leftoverTanks[i])
-						fmt.Println("selectedTanks before: ")
-						fmt.Println(selectedTanks)
 						fmt.Println("++++++++++++++++++++++++++")
 
 						leftoverTanks[i] = append(leftoverTanks[i], *sourceTank)
 						sourceTanksByWine = removeLastTank(sourceTanksByWine)
-						selectedTanks[i] = append(selectedTanks[i], wineTanks[i][len(wineTanks)-1])
 
 						fmt.Println("sourceTanksByWine After: ")
 						fmt.Println(sourceTanksByWine)
 						fmt.Println("leftoverTanks After: ")
 						fmt.Println(leftoverTanks[i])
-						fmt.Println("selectedTanks after: ")
-						fmt.Println(selectedTanks)
+						// WORKING HERE HERE
 					}
 
 					fmt.Println(" 🛢️  ↪️  sourceTankAfterPour: ", sourceTank)
@@ -209,25 +211,6 @@ func removeLastTank(slice []tanks.Tank) []tanks.Tank {
 		return slice // Return the same slice if it's empty
 	}
 	return slice[:len(slice)-1]
-}
-
-// :===== This function is here to select a tanks to be put in the selector =====:
-func TankSelector(wineTanks [][]tanks.Tank, selectedTanks [][]tanks.Tank) [][]tanks.Tank {
-	for _, sublist := range wineTanks {
-		if len(sublist) > 0 {
-
-			// creating new Tank based on the Tank
-			activeTank := tanks.Tank{
-				TankID:        sublist[len(sublist)-1].TankID,
-				Capacity:      sublist[len(sublist)-1].Capacity,
-				BlendNewField: sublist[len(sublist)-1].BlendNewField,
-				Volume:        float64(sublist[len(sublist)-1].Capacity),
-				Blend:         []float64{},
-			}
-			selectedTanks = append(selectedTanks, []tanks.Tank{activeTank})
-		}
-	}
-	return selectedTanks
 }
 
 //
