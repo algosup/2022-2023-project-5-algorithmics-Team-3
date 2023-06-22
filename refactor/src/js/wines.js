@@ -51,7 +51,7 @@ function displayWinesInTable() {
             <td>${wine.wineId}</td>
             <td>${wine.wineName}</td>
             <td><span style="color: ${wine.wineColor}; background-color: ${wine.wineColor}; width: 50%; height: 100%; display: inline-block; border-radius: 5px;">${wine.wineColor}</span></td>
-            <td><button class="btn btn-danger" onclick="deleteWine(${wine.wineId})">Delete</button></td>
+            <td><button class="btn btn-danger" onclick="deleteWine(${wine.wineId})"><i class="fa-solid fa-trash"></i></button></td>
         `;
         wineTableBody.appendChild(newRow);
     });

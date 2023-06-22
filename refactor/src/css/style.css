@@ -1,12 +1,30 @@
+:root {
+    --bg-color: #580101;
+    --glass-bg-color: #ffffff4d;
+    --font-color: #dfc08d;
+    --font-color2: #a78349;
+    --font-color3: #ffffff;
+    --font-color4: #000000;
+    --table-color-top: #727272;
+    --table-color-even: #c8c8c8;
+    --table-color-odd: #e5e5e5;
+    --button-color: #dfc08d;
+    --button-color-hover: #a78349;
+    --delete-button-color: #c33939;
+    --delete-button-color-hover: #b70c0c;
+    --download-button-color: #359021;
+    --download-button-color-hover: #3aa422;
+    --upload-button-color: #1185bb;
+    --upload-button-color-hover: #1f96cd;
+}
+
 * {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 html{
-    background: rgb(0,170,204);
-    background: radial-gradient(circle, rgba(0,170,204,1) 0%, rgba(0,143,172,1) 34%, rgba(0,114,134,1) 66%, rgba(0,75,85,1) 100%);
-    background-attachment: fixed;
+    background: var(--bg-color);
 }
 
 .tanks_sidebar, .formula_sidebar , .wines_sidebar, .actions_sidebar {
@@ -17,8 +35,8 @@ html{
     z-index: 1;
     top: 11%;
     left: 0;
-    background: rgba( 255, 255, 255, 0.3 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    background: var(--glass-bg-color);
+    box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
     backdrop-filter: blur( 20px );
     -webkit-backdrop-filter: blur( 20px );
     border: 1px solid rgba( 255, 255, 255, 0.18 );
@@ -26,11 +44,23 @@ html{
 
 .tanks_sidebar > h1 , .formula_sidebar > h1 , .wines_sidebar > h1, .actions_sidebar > h1 {
     text-align: center;
-    color: #ffffff;
+    color: var(--font-color);
+}
+
+.actions_sidebar > h2 {
+    color: var(--font-color);
+    margin: 25 0;
+}
+
+hr {
+    margin-top: 20px;
+    border: 0;
+    height: 1.5px;
+    background: var(--font-color);
 }
 
 .tanks_sidebar > #inputForm > p , .wines_sidebar > #wineForm > p{
-    color: #ffffff;
+    color: var(--font-color);
     font-size: 16px;
     margin-bottom: 5px;
 }
@@ -40,13 +70,15 @@ html{
     padding: 5px;
     border-radius: 5px;
     border: 0px;
+    background-color: var(--button-color);
+    color: var(--font-color4);
 }
 
 .wines_sidebar > #wineForm > input[type="color"] {
     width: 80%;
     height: 30px;
-    background-color: #ffffff;
-    border: 2px solid #ffffff;
+    background-color: var(--button-color);
+    border: 2px solid var(--button-color);
     cursor: pointer;
     padding: 0px;
 }
@@ -54,44 +86,95 @@ html{
 .tanks_sidebar > #inputForm > button , .wines_sidebar > #wineForm > button{
     margin-top: 25px;
     text-decoration: none;
-    color: #000000;
+    color: var(--font-color4);
     font-size: 16px;
     padding: 10px;
     border-radius: 10px;
-    background-color: #ffffff;
+    background-color: var(--button-color);
     border: 0px;
     cursor: pointer;
     width: 100%;
 }
 
+.tanks_sidebar > #inputForm > button:hover , .wines_sidebar > #wineForm > button:hover{
+    background-color: var(--button-color-hover);
+    transition: all 0.1s ease-in-out;
+}
+
+
 .tanks_sidebar > #clearBtn > button, .wines_sidebar > #clearWineBtn {
     text-decoration: none;
-    color: #ffffff;
+    color: var(--font-color3);
     font-size: 16px;
     padding: 10px;
     border-radius: 10px;
-    background-color: #d71e1e;
+    background-color: var(--delete-button-color);
     border: 0px;
     cursor: pointer;
     margin-bottom: 0px;
 }
 
-.tanks_sidebar > #downloadBtn, .formula_sidebar > #downloadBtn {
+.tanks_sidebar > #clearBtn > button:hover, .wines_sidebar > #clearWineBtn:hover {
+    background-color: var(--delete-button-color-hover);
+    transition: all 0.3s ease-in-out;
+}
+
+.tanks_sidebar > #downloadBtn, .formula_sidebar > #downloadBtn, .actions_sidebar > #downloadBtn, .actions_sidebar > #downloadPresetBtn{
     text-decoration: none;
     font-size: 16px;
     padding: 10px;
     border-radius: 10px;
-    background-color: #28b708;
+    background-color: var(--download-button-color);
     width: 80%;
     margin: 0 auto;
+    text-align: center;
 }
 
-.tanks_sidebar > #downloadBtn > a, .formula_sidebar > #downloadBtn > a{
+.tanks_sidebar > #downloadBtn:hover, .formula_sidebar > #downloadBtn:hover, .actions_sidebar > #downloadBtn:hover, .actions_sidebar > #downloadPresetBtn:hover{
+    background-color: var(--download-button-color-hover);
+    transition: all 0.3s ease-in-out;
+}
+
+.actions_sidebar > #presetFileInput, .actions_sidebar > #csvFileInput{
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.actions_sidebar > #presetFileInput + label, .actions_sidebar > #csvFileInput + label{
     text-decoration: none;
-    color: #ffffff;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--upload-button-color);
+    width: 80%;
+    cursor: pointer;
+    color: var(--font-color3);
+    margin: 0 auto;
+    text-align: center;
+    display: block;
 }
 
-.tanks_sidebar >#downloadBtn > a > i, .formula_sidebar > #downloadBtn > a > i{
+.actions_sidebar > #presetFileInput + label:hover, .actions_sidebar > #csvFileInput + label:hover{
+    background-color: var(--upload-button-color-hover);
+    transition: all 0.3s ease-in-out;
+}
+
+
+.tanks_sidebar > #downloadBtn > a, .formula_sidebar > #downloadBtn > a, .actions_sidebar > #downloadBtn > a, .actions_sidebar > #downloadPresetBtn > a{
+    text-decoration: none;
+    color: var(--font-color3);
+}
+
+.tanks_sidebar > #downloadBtn > a:hover, .formula_sidebar > #downloadBtn > a:hover, .actions_sidebar > #downloadBtn > a:hover, .actions_sidebar > #downloadPresetBtn > a:hover{
+    /* color: var(--font-color4); */
+}
+
+
+.tanks_sidebar >#downloadBtn > a > i, .formula_sidebar > #downloadBtn > a > i, .actions_sidebar > #downloadBtn > a > i, .actions_sidebar > #downloadPresetBtn > a > i{
     margin-left: 10px;
 }
 
@@ -102,12 +185,16 @@ html{
     margin-bottom: 20px;
 }
 
+.actions_sidebar > #downloadBtn, .actions_sidebar > #downloadPresetBtn, .actions_sidebar > #presetFileInput, .actions_sidebar > #csvFileInput {
+    margin-bottom: 20px;
+}
+
 .global_container_tanks, .global_container_formula, .global_container_wines, .global_container_actions {
     margin-left: 300px;
     min-height: 100%;
     max-height: fit-content;
-    background: rgba( 255, 255, 255, 0.3 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    background: var(--glass-bg-color);
+    box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
     backdrop-filter: blur( 20px );
     -webkit-backdrop-filter: blur( 20px );
     border-radius: 10px;
@@ -121,14 +208,12 @@ html{
     justify-content: center;
     align-items: center;
     margin: 20px 20px 30px 20px;; 
-
-    background: rgba( 255, 255, 255, 0.3 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    background: #dfc08d4d;
+    box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
     backdrop-filter: blur( 20px );
     -webkit-backdrop-filter: blur( 20px );
     border-radius: 10px;
 }
-
 
 .views > button, .winesViews > button {
     padding: 10px;
@@ -140,9 +225,9 @@ html{
 }
 
 .views > button.active, .winesViews > button.active {
-    background-color: #fff;
+    background-color: var(--button-color-hover);
     border-radius: 10px;
-    color: #000000;
+    color: var(--font-color3);
 }
 
 .tanks_display {
@@ -163,10 +248,11 @@ html{
     justify-content: flex-end;
     align-items: center;
 }
+
 .tankLabel{
     font-size: 12px;
-    color: #000000;
-    background-color: #ffffff57;
+    color: var(--font-color4);
+    background-color: var(--glass-bg-color);
     margin-bottom: 5px;
     padding: 5px;
     border-radius: 5px;
@@ -176,7 +262,8 @@ table {
     border-collapse: collapse;
     width: 95%;
     margin: 0 auto;
-    border: #000000 2px solid;
+    border: var(--font-color4) 2px solid;
+    margin-bottom: 30px;
 }
 
 th, td {
@@ -185,10 +272,10 @@ th, td {
     font-weight: bold;
 }
 
-thead > tr > th {background-color: #0089a5; color: #ffffff;}
+thead > tr > th {background-color: var(--table-color-top); color: var(--font-color3);}
 
-tr:nth-child(odd) {background-color: #ffffff;}
-tr:nth-child(even) {background-color: #b5f3ff;}
+tr:nth-child(odd) {background-color: var(--table-color-odd);}
+tr:nth-child(even) {background-color: var(--table-color-even);}
 
 tr > td > button {
     padding: 5px;
@@ -198,9 +285,23 @@ tr > td > button {
     cursor: pointer;
 }
 
+tr > td > button:hover {
+    background-color: var(--button-color);
+    border-radius: 10px;
+    color: var(--font-color3);
+}
+
+tr > td > button:nth-child(1):hover {
+    color: var(--delete-button-color);
+}
+
+tr > td > button:nth-child(2):hover {
+    color: var(--upload-button-color);
+}
+
 .navigation{
-    background: rgba( 255, 255, 255, 0.3 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    background: var(--glass-bg-color);
+    box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
     backdrop-filter: blur( 20px );
     -webkit-backdrop-filter: blur( 20px );
     border: 1px solid rgba( 255, 255, 255, 0.18 );
@@ -218,7 +319,7 @@ tr > td > button {
 
 .navigation > a {
     text-decoration: none;
-    color: #ffffff;
+    color: var(--font-color3);
     font-size: 25px;
     width: 45px;
     height: 45px;
@@ -231,15 +332,15 @@ tr > td > button {
 }
 
 .navigation > a:hover {
-    background-color: #ffffff;
-    color: #000000;
-    scale: 0.9;
-    rotate: 10deg;
+    background-color: var(--button-color);
+    color: var(--font-color4);
+    scale: 0.8;
+    rotate: 5deg;
     transition: all 0.3s ease-in-out;
 }
 
 .navigation > a.active {
-    border: #ffffff 2px solid;
+    border: var(--font-color3) 2px solid;
     border-radius: 50%;
 }
 
@@ -253,8 +354,8 @@ tr > td > button {
 }
 
 .wine-container {
-    background: rgba( 255, 255, 255, 0.3 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    background: var(--glass-bg-color);
+    box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
     backdrop-filter: blur( 20px );
     -webkit-backdrop-filter: blur( 20px );
     display: flex;
@@ -280,12 +381,12 @@ tr > td > button {
     padding: 0px;
     margin: 20 auto;
     display: flex;
-    background-color: #ffffff39;
+    background-color: var(--glass-bg-color);
 }
 
 .horizontal_bar_chart_container > div {
     height: 100%;
-    background-color: #ffffff;
+    background-color: var(--font-color3);
 }
 
 .horizontal_bar_chart_container> div:first-child  {
@@ -307,8 +408,8 @@ tr > td > button {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    background: rgba( 255, 255, 255, 0.3 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    background: var(--glass-bg-color);
+    box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
     backdrop-filter: blur( 20px );
     -webkit-backdrop-filter: blur( 20px );
     border-radius: 10px;
@@ -320,16 +421,15 @@ tr > td > button {
     width: 40px;
     height: 40px;
     border-radius: 25%;
-    border: #000000 2px solid;
-    /* margin: 10px; */
+    border: var(--font-color4) 2px solid;
 }
 
 .wines_percent_list > ul > li > div.wineType {
     height: 40px;
     width: 250px;
-    background-color: #ffffff;
+    background-color: var(--font-color3);
     border-radius: 10px;
-    border: #000000 2px solid;
+    border: var(--font-color4) 2px solid;
     display: flex;
     align-items: center;
     padding-left: 20px;
@@ -339,10 +439,9 @@ tr > td > button {
 .wines_percent_list > ul > li > input.percent {
     width: 100px;
     height: 40px;
-    background-color: #ffffff;
+    background-color: var(--font-color3);
     border-radius: 10px;
-    border: #000000 2px solid;
-    /* margin: 10px; */
+    border: var(--font-color4) 2px solid;
     padding: 5px;
     padding-left: 10px;
     font-size: 1.3em;
@@ -353,20 +452,51 @@ tr > td > button {
     transform: translateX(-55px);
 }
 
-.wines_percent_list > ul > li > button {
-    width: 40px;
-    height: 40px;
-    border-radius: 25%;
-    border: #000000 2px solid;
-    transform: translateX(-20px);
-    cursor: pointer;
-    font-size: 1.4em;
-}
-
 .horizontal_bar_chart_container > div {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.3em;
-    color: #ffffff;
+    color: var(--font-color3);
+}
+
+
+.global_container_actions > .instructions_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    margin: 20px auto;
+    color: var(--font-color3);
+}
+
+.global_container_actions > .instructions_container > h2 {
+    font-size: 1.6em;
+    text-decoration: underline;
+}
+
+.global_container_actions > .instructions_container > .steps_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 20px auto;
+    color: var(--font-color3);
+}
+
+.global_container_actions > .instructions_container > .steps_container > .step_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    background-color: var(--glass-bg-color);
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.global_container_actions > .instructions_container > .steps_container > .step_container > .substep > p {
+    font-size: 1.3em;
+}
+
+.global_container_actions > .instructions_container > .steps_container > .step_container > .substep > h2 {
+    font-weight: bold;
 }

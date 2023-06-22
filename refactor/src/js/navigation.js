@@ -53,7 +53,14 @@ var containerTanks = document.getElementsByClassName('global_container_tanks')[0
 var containerWines = document.getElementsByClassName('global_container_wines')[0];
 var containerActions = document.getElementsByClassName('global_container_actions')[0];
 
+var lastPosition = 0;
+
 document.getElementById('nav_formula').addEventListener('click', function () {
+    location.reload();
+    formulaScreen();
+});
+
+function formulaScreen() {
     navFormula.classList.add = 'active';
     navTanks.classList.remove = 'active';
     navWines.classList.remove = 'active';
@@ -69,10 +76,15 @@ document.getElementById('nav_formula').addEventListener('click', function () {
     containerWines.style.display = 'none';
     containerActions.style.display = 'none';
 
-    location.reload();
-});
+    lastPosition = 3;
+    saveLastPosition();
+}
 
 document.getElementById('nav_tanks').addEventListener('click', function () {
+    tanksScreen();
+});
+
+function tanksScreen(){
     navFormula.classList.remove = 'active';
     navTanks.classList.add = 'active';
     navWines.classList.remove = 'active';
@@ -89,9 +101,16 @@ document.getElementById('nav_tanks').addEventListener('click', function () {
     containerActions.style.display = 'none';
 
     generateSelectOptions();
-});
+
+    lastPosition = 2;
+    saveLastPosition();
+}
 
 document.getElementById('nav_wines').addEventListener('click', function () {
+    winesScreen();
+});
+
+function winesScreen(){
     navFormula.classList.remove = 'active';
     navTanks.classList.remove = 'active';
     navWines.classList.add = 'active';
@@ -106,9 +125,16 @@ document.getElementById('nav_wines').addEventListener('click', function () {
     containerTanks.style.display = 'none';
     containerWines.style.display = 'block';
     containerActions.style.display = 'none';
-});
+
+    lastPosition = 1;
+    saveLastPosition();
+}
 
 document.getElementById('nav_actions').addEventListener('click', function () {
+    actionsScreen();
+});
+
+function actionsScreen(){
     navFormula.classList.remove = 'active';
     navTanks.classList.remove = 'active';
     navWines.classList.remove = 'active';
@@ -123,4 +149,47 @@ document.getElementById('nav_actions').addEventListener('click', function () {
     containerTanks.style.display = 'none';
     containerWines.style.display = 'none';
     containerActions.style.display = 'block';
-});
+
+    lastPosition = 0;
+    saveLastPosition();
+}
+
+// When Var LastPosition = 0, it means that the user is on the Actions page
+// When Var LastPosition = 1, it means that the user is on the Wines page
+// When Var LastPosition = 2, it means that the user is on the Tanks page
+// When Var LastPosition = 3, it means that the user is on the Formula page
+
+function saveLastPosition() {
+    switch (lastPosition) {
+        case 0:
+            localStorage.setItem('lastPosition', 'actions');
+            break;
+        case 1:
+            localStorage.setItem('lastPosition', 'wines');
+            break;
+        case 2:
+            localStorage.setItem('lastPosition', 'tanks');
+            break;
+        case 3:
+            localStorage.setItem('lastPosition', 'formula');
+            break;
+    }
+}
+
+function getLastPosition() {
+    var lastPosition = localStorage.getItem('lastPosition');
+    switch (lastPosition) {
+        case 'actions':
+            actionsScreen();
+            break;
+        case 'wines':
+            winesScreen();
+            break;
+        case 'tanks':
+            tanksScreen();
+            break;
+        case 'formula':
+            formulaScreen();
+            break;
+    }
+}

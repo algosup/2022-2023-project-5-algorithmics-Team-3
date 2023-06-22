@@ -1,4 +1,6 @@
 function root() {
+    getLastPosition();
+
     getWinesFromLocalStorage();
     displayWinesInTable();
     displayWinesGraphically();
@@ -13,8 +15,8 @@ function root() {
     getFormulaFromLocalStorage();
     displayFormulaInBarChart();
 
-    logWines();
-    logTanks();
+    // logWines();
+    // logTanks();
 }
 
 window.addEventListener('load', root);

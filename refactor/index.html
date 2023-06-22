@@ -1,14 +1,14 @@
 <html>
 
 <head>
-    <title>Tanks Generation</title>
-
+    <title>Krug X ALGOSUP</title>
+	<link href="https://www.krug.com/themes/custom/krug/images/favicon.png" rel="shortcut icon" type="image/x-icon">
     <link rel="stylesheet" href="src/css/style.css">
     <script src="https://kit.fontawesome.com/7cca3309d0.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <d class="sidebar">
+    <div class="sidebar">
         <div class="navigation">
             <a href="#" id="nav_formula"><i class="fa-solid fa-flask-vial"></i></a>
             <a href="#" id="nav_wines"><i class="fa-solid fa-wine-bottle"></i></a>
@@ -55,15 +55,24 @@
 
         <div class="actions_sidebar" style="display: none;">
             <h1>Actions</h1>
-            <div id="downloadInputBtn">
-                <a href="#" onclick="downloadCSV()">Download Input CSV <i class="fa-solid fa-download"></i></a>
-            </div>
+            <hr>
+            <h2>Datas</h2>
             <div id="downloadBtn">
-                <a href="#" onclick="downloadCSV()">Download CSV <i class="fa-solid fa-download"></i></a>
+                <a href="#" onclick="downloadCSV()">Download as CSV File<i class="fa-solid fa-download"></i></a>
             </div>
-            <input type="file" id="presetFileInput">
+            <input type="file" id="csvFileInput" name="csvFileInput">
+            <label for="csvFileInput">Import <i class="fa-solid fa-upload"></i></label>
+
+            <hr>
+            <h2>Configuration</h2>
+            <div id="downloadPresetBtn">
+                <a href="#" onclick="downloadPreset()">Export the Current Configuration<i class="fa-solid fa-download"></i></a>
+            </div>
+            <input type="file" id="presetFileInput" name="presetFileInput">
+            <label for="presetFileInput">Load a Configuration file <i class="fa-solid fa-upload"></i></label><br>
+
         </div>
-    </d iv>
+    </div>
 
 
     <div class="global_container_tanks" style="display: none;">
@@ -122,10 +131,8 @@
     </div>
 
     <div class="global_container_actions" style="display: none;">
-        <div class="OutputBlendFile"></div>
-        <div class="InputBlendFile"></div>
-        <div class="uploadPresetFile"></div>
-        <div class="downloadPresetFile"></div>
+        <div class="instructions_container">
+        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -136,5 +143,6 @@
     <script src="src/js/root.js"></script>
     <script src="src/js/csv.js"></script>
     <script src="src/js/preset.js"></script>
+    <script src="src/js/display_output.js"></script>
 </body>
 </html>

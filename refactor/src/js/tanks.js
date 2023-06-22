@@ -84,8 +84,8 @@ function displayTanksInTable() {
             <td>${tank.capacity}</td>
             <td>${tank.content}</td>
             <td>
-                <button onclick="deleteTank(${index})">Delete</button>
-                <button onclick="duplicateTank(${index})">Duplicate</button>
+                <button onclick="deleteTank(${index})"><i class="fa-solid fa-trash"></i></button>
+                <button onclick="duplicateTank(${index})"><i class="fa-solid fa-copy"></i></button>
             </td>
         `;
         tankTableBody.appendChild(newRow);
