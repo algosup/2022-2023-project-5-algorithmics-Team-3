@@ -277,7 +277,7 @@ Here is the list of best practices in Go that should be applied during this proj
 
 #### Package used
 
-We have decided to create 5 custom packages for this project, named as follows:
+We have decided to create 5 custom packages[^3] for this project, named as follows:
 
 ##### csvutils package
 
@@ -305,7 +305,7 @@ A custom package for tank management.
 
 ##### treegen package
 
-A custom package for generating and solving a tree structure related to tank blending.
+A custom package for generating and solving a tree[^4] structure related to tank blending.
 
 - **Data structure**
 
@@ -488,8 +488,14 @@ Our testing strategy is listed in the test plan, along with the various use case
 [^1]: Krug Champagne is a Champagne house founded by Joseph Krug in 1843.
 *source : [Krug Champagne](https://www.krug.com/)*
 
-[^2]: A CSV (Comma-Separated Value) file is a delimited text file that uses a comma to separate values
+[^2]: A CSV (Comma-Separated Value) file is a delimited text file that uses a comma to separate values.
 *source : [Wikipedia](https://en.wikipedia.org/wiki/Comma-separated_values)*
+
+[^3]:  A package is a collection of source files in the same directory that are compiled together.
+*source : [How to write Go code](https://go.dev/doc/code#:~:text=Go%20programs%20are%20organized%20into,files%20within%20the%20same%20package.)*
+
+[^4]:  A tree data structure is a hierarchical structure that is used to represent and organize data in a way that is easy to navigate and search.
+*source : [Introduction to Tree](https://www.geeksforgeeks.org/introduction-to-tree-data-structure-and-algorithm-tutorials/)*
 
 <!-- | Word                  | Definition | Source |
 |-----------------------|------------|--------|
