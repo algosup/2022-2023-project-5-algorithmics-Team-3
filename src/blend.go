@@ -29,7 +29,7 @@ func main() {
 		// :===== Open the selected CSV =====:
 		records := csvutils.OpenCSV(fmt.Sprintf("UseCase%d.csv", ucNumber))
 	*/
-	records := csvutils.OpenCSV("UseCase2.csv")
+	records := csvutils.OpenCSV("UseCase1.csv")
 
 	// :===== Create the initial Tank Slice =====:
 	var Tanks []tanks.Tank

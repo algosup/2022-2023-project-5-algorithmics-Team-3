@@ -18,7 +18,6 @@ type Tank struct {
 	Capacity      uint32
 	BlendNewField []float64
 	Volume        float64
-	Blend         []float64
 }
 
 // :===== This function is meant to retrieve all the empty tanks from the list of tanks =====:

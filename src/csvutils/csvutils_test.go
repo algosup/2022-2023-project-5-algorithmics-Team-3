@@ -44,16 +44,16 @@ func TestParseCSV(t *testing.T) {
 		wantedTanks, wantedFormula :=
 			// The expected tanks
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 100, BlendNewField: []float64{100, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 2, Capacity: 50, BlendNewField: []float64{100, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 3, Capacity: 25, BlendNewField: []float64{0, 100, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 4, Capacity: 100, BlendNewField: []float64{0, 100, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 5, Capacity: 200, BlendNewField: []float64{0, 0, 100}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 6, Capacity: 100, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 7, Capacity: 200, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 8, Capacity: 50, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 9, Capacity: 25, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 10, Capacity: 50, BlendNewField: []float64{0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 1, Capacity: 100, BlendNewField: []float64{100, 0, 0}, Volume: 0},
+				{TankID: 2, Capacity: 50, BlendNewField: []float64{100, 0, 0}, Volume: 0},
+				{TankID: 3, Capacity: 25, BlendNewField: []float64{0, 100, 0}, Volume: 0},
+				{TankID: 4, Capacity: 100, BlendNewField: []float64{0, 100, 0}, Volume: 0},
+				{TankID: 5, Capacity: 200, BlendNewField: []float64{0, 0, 100}, Volume: 0},
+				{TankID: 6, Capacity: 100, BlendNewField: []float64{0, 0, 0}, Volume: 0},
+				{TankID: 7, Capacity: 200, BlendNewField: []float64{0, 0, 0}, Volume: 0},
+				{TankID: 8, Capacity: 50, BlendNewField: []float64{0, 0, 0}, Volume: 0},
+				{TankID: 9, Capacity: 25, BlendNewField: []float64{0, 0, 0}, Volume: 0},
+				{TankID: 10, Capacity: 50, BlendNewField: []float64{0, 0, 0}, Volume: 0},
 			},
 			// The expected formula
 			[]float64{40, 45, 15}
@@ -73,9 +73,9 @@ func TestParseCSV(t *testing.T) {
 
 		wantedTanks, wantedFormula :=
 			[]tanks.Tank{
-				{TankID: 1, Capacity: 401, BlendNewField: []float64{100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 501, Capacity: 161, BlendNewField: []float64{0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
-				{TankID: 1000, Capacity: 343, BlendNewField: []float64{0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, Volume: 0, Blend: []float64{999.9}},
+				{TankID: 1, Capacity: 401, BlendNewField: []float64{100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, Volume: 0},
+				{TankID: 501, Capacity: 161, BlendNewField: []float64{0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, Volume: 0},
+				{TankID: 1000, Capacity: 343, BlendNewField: []float64{0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, Volume: 0},
 			},
 			[]float64{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
 

@@ -222,7 +222,6 @@ func TankSelector(wineTanks [][]tanks.Tank, selectedTanks [][]tanks.Tank) [][]ta
 				Capacity:      sublist[len(sublist)-1].Capacity,
 				BlendNewField: sublist[len(sublist)-1].BlendNewField,
 				Volume:        float64(sublist[len(sublist)-1].Capacity),
-				Blend:         []float64{},
 			}
 			selectedTanks = append(selectedTanks, []tanks.Tank{activeTank})
 		}
