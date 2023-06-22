@@ -193,13 +193,9 @@ For the algorithm, the input is a CSV file[^2] filed with the following informat
 - The wine ID
 - The capacity
 
-All of these information will be filled by the customer in a user interface we have developed internally to facilitate the use of our algorithm for our client.
+All of these information will be filled by the customer in an user interface we have developed internally to facilitate the use of our algorithm for our client.
 
-**Note:** The code is preconfigured to use a specific CSV file. If you wish to use another CSV file, you will need to modify the line ```records := csvutils.OpenCSV("UseCase.csv")``` in **blend.go** to specify the path to the desired CSV file, like this:
-
-```go
-records := csvutils.OpenCSV("UseCase1.csv")
-```
+The user will have the possibility to select the CSV file he wants in the trminal.
 
 - **Output**
 
@@ -406,7 +402,7 @@ In the main file, **blend.go**, ```func main()``` is called. This is the primary
 - Inside ```func main()```, the program may wait for an input, such as by asking the user to specify a use case number or by prompting them to provide the path to the CSV file wich will be open by the **csvutils package**.
 
   - ```go
-    csvutils.OpenCSV("UseCase.csv")
+    csvutils.OpenCSV()
     ```
 
 - The data in the CSV file is then analysed using the followin function:
