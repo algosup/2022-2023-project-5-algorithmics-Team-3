@@ -169,11 +169,6 @@ hr {
     color: var(--font-color3);
 }
 
-.tanks_sidebar > #downloadBtn > a:hover, .formula_sidebar > #downloadBtn > a:hover, .actions_sidebar > #downloadBtn > a:hover, .actions_sidebar > #downloadPresetBtn > a:hover{
-    /* color: var(--font-color4); */
-}
-
-
 .tanks_sidebar >#downloadBtn > a > i, .formula_sidebar > #downloadBtn > a > i, .actions_sidebar > #downloadBtn > a > i, .actions_sidebar > #downloadPresetBtn > a > i{
     margin-left: 10px;
 }
