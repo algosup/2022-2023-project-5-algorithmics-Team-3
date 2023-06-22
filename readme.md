@@ -11,11 +11,3 @@ cd src
 ```go
 go run blend
 ```
-
-## Change the CSV file
-
-The code is preconfigured to use a specific CSV file. If you wish to use another CSV file, you will need to modify the line ```records := csvutils.OpenCSV("UseCase.csv")``` in **blend.go** to specify the path to the desired CSV file, like this:
-
-```go
-records := csvutils.OpenCSV("MyUseCase.csv")
-```
